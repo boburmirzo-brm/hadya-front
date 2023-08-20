@@ -1,0 +1,213 @@
+
+.slider__container .mySwiper{
+    height: 650px;
+    margin-top: 20px;
+}
+.slider__container .mySwiper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* BANNER FIRST */
+.banner__one{
+    background: url(../../assets//banner_img_one.webp);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner__one .banner_text{
+    padding: 200px 100px; 
+    cursor: pointer;  
+}
+.banner__one .banner_text p{
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+.banner__one .banner_text h1{
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 75px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.banner__one .banner_text span{
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 40px;
+}
+.banner__one .banner_text .banner__btn{
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid #000;
+    margin-top: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.banner__one .banner_text .banner__btn:hover{
+    background: #000;
+    transition: .3s ease-in-out;
+    color: #fff;
+}
+@media screen and (max-width:657px){
+   .banner__one .banner_text h1{
+    font-size: 50px;
+   }
+   .banner__one .banner_text span{
+    font-size: 18px;
+    margin-top: 20px;
+   }
+}
+@media screen and (max-width:510px){
+    .banner__one .banner_text h1{
+        font-size: 35px;
+       }
+       .banner__one .banner_text span{
+        font-size: 15px;
+        margin-top: 20px;
+       }
+       .slider__container .mySwiper{
+        height: 450px;
+    }
+    .banner__one .banner_text {
+        padding: 100px 50px; 
+    }
+}
+@media screen and (max-width:350px){
+    .banner__one .banner_text{
+        padding: 50px 10px;
+    }
+    .banner__one .banner_text .banner__btn{
+        padding: 10px 20px;
+    }
+    .banner__one{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 340px;
+    }
+}
+
+
+/* BANNER TWO */
+.banner__two{
+    background: url(../../assets//banner_img_two.webp);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner__two .banner_text{
+    padding: 200px 100px; 
+    cursor: pointer;  
+}
+.banner__two .banner_text p{
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+.banner__two .banner_text h1{
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 75px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.banner__two .banner_text span{
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 40px;
+}
+.banner__two .banner_text .banner__btn{
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid #000;
+    margin-top: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.banner__two .banner_text .banner__btn:hover{
+    background: #000;
+    transition: .3s ease-in-out;
+    color: #fff;
+}
+@media screen and (max-width:657px){
+   .banner__two .banner_text h1{
+    font-size: 50px;
+   }
+   .banner__two .banner_text span{
+    font-size: 18px;
+    margin-top: 20px;
+   }
+}
+@media screen and (max-width:510px){
+    .banner__two .banner_text h1{
+        font-size: 35px;
+       }
+       .banner__two .banner_text span{
+        font-size: 15px;
+        margin-top: 20px;
+       }
+       .slider__container .mySwiper{
+        height: 450px;
+    }
+    .banner__two .banner_text {
+        padding: 100px 50px; 
+    }
+}
+@media screen and (max-width:350px){
+    .banner__two .banner_text{
+        padding: 50px 10px;
+    }
+    .banner__two .banner_text .banner__btn{
+        padding: 10px 20px;
+    }
+    .banner__two{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 340px;
+    }
+}
+
+
+/* ANIMATION code */
+.slider__container.animate .banner__one,
+.slider__container.animate .banner__two {
+  animation: slide-in 1s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.slider__container.animate .banner__one .banner_text,
+.slider__container.animate .banner__two .banner_text {
+  animation: slide-in 1s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.slider__container.animate .banner__one .banner__img,
+.slider__container.animate .banner__two .banner__img {
+  animation: slide-in-img 1s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-img {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
