@@ -32,9 +32,6 @@
   .sidebar.show {
     left: 0;
   }
-  span{
-    color:red;
-  }
   .sidebar__content {
     display: flex;
     flex-direction: column;
