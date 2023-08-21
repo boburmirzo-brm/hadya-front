@@ -1,0 +1,40 @@
+.footer{
+    width: 100%;
+    background-color: black;
+    color: rgb(97, 80, 80);
+    display: flex;
+   
+    padding:  2% 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+.footer h2:hover{
+    color: pink;
+}
+.footer h1:hover{
+    color: pink;
+}
+.footer h5:hover{
+    color: pink;
+}
+.item{
+    line-height: 35px;
+}
+.footer li{
+    text-decoration: none;
+    list-style: none;
+    font-weight: 100;
+}
+.footer li:hover{
+   color: pink;
+   cursor: pointer;
+}
+.item svg{
+    font-size: 30px;
+    gap: 20px;
+}
+.footer svg     :hover{
+    color: pink;
+    cursor: pointer;
+ }
