@@ -19,7 +19,6 @@ function App() {
         <Route path='/wishlist' element={<Wishlist/>}/>
         <Route path="*" element={<Notefaund/>} />
       </Routes>      
-
       <Footer/>
     </div>
   );
