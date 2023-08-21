@@ -2,6 +2,7 @@
 .slider__container .mySwiper{
     height: 650px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 .slider__container .mySwiper img{
     width: 100%;
