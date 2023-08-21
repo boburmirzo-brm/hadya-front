@@ -7,7 +7,7 @@ import Wishlist from "./router/wishlist/Wishlist"
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import Notefaund from './router/notefaund/Notefaund';
-
+    
 function App() {
   return (
     <div className="App">

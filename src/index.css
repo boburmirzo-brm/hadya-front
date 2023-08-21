@@ -4,3 +4,25 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+
+.container {
+  width: 1250px;
+  margin: auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
