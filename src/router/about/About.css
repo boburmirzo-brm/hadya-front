@@ -162,7 +162,7 @@
     color: white;
     font-size: 40px;
 }
-.mySwiper{
+.about__swiper .mySwiper{
     margin-top: 50px;
     cursor: pointer;
 }
