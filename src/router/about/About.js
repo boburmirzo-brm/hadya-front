@@ -77,7 +77,7 @@ function About() {
       <div className="swiper__chiziq"></div>
 
       <div className="swiper__texts">
-        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, <br /> itaque! Repudiandae culpa quasi suscipit perspiciatis <br /> libero est doloribus reiciendis nihil.</h2>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br /> itaque! Repudiandae culpa quasi suscipit perspiciatis <br /> libero est doloribus reiciendis nihil.</h2>
         <h3>-- Robert Joe</h3>
       </div>
        </div>
@@ -105,7 +105,7 @@ function About() {
       <div className="swiper__chiziq"></div>
 
       <div className="swiper__texts">
-        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, <br /> itaque! Repudiandae culpa quasi suscipit perspiciatis <br /> libero est doloribus reiciendis nihil.</h2>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br /> itaque! Repudiandae culpa quasi suscipit perspiciatis <br /> libero est doloribus reiciendis nihil.</h2>
         <h3>-- Robert Joe</h3>
       </div>
        </div>
