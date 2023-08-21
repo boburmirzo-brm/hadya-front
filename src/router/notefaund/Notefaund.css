@@ -5,7 +5,7 @@
     line-height: 60px;
 }
 
-p{
+.not__faund p {
     font-family: 'Dancing Script', cursive;
     font-family: 'Domine', serif;
     font-family: 'Pacifico', cursive;
@@ -14,7 +14,7 @@ p{
     height: 120px;
 }
 
-img {
+.not__faund img {
     align-items: center;
 }
 
@@ -36,11 +36,11 @@ img {
         line-height: 40px; 
         
     }
-    img{
+    .not__faund img{
         width: 300px;    
     }
 
-    p {
+    .not__faund p {
         font-size: 50px; 
         height: auto; 
         margin-bottom: 20px;
