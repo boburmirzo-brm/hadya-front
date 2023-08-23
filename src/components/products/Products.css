@@ -2,9 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
-  justify-content: center;
-  margin: auto;
+  justify-content: space-between;
 }
 .products .product {
   cursor: pointer;
@@ -68,4 +66,10 @@
 
 .products .product:hover .action__wrapper {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    justify-content: center;
+  }
 }
