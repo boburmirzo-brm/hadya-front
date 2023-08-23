@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Products.css";
-import { ProductsData } from "./data";
+import { ProductsData } from "../../static";
 import {
   AiOutlineHeart,
   AiOutlineSearch,
@@ -29,9 +29,6 @@ function Products() {
               <div className="actions">
                 <div className="cart">
                   <AiOutlineShoppingCart />
-                </div>
-                <div className="search">
-                  <AiOutlineSearch />
                 </div>
                 <div className="heart">
                   <AiOutlineHeart />
