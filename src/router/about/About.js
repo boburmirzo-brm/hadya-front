@@ -17,7 +17,7 @@ function About() {
           <div className="back__color"></div>
         </div>
 
-        <div className="about__our__approach">
+        <div className="container about__our__approach">
         <h1>Bizning yondashuv</h1>
         <p></p>
         <h2>Bizning maftunkor lazzatlar dunyomizga xush kelibsiz. Bu tort ishqibozlari va hayotning shirin daqiqalarini qadrlaydiganlar uchun boshpana. Bizning tort nonvoyxonamizda shirinlik pishirish shunchaki vazifa emas; Bu biz har bir o'lchov, har bir ingredient va har bir muzqaymoq bilan ishtiyoq bilan yaratadigan san'at turi.</h2>
@@ -37,7 +37,7 @@ function About() {
         </div>
 
 
-        <div className="about__our__mission">
+        <div className="container about__our__mission">
       <div className="mission__text">
         <h2>Bizning maqsad</h2>
       </div>
@@ -69,7 +69,7 @@ function About() {
     <div className="about__swiper">
     <h1>Mijozlar nima deydi</h1>
 
-    <Swiper className="mySwiper">
+    <Swiper className=" mySwiper">
         <SwiperSlide>
        <div className="swiper__content">
        <img src="https://cakeciouswp.bolvosites.com/demo1/wp-content/uploads/sites/14/2018/06/client-1.png" alt="" />
@@ -123,7 +123,7 @@ function About() {
 
     <div className="our__chefs__text">
     <h1>Our Chefs</h1>
-    <p>We have awesome chefs in our <br /> team. We are also always looking <br /> for new people to join our team. <br /> Our chefs know their stuff very <br /> well. </p>
+    <p>We have awesome chefs in our team. We are also always looking  for new people to join our team. <br /> Our chefs know their stuff very <br /> well. </p>
     </div>
 
 
