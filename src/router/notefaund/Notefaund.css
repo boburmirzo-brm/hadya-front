@@ -5,7 +5,7 @@
     line-height: 60px;
 }
 
-.not__faund p {
+.p_Tree {
     font-family: 'Dancing Script', cursive;
     font-family: 'Domine', serif;
     font-family: 'Pacifico', cursive;
@@ -40,11 +40,10 @@ img {
         width: 300px;    
     }
 
-    p {
+    .p_Tree {
         font-size: 50px; 
         height: auto; 
         margin-bottom: 20px;
-
     }
 
     .p_One,
