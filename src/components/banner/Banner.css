@@ -13,6 +13,7 @@
     height: 100vh;
     background-position: center;
     background-size: cover;
+    object-fit: cover;
     background-repeat: no-repeat;
 }
 .banner__one .banner_text{
@@ -84,6 +85,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        object-fit: cover;
         height: 340px;
     }
 }
@@ -94,6 +96,7 @@
     background: url(../../assets//banner_img_two.webp);
     height: 100vh;
     background-position: center;
+    object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -166,6 +169,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        object-fit: cover;
         height: 340px;
     }
 }
