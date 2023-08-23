@@ -45,9 +45,12 @@
 }
 
 .products .actions .cart,
-.products .actions .heart,
-.products .actions .search {
-  padding: 9px 12px;
+.products .actions .heart {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
   border-radius: 50%;
   transition: ease 0.4s;
