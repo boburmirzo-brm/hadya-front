@@ -53,12 +53,12 @@ function About() {
     <h1>Baked goods have been around for thousands of years. The art of baking was developed early during the Roman <br /> Empire. It was a highly famous art as Roman citizens loved baked goods and demanded for <br /> them frequently for important occasions such as feasts and weddings etc. Due to the fame and desire that the art of baking received, <br /> around 300 BC, baking was introduced as an occupation and respectable profession for Romans.</h1>
       </div>
 
-      <div className="mission__category">
+      {/* <div className="mission__category">
         <p>Custom cakes</p>
         <p>Birthday cakes</p>
         <p>Wedding cakes</p>
         <p>European cakes</p>
-      </div>
+      </div> */}
 
       </div>
 
