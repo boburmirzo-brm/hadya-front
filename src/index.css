@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-
+:root{
+  --bg-py: #289F89;
+}
 
 .container {
   width: 1250px;
