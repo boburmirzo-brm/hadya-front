@@ -6,7 +6,7 @@ import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 function Cart() {
   return (
     <div className="cart">
-      <table className="cart__table">
+      <table className="container cart__table">
         <thead className="cart__table-thead">
           <th className="cart__table-thead-name">Product name</th>
           <th>Price</th>
@@ -56,13 +56,13 @@ function Cart() {
           </tr>
         </tbody>
       </table>
-      <div className="cart__buttons">
+      <div className="cart__buttons container">
         <button className="cart__buttons-btn">Update Cart</button>
         <button className="cart__buttons-btn btn-coral">
           Continue Shopping
         </button>
       </div>
-      <div className="cart__totals">
+      <div className="container cart__totals">
         <div className="cart__totals-title">
           <p>CART TOTALS</p>
         </div>

@@ -14,7 +14,7 @@
 .cart__table {
   border-collapse: collapse;
   position: relative;
-  width: 80%;
+  /* width: 100%; */
 }
 
 th {
@@ -113,7 +113,7 @@ tbody tr {
 .cart__buttons {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   margin-top: 50px;
 }
@@ -147,7 +147,6 @@ tbody tr {
 .cart__totals {
   margin-top: 50px;
   border: 1px solid #dee2e6;
-  width: 80%;
   padding: 40px 20px;
 }
 
