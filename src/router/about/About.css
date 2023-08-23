@@ -30,12 +30,12 @@
 .about .about__our__approach{
     margin-top: 100px;
     text-align: center;
-    margin-left: -200%;
-    opacity: 0;
+    /* margin-left: -200%; */
+    /* opacity: 0;
     transition: 1s;
-    animation: fade-in 2s ease-in-out forwards;
+    animation: fade-in 2s ease-in-out forwards; */
 }
-@keyframes fade-in {
+/* @keyframes fade-in {
     from {
     margin-left: -200%;
     opacity: 0;
@@ -44,7 +44,7 @@
     margin-left: 0%;
     opacity: 1;
     }
-  }
+  } */
 
 .about .about__our__approach p{
     width: 50px;
@@ -162,7 +162,7 @@
     color: white;
     font-size: 40px;
 }
-.mySwiper{
+.about__swiper .mySwiper{
     margin-top: 50px;
     cursor: pointer;
 }
