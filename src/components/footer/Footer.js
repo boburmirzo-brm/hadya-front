@@ -6,7 +6,7 @@ import { IoBasketballOutline } from 'react-icons/io5'
 
 function Footer() {
   return (
-    <div className='footer'>
+    <div className='container footer'>
       <div className="item">
         <h1>Clenu</h1>
         <h5>Sophisticated simplicity  <br />
