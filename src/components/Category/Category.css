@@ -1,0 +1,84 @@
+.Category h2{
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 30px;
+}
+.Category{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.all_categories .one,.two,.three,.four{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 10px 20px;
+    transition: all .3s ease;
+}
+.all_categories .one h3{
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Domine', serif;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+.all_categories .one svg{
+    font-size: 25px;
+    color: pink;
+}
+.all_categories .two h3{
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Domine', serif;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+.all_categories .two svg{
+    font-size: 25px;
+    color: brown;
+}
+.all_categories .three h3{
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Domine', serif;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+.all_categories .three svg{
+    font-size: 25px;
+    color: red;
+}
+.all_categories .four h3{
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Domine', serif;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+.all_categories .four svg{
+    font-size: 25px;
+    color: yellow;
+}
+.all_categories .one:hover{
+    background: aliceblue;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.all_categories .two:hover{
+    background: aliceblue;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.all_categories .three:hover{
+    background: aliceblue;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.all_categories .four:hover{
+    background: aliceblue;
+    cursor: pointer;
+    padding: 10px 20px;
+}
