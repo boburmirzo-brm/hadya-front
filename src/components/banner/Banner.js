@@ -21,7 +21,7 @@ function Banner() {
       >
         <SwiperSlide>
           <div className="banner__one">
-            <div className="banner_text">
+            <div className="banner_text container">
               <p>Style Destination</p>
               <h1>Mazzali tortlar</h1>
               <span>
@@ -37,7 +37,7 @@ function Banner() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="banner__two">
-            <div className="banner_text">
+            <div className="banner_text container">
               <p>Style Destination</p>
               <h1>Tortlar Toplami</h1>
               <span>
