@@ -1,33 +1,72 @@
 import React from 'react'
 import './Category.css'
-import {FaCakeCandles} from 'react-icons/fa6'
-import {GiCakeSlice} from 'react-icons/gi'
-import {GiCupcake} from 'react-icons/gi'
-import {PiCookieDuotone} from 'react-icons/pi'
+import {Link} from 'react-router-dom'
 function Category() {
   return (
     <div className='Category container'>
-        <h2>Bizda bor Kategoriyalar</h2>
-        <div className="all_categories">
-            <div className="one">
-                <h3>Tortlar</h3>
-                <FaCakeCandles/>
-            </div>
-            <div className="two">
-                <h3>Pirojnetlar</h3>
-                <GiCakeSlice/>
-            </div>
-            <div className="three">
-                <h3>Biskuitlar</h3>
-                <GiCupcake/>
-            </div>
-            <div className="four">
-                <h3>Pechenyalar</h3>
-                <PiCookieDuotone/>
-            </div>
+      <h2>Bizda bor Kategoriyalar</h2>
+      <div className="all__categories">
+        <div className="one">
+          <div className="img">
+            <Link to={"/"}>
+            <button>Koproq</button>
+            </Link>
+          </div>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, adipisci.</h4>
         </div>
+
+        <div className="one">
+          <div className="img">
+          <Link to={"/"}>
+            <button>Koproq</button>
+            </Link>
+          </div>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, adipisci.</h4>
+        </div>
+
+        <div className="one">
+          <div className="img">
+          <Link to={"/"}>
+            <button>Koproq</button>
+            </Link>
+          </div>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, adipisci.</h4>
+        </div>
+
+        <div className="one">
+          <div className="img">
+          <Link to={"/"}>
+            <button>Koproq</button>
+            </Link>
+          </div>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h4>Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit. Nam, adipisci.</h4>
+        </div>
+        <div className="one">
+          <div className="img">
+          <Link to={"/"}>
+            <button>Koproq</button>
+            </Link>
+          </div>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h4>Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit. Nam, adipisci.</h4>
+        </div>
+        <div className="one">
+          <div className="img">
+          <Link to={"/"}>
+            <button>Koproq</button>
+            </Link>
+          </div>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+          <h4>Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit. Nam, adipisci.</h4>
+        </div>
+      </div>
+      
     </div>
   )
 }
 
-export default Category
+export default Category;
