@@ -1,6 +1,7 @@
 .footer{
     width: 100%;
     background-color: black;
+    margin-bottom: 50px;
 }
 .footer__wrapper{
     color: rgb(97, 80, 80);
@@ -9,11 +10,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
+.icon{
+  display: flex;
+  gap: 10px;
+}
 .footer button{
     background-color: transparent;
     color: rgb(97, 80, 80);
     border: none;
+   
 }
 .footer button:hover{
     color: pink;
@@ -24,7 +29,7 @@
 .footer li{
     text-decoration: none;
     list-style: none;
-    font-weight: 100;
+    font-weight: 500;
 }
 .footer li:hover{
    color: pink;
@@ -33,4 +38,12 @@
 .item svg{
     font-size: 30px;
     gap: 20px;
+}
+@media screen and(max-width:350px) {
+    .footer__wrapper{
+        color: rgb(97, 80, 80);
+        display: block;
+        padding: 40px 0;
+        flex-direction: column;
+    }
 }

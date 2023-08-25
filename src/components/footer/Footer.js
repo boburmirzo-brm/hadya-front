@@ -1,11 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import {
-  AiOutlineTwitter,
-  AiOutlineBehance,
-  AiOutlineInstagram,
-} from "react-icons/ai";
-import { IoBasketballOutline } from "react-icons/io5";
+
+import { FaTelegram, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa"
 
 function Footer() {
   return (
@@ -14,54 +10,41 @@ function Footer() {
         <div className="footer__wrapper">
           <div className="item">
             <h1>Clenu</h1>
-            <h5>
-              Sophisticated simplicity <br />
-              independent mind.
-            </h5>
+            <li>
+              Bizda hamma yaxshi narsalar
+            </li>
+            <li>Yaxshi narsalarni bizdan oling</li>
             <div className="icon">
+              <a href="https://instagram.com/hadya2020.uz">
+                <button>
+                  <FaInstagram />
+                </button>
+              </a>
+              <a href="https://t.me/hadya2020">
+                <button>
+                  <FaTelegram />
+                </button>
+              </a>
+              <a href="#">
               <button>
-                <AiOutlineTwitter />
+                <FaFacebook />
               </button>
+              </a>
+              <a href="#">
               <button>
-                {" "}
-                <IoBasketballOutline />
+                <FaYoutube />
               </button>
-              <button>
-                <AiOutlineBehance />
-              </button>
-              <button>
-                <AiOutlineInstagram />
-              </button>
+              </a>
             </div>
           </div>
           <div className="item">
-            <h2>Help</h2>
+            <h2>Biz xaqimizda</h2>
             <ul>
               <li>About Us</li>
               <li>Privacy Policy</li>
               <li>Terms & Conditions</li>
               <li>Products Return</li>
               <li>Wholesale Policy</li>
-            </ul>
-          </div>
-          <div className="item">
-            <h2>About Us</h2>
-            <ul>
-              <li>Pagination</li>
-              <li>Terms & Conditions</li>
-              <li>Contact</li>
-              <li>Accessories</li>
-              <li>Home Page</li>
-            </ul>
-          </div>
-          <div className="item">
-            <h2>Categories</h2>
-            <ul>
-              <li>Menu items</li>
-              <li>Help Center</li>
-              <li>Address Store</li>
-              <li>Privacy Policy</li>
-              <li>HomePage</li>
             </ul>
           </div>
         </div>
