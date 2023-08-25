@@ -7,6 +7,7 @@ import Wishlist from "./router/wishlist/Wishlist"
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import Notefaund from './router/notefaund/Notefaund';
+import Login from './router/login/Login';
     
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/login' element={<Login/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
         <Route path="*" element={<Notefaund/>} />
