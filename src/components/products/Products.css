@@ -56,6 +56,10 @@
   transition: ease 0.4s;
 }
 
+.product .heart {
+  border: none;
+}
+
 .products .actions .cart:hover,
 .products .actions .heart:hover,
 .products .actions .search:hover {

@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import "./Products.css";
 import { ProductsData } from "../../static";
 import {
+  AiFillHeart,
   AiOutlineHeart,
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 
+import { useDispatch, useSelector } from "react-redux";
+import { addToHeart, removeFromHeart } from "../../context/heart";
+
 function Products() {
   const [hoveredItem, setHoveredItem] = useState(null);
+
+  const heart = useSelector((s) => s.heart.value);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -34,9 +42,18 @@ function Products() {
                 <div className="cart">
                   <AiOutlineShoppingCart />
                 </div>
-                <div className="heart">
-                  <AiOutlineHeart />
-                </div>
+                <button className="heart">
+                  {heart.some((i) => i.name === item.name) ? (
+                    <AiFillHeart
+                      style={{ color: "#000" }}
+                      onClick={() => dispatch(removeFromHeart(item))}
+                    />
+                  ) : (
+                    <AiOutlineHeart
+                      onClick={() => dispatch(addToHeart(item))}
+                    />
+                  )}
+                </button>
               </div>
             </div>
           </div>
