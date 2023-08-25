@@ -13,13 +13,16 @@ function Navbar() {
     return (
         <div className='navbar'>
         <div className='container navbar__main'>
-            <Link to={"/"} className="nav__logo"><img src={Clenu} alt="" /></Link>
+            <Link to={"/"} className="nav__logo"><img src={Clenu} alt="" width={180}/></Link>
+            <div className="nav__search">
+            <input type="text" placeholder='Qidirish...' />
+            </div>
             <ul className="nav__collection">
-                <Link to={"/home"} className="nav__item">
-                    <AiOutlineHome />
-                </Link>
                 <Link to={"/about"} className="nav__item">
                     <AiOutlineSearch />
+                </Link> 
+                <Link to={"/"} className="nav__item">
+                    <AiOutlineHome />
                 </Link>
                 <Link to={"/login"} className="nav__item">
                     <AiOutlineUser />
