@@ -20,22 +20,10 @@
   background: url('../../assets/category__one.jpg') center/cover;
   align-items: center;
   justify-content: center;
-  animation: rotateAnimation 5s linear infinite; /* Added rotating animation */
 }
-
-@keyframes rotateAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .all__categories .one .img:hover {
   animation-play-state: paused; 
   transform: scale(1.05); 
-  /* rotate: 0deg; */
 }
 
 .all__categories .one .img button {
@@ -98,20 +86,6 @@
     opacity: 0;
     transform: translateY(-150px);
   }
-  /* 30% {
-    opacity: .5;
-    transform: translateY(0);
-    transform: translateX(-250px);
-    transition: .4s;
-  }
-  50%{
-    opacity: 1;
-    transform: translateY(250px);
-  }
-  80%{
-    opacity: 1;
-    transform: translateZ(-250px);
-  } */
   100%{
     opacity: 1;
     transform: translateY(0);
