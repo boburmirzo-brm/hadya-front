@@ -30,7 +30,9 @@
     border-radius: 10px;
     font-weight: 500;
 }
-
+.empty__container img{
+    width: 10%;
+}
 @media screen and (max-width: 600px) {
     .empty__container {
         width: 80%;
