@@ -9,14 +9,14 @@ const heartSlice = createSlice({
   initialState,
   reducers: {
     addToHeart: (state, action) => {
-      let index = state.value.findIndex((i) => i.id === action.payload.id);
+      let index = state.value.findIndex((i) => i.name === action.payload.name);
       if (index < 0) {
         state.value = [...state.value, action.payload];
         localStorage.setItem("wishlist-item", JSON.stringify(state.value));
       }
     },
     removeFromHeart: (state, action) => {
-      state.value = state.value.filter((i) => i.id !== action.payload.id);
+      state.value = state.value.filter((i) => i.name !== action.payload.name);
       localStorage.setItem("wishlist-item", JSON.stringify(state.value));
     },
   },

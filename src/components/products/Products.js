@@ -15,7 +15,6 @@ function Products() {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const heart = useSelector((s) => s.heart.value);
-  console.log(heart);
 
   const dispatch = useDispatch();
 
@@ -44,7 +43,7 @@ function Products() {
                   <AiOutlineShoppingCart />
                 </div>
                 <button className="heart">
-                  {heart.some((i) => i.id === item.id) ? (
+                  {heart.some((i) => i.name === item.name) ? (
                     <AiFillHeart
                       style={{ color: "#000" }}
                       onClick={() => dispatch(removeFromHeart(item))}
