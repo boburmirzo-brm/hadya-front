@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Empty.css"
-import rasim from "../../assets/banner_img_one.webp"
+import rasim from "../../assets/empty.webp"
 import {Link} from "react-router-dom"
 function Empty({title}) {
   return (
