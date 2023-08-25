@@ -1,15 +1,14 @@
 .footer{
     width: 100%;
     background-color: black;
+}
+.footer__wrapper{
     color: rgb(97, 80, 80);
     display: flex;
-   
-    padding:  2% 5%;
+    padding: 40px 0;
     flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-
 
 .footer button{
     background-color: transparent;
@@ -17,10 +16,7 @@
     border: none;
 }
 .footer button:hover{
-    
     color: pink;
-
-    
 }
 .item{
     line-height: 35px;

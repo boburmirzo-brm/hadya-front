@@ -4,6 +4,12 @@ import { AiOutlineClose } from "react-icons/ai";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 import { ProductsData } from "../../static";
 
+// inputs
+// full name
+// tel
+// address
+// comment - textarea
+
 function Cart() {
   return (
     <div className="cart">

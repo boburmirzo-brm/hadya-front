@@ -14,6 +14,7 @@ function Banner() {
   return (
     <div className={`slider__container ${animate ? 'animate' : ''}`}>
       <Swiper
+        loop={true}
         pagination={{
           clickable: true,
         }}

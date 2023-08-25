@@ -14,6 +14,8 @@
 }
 .products .product img {
   width: 100%;
+  height: 260px;
+  object-fit: cover;
 }
 
 .products .product h5 {
@@ -35,9 +37,7 @@
   margin: auto;
   gap: 30px;
   justify-content: center;
-  position: absolute;
-  top: 60%;
-  left: 30%;
+  padding: 10px 0;
 }
 
 .products .actions svg {
