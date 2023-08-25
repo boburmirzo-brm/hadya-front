@@ -20,6 +20,7 @@
   background: url('../../assets/category__one.jpg') center/cover;
   align-items: center;
   justify-content: center;
+  /* transition: .3s; */
 }
 .all__categories .one .img:hover {
   animation-play-state: paused; 

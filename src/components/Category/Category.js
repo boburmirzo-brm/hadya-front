@@ -5,7 +5,7 @@ function Category() {
   return (
     <div className='Category container'>
       <h2>Bizda bor Kategoriyalar</h2>
-      <div className="all__categories">
+      <div className="all__categories">    
         <div className="one">
           <div className="img">
             <Link to={"/"}>
