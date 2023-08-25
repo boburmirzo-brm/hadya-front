@@ -12,10 +12,10 @@ function Footer() {
         <h5>Sophisticated simplicity  <br />
           independent mind.</h5>
         <div className="icon">
-          <AiOutlineTwitter />
-          <IoBasketballOutline />
-          <AiOutlineBehance />
-          <AiOutlineInstagram />
+          <button><AiOutlineTwitter /></button>
+         <button> <IoBasketballOutline /></button>
+          <button><AiOutlineBehance /></button>
+          <button><AiOutlineInstagram /></button>
         </div>
       </div>
       <div className="item">

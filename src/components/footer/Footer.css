@@ -9,14 +9,18 @@
     justify-content: center;
     justify-content: space-around;
 }
-.footer h2:hover{
-    color: pink;
+
+
+.footer button{
+    background-color: transparent;
+    color: rgb(97, 80, 80);
+    border: none;
 }
-.footer h1:hover{
+.footer button:hover{
+    
     color: pink;
-}
-.footer h5:hover{
-    color: pink;
+
+    
 }
 .item{
     line-height: 35px;
@@ -34,7 +38,3 @@
     font-size: 30px;
     gap: 20px;
 }
-.footer svg     :hover{
-    color: pink;
-    cursor: pointer;
- }
