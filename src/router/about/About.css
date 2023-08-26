@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Raleway:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Poppins:wght@300&family=Raleway:wght@100&display=swap');
 
+.about{
+    margin-bottom: 70px;
+}
 .about .main__aboutus__text{
     width: 100%;
     background-color: #C77A91;
@@ -10,7 +13,7 @@
     background-image: url("https://i.ibb.co/dM8f5mG/photo-2023-08-19-17-24-30.jpg");
 }
 .about .back__color{
-    background-color: #C77A91;
+    background-color: var(--bg-py);
     height: 120px;
     position: absolute;
     width: 100%;
@@ -31,21 +34,9 @@
 .about .about__our__approach{
     margin-top: 100px;
     text-align: center;
-    /* margin-left: -200%;rt */
-    /* opacity: 0;
-    transition: 1s;
-    animation: fade-in 2s ease-in-out forwards; */
 }
-/* @keyframes fade-in {
-    from {
-    margin-left: -200%;
-    opacity: 0;
-    }
-    to {
-    margin-left: 0%;
-    opacity: 1;
-    }
-  } */
+
+
 
 .about .about__our__approach p{
     width: 50px;
@@ -60,28 +51,27 @@
     font-weight: 900;
 }
 .about .about__our__approach h2{
-    padding: 0 40px;
+    padding: 0 0px;
     font-family: 'Lora', serif;
     margin-top: 30px;
     font-size: 22px;
 }
 .about .about__our__approach h3{
     margin-top: 25px;
-    padding: 0 40px;
+    padding: 0 0px;
     font-weight: 300;
     line-height: 138%;
 }
 .about .about__our__approach .approach__images{
     padding: 0 40px;
     margin-top: 30px;
-    margin-left: -40px;
-    /* display: flex; */
+    /* margin-left: -40px; */
 }
 .about .about__our__approach .approach__images img{
     margin-left: 20px;
     height: auto;
+    margin-top: 20px;
     max-width: 80%;
- 
 }
 
 
@@ -89,7 +79,7 @@
     position: relative;
     margin-top: 100px;
     height: 100%;
-    padding: 15% 0%;
+    padding: 10% 0%;
     color: white;
     text-align: center;
 }
@@ -106,17 +96,18 @@
 
 
 .about .about__our__mission{
-    /* display: flex; */
-    padding: 0 60px;
+    margin-top: 50px;
+    padding: 0 90px;
     text-align: center;
+    justify-content: center;
 }
 .about__our__mission .mission__text{
     font-size: 30px;
     color: #333333;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 .about__our__mission .about__our__mission_second__text{
-    margin-left: 40px;
+    /* margin-left: 40px; */
     margin-top: 20px;
 }
 .about__our__mission_second__text{
@@ -148,59 +139,8 @@
     font-size: 25px;
 }
 
-
-.about__swiper{
-    background-color: #62C2E6;
-    padding: 60px 150px;
-    margin-top: 70px;
-}
-.about__swiper h1{
-    text-align: center;
-    color: white;
-    font-size: 40px;
-}
-.about__swiper .mySwiper{
-    margin-top: 50px;
-    cursor: pointer;
-}
-.swiper__content{
-    display: flex;
-    align-items: center;
-    gap: 100px;
-}
-.swiper__content img{
-    width: 100px;
-    height: 100px;
-}
-.swiper__content .swiper__texts{
-    /* margin-left: 100px; */
-    color: white;
-}
-.swiper__chiziq{
-    height: 150px;
-    width: 1px;
-    background-color: #fff;
-    /* margin-left: 50px; */
-}
-.swiper__content .swiper__texts h2{
-    font-size: 22px;
-    line-height: 28px;
-    letter-spacing: .66px;
-    font-family: "Lora", serif;
-    font-style: italic;
-    /* padding-top: 34px; */
-    margin-bottom: 0px;
-}
-.swiper__content .swiper__texts h3{
-    font-family: "Lora", serif;
-    margin-top: 30px;
-    font-style: 20px;
-    font-style: italic;
-}
-
 .our__chefs{
     margin-top: 120px;
-    /* display: flex; */
     padding: 0 50px;
     gap: 70px;
     text-align: center;
@@ -221,7 +161,7 @@
 .our__chefs .our__chefs__image{
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 100px;
     margin-top: 20px;
     justify-content: center;
     text-align: center;
@@ -247,14 +187,6 @@
 
 
 
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1075px){
     .about .about__our__mission{
         padding: 0;
@@ -270,7 +202,13 @@
         width: 100%;
         text-align: center;
     }
+   
 }
+
+
+
+
+
 
 @media screen and (max-width: 1000px){
     .our__chefs .our__chefs__image .chef__one img{
@@ -284,17 +222,7 @@
     }
 }
 
-@media screen and (max-width: 650px) {
-    .about .about__real__taste h2{
-        font-size: 50px;
-    }
-    .about .about__real__taste h3{
-        font-size: 20px;
-    }
-    .about .about__our__approach .approach__images{
-        display: flex;
-        flex-direction: column;
-    } 
+@media screen and (max-width: 850px){
     .swiper__content{
         flex-direction: column;
         width: 100%;
@@ -305,6 +233,33 @@
     .about__swiper{
         padding: 60px 0;
     }
+}
+
+
+@media screen and (max-width: 650px) {
+    .about .about__real__taste h2{
+        font-size: 50px;
+    }
+    .about .about__real__taste h3{
+        font-size: 20px;
+    }
+    .about .about__our__approach .approach__images{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    } 
+    /* .swiper__content{
+        flex-direction: column;
+        width: 100%;
+    } 
+    .swiper__chiziq{
+        display: none;
+    }
+    .about__swiper{
+        padding: 60px 0;
+    } */
     .swiper__texts h2{
         text-align: center;
     }
@@ -335,4 +290,6 @@
         font-size: 17px;
     }
 }
+
+
 

@@ -1,19 +1,27 @@
 import React from 'react'
 import "./About.css"
-import { Swiper, SwiperSlide } from "swiper/react";
+import { toast } from 'react-toastify';
 
-
+import 'react-toastify/dist/ReactToastify.css';
 import "swiper/css";
 
 
 function About() {
 
 
+  
+
+
+  
+
+
   return (
     <div className='about'>
 
         <div className="main__aboutus__text">
+          <div className="container">
           <h2>About Us</h2>
+          </div>
           <div className="back__color"></div>
         </div>
 
@@ -33,7 +41,7 @@ function About() {
 
         <div style={{backgroundImage: `url("https://i.ibb.co/SN8HcTx/2.jpg")`, backgroundRepeat: 'no-repeat'}} className="about__real__taste">
         <h2>Haqiqiy Tam</h2>
-        <h3>A light, sour wheat dough with roasted walnuts and freshly picked rosemary, thyme, poppy seeds, <br /> parsley and sage</h3>
+        <h3>Mehir va muhabbat bilan tayyorlangan shirinlikni har bir bo'lakda his qiling</h3>
         </div>
 
 
@@ -46,11 +54,14 @@ function About() {
 
       <div className="about__our__mission_second__text">
       <div className="mission__first__text">
-        <h1>This drastic appeal for baked goods promoted baking all throughout Europe and expanded <br /> into the eastern parts of Asia. Bakers started baking breads and goods at home and selling <br /> them out on the streets.</h1>
+        <h1>Bizning maqsad insonlarga shirinlilar bilan lazzatli onlar ulashish. Har bir bo'lak sizga hayotingizdagi eng lazzatli onlarni baxshida etadi. Biz bilan hayotingizning yorqin davrlariga erishing</h1>
       </div>
 
       <div className="mission__second__text">
-    <h1>Baked goods have been around for thousands of years. The art of baking was developed early during the Roman <br /> Empire. It was a highly famous art as Roman citizens loved baked goods and demanded for <br /> them frequently for important occasions such as feasts and weddings etc. Due to the fame and desire that the art of baking received, <br /> around 300 BC, baking was introduced as an occupation and respectable profession for Romans.</h1>
+    <h1>Pishiriqlar ming yillar davomida mavjud. Non pishirish san'ati Rim davrida erta rivojlangan <br />
+Imperiya. Bu juda mashhur san'at edi, chunki Rim fuqarolari pishiriqlarni yaxshi ko'rishgan va talab qilishgan <br />
+ularni tez-tez ziyofatlar va to'ylar va hokazo kabi muhim tadbirlar uchun. Non pishirish san'ati olgan shon-shuhrat va xohish tufayli, <br />
+miloddan avvalgi 300-yillarda non pishirish rimliklar uchun kasb va hurmatli kasb sifatida joriy qilingan.</h1>
       </div>
 
       {/* <div className="mission__category">
@@ -66,10 +77,10 @@ function About() {
 
 
 
-    <div className="about__swiper">
+    {/* <div className="about__swiper">
     <h1>Mijozlar nima deydi</h1>
 
-    <Swiper className=" mySwiper">
+    <Swiper className="mySwiper">
         <SwiperSlide>
        <div className="swiper__content">
        <img src="https://cakeciouswp.bolvosites.com/demo1/wp-content/uploads/sites/14/2018/06/client-1.png" alt="" />
@@ -114,7 +125,7 @@ function About() {
       </Swiper>
 
 
-    </div>
+    </div> */}
 
 
 
@@ -122,8 +133,8 @@ function About() {
     <div className="our__chefs">
 
     <div className="our__chefs__text">
-    <h1>Our Chefs</h1>
-    <p>We have awesome chefs in our team. We are also always looking  for new people to join our team. <br /> Our chefs know their stuff very <br /> well. </p>
+    <h1>Bizning oshpazlar</h1>
+    <p>Jamoamizda ajoyib oshpazlar bor. Shuningdek, biz har doim jamoamizga qo'shilish uchun yangi odamlarni qidiramiz. <br /> Bizning oshpazlarimiz o'z ishini juda yaxshi bilishadi yaxshi. </p>
     </div>
 
 
@@ -149,11 +160,12 @@ function About() {
 
     </div>
 
-
-
     </div>
         
 
+
+
+   
 
 
 
