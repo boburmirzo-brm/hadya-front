@@ -175,13 +175,13 @@
 }
 
 
-/* ANIMATION code */
-.slider__container.animate .banner__one,
-.slider__container.animate .banner__two {
+/* ANIMATION code
+.slider__container.animate .banner__one .banner_text,
+.slider__container.animate .banner__two .banner_text {
   animation: slide-in 1s ease-in-out;
   animation-fill-mode: forwards;
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateX(-100%);
 }
 
 .slider__container.animate .banner__one .banner_text,
@@ -213,4 +213,4 @@
     transform: translateX(0);
   }
 }
-
+ */

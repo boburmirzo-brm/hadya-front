@@ -3,7 +3,8 @@ import './Banner.css';
 import SwiperCore, { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 function Banner() {
   const [animate, setAnimate] = useState(false);
 
@@ -14,6 +15,7 @@ function Banner() {
   return (
     <div className={`slider__container ${animate ? 'animate' : ''}`}>
       <Swiper
+        loop={true}
         pagination={{
           clickable: true,
         }}
@@ -30,7 +32,7 @@ function Banner() {
               </span>
               <br />
               <Link to={"/about"}>
-              <button className="banner__btn">Biz haqimizda</button>
+                <button className="banner__btn">Biz haqimizda</button>
               </Link>
             </div>
           </div>
@@ -46,8 +48,8 @@ function Banner() {
               </span>
               <br />
               <Link to={"/about"}>
-              <button className="banner__btn">Biz haqimizda</button>
-            </Link>
+                <button className="banner__btn">Biz haqimizda</button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>

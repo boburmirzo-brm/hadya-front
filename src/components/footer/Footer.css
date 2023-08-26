@@ -1,21 +1,21 @@
 .footer{
     width: 100%;
     background-color: black;
+}
+.footer__wrapper{
     color: rgb(97, 80, 80);
     display: flex;
-   
-    padding:  2% 5%;
+    padding: 40px 0;
     flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-.footer h2:hover{
-    color: pink;
+
+.footer button{
+    background-color: transparent;
+    color: rgb(97, 80, 80);
+    border: none;
 }
-.footer h1:hover{
-    color: pink;
-}
-.footer h5:hover{
+.footer button:hover{
     color: pink;
 }
 .item{
@@ -34,7 +34,3 @@
     font-size: 30px;
     gap: 20px;
 }
-.footer svg     :hover{
-    color: pink;
-    cursor: pointer;
- }

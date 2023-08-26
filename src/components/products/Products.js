@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Products.css";
-import { ProductsData } from "./data";
+import { ProductsData } from "../../static";
 import {
   AiOutlineHeart,
   AiOutlineSearch,
@@ -22,25 +22,22 @@ function Products() {
           >
             <img
               src={hoveredItem === item ? item.url[1] : item.url[0]}
-              alt={item.name}
+              // alt={item.name}
               className="product-image"
             />
+            <div>
+              <h5>{item.name}</h5>
+              <h4>${item.price}.00</h4>
+            </div>
             <div className="action__wrapper">
               <div className="actions">
                 <div className="cart">
                   <AiOutlineShoppingCart />
                 </div>
-                <div className="search">
-                  <AiOutlineSearch />
-                </div>
                 <div className="heart">
                   <AiOutlineHeart />
                 </div>
               </div>
-            </div>
-            <div>
-              <h5>{item.name}</h5>
-              <h4>${item.price}.00</h4>
             </div>
           </div>
         ))}
