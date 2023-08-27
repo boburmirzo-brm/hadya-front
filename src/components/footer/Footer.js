@@ -11,9 +11,9 @@ function Footer() {
           <div className="item">
             <h1>Clenu</h1>
             <li>
-              Bizda hamma yaxshi narsalar
+              Biz Haqimizda
             </li>
-            <li>Yaxshi narsalarni bizdan oling</li>
+          
             <div className="icon">
               <a href="https://instagram.com/hadya2020.uz">
                 <button>
@@ -37,16 +37,7 @@ function Footer() {
               </a>
             </div>
           </div>
-          <div className="item">
-            <h2>Biz xaqimizda</h2>
-            <ul>
-              <li>About Us</li>
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Products Return</li>
-              <li>Wholesale Policy</li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     </div>

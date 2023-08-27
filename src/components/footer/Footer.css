@@ -1,49 +1,80 @@
-.footer{
+.footer {
     width: 100%;
     background-color: black;
     margin-bottom: 50px;
 }
-.footer__wrapper{
+
+.footer__wrapper {
     color: rgb(97, 80, 80);
     display: flex;
     padding: 40px 0;
-    flex-wrap: wrap;
-    justify-content: space-between;
+
 }
-.icon{
-  display: flex;
-  gap: 10px;
+
+.icon {
+    display: flex;
+    gap: 10px;
 }
-.footer button{
+
+.footer button {
     background-color: transparent;
     color: rgb(97, 80, 80);
     border: none;
-   
+
 }
-.footer button:hover{
+
+.footer button:hover {
     color: pink;
 }
-.item{
-    line-height: 35px;
+
+.item {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
 }
-.footer li{
+
+.footer li {
     text-decoration: none;
     list-style: none;
-    font-weight: 500;
+    font-weight: 800;
 }
-.footer li:hover{
-   color: pink;
-   cursor: pointer;
+
+.footer li:hover {
+    color: pink;
+    cursor: pointer;
 }
-.item svg{
+
+.item svg {
     font-size: 30px;
     gap: 20px;
 }
-@media screen and(max-width:350px) {
-    .footer__wrapper{
+
+@media screen and (max-width:350px) {
+    .footer__wrapper {
         color: rgb(97, 80, 80);
         display: block;
         padding: 40px 0;
         flex-direction: column;
+    }
+
+    .item {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+   
+
+    .item {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 }
