@@ -1,24 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Cart.css";
-import { AiOutlineClose } from "react-icons/ai";
+import { FiTrash2 } from "react-icons/fi";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 import { ProductsData } from "../../static";
 
-// inputs
-// full name
-// tel
-// address
-// comment - textarea
-
 function Cart() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="cart">
       <table className="container cart__table">
         <thead className="cart__table-thead">
-          <th className="cart__table-thead-name">Product name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
+          <th className="cart__table-thead-name">Mahhsulot nomi</th>
+          <th>Narxi</th>
+          <th>Soni</th>
+          <th>Jami</th>
           <th></th>
         </thead>
         <tbody className="cart__table-tbody">
@@ -56,29 +54,40 @@ function Cart() {
                 <span>$32.00</span>
               </td>
               <td className="cart__table-remove">
-                <span>.</span>
-                <AiOutlineClose />
+                <div className="cart__table-remove-wrapper">
+                  <span>.</span>
+                  <FiTrash2 />
+                </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <div className="cart__buttons container">
+      {/* <div className="cart__buttons container">
         <button className="cart__buttons-btn">Update Cart</button>
         <button className="cart__buttons-btn btn-coral">
           Continue Shopping
         </button>
-      </div>
+      </div> */}
       <div className="container cart__totals">
-        <div className="cart__totals-title">
-          <p>CART TOTALS</p>
-        </div>
-        <div className="cart__totals-checkout">
-          <span>Total</span>
-          <span>$32.00</span>
-        </div>
-        <div className="cart__totals-btn">
+        <div className="cart__totals-wrapper">
+          <div className="cart__totals-title">
+            <p>Jamu summa</p>
+          </div>
+          <div className="cart__totals-checkout">
+            <span>Jami</span>
+            <span>$32.00</span>
+          </div>
+          {/* <div className="cart__totals-btn">
           <button>Proceed to checkout</button>
+        </div> */}
+          <form className="cart__toals-form">
+            <input type="text" placeholder="To'liq ism" />
+            <input type="number" placeholder="Telefon raqam" pattern="\d*" />
+            <input type="text" placeholder="Manzil" />
+            <textarea placeholder="Komment"></textarea>
+            <button type="submit">Jo'natish</button>
+          </form>
         </div>
       </div>
     </div>
