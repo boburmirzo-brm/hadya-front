@@ -44,8 +44,8 @@
   font-size: 22px;
 }
 
-.products .actions .cart,
-.products .actions .heart {
+.products .actions .product__cart,
+.products .actions .product__heart {
   width: 40px;
   height: 40px;
   display: flex;
@@ -60,9 +60,8 @@
   border: none;
 }
 
-.products .actions .cart:hover,
-.products .actions .heart:hover,
-.products .actions .search:hover {
+.products .actions .product__cart:hover,
+.products .actions .product__heart:hover {
   background: saddlebrown;
   color: #fff;
 }

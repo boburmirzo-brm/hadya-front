@@ -39,10 +39,10 @@ function Products() {
             </div>
             <div className="action__wrapper">
               <div className="actions">
-                <div className="cart">
+                <div className="product__cart">
                   <AiOutlineShoppingCart />
                 </div>
-                <button className="heart">
+                <button className="product__heart">
                   {heart.some((i) => i.name === item.name) ? (
                     <AiFillHeart
                       style={{ color: "#000" }}
