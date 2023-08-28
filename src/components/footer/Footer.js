@@ -1,8 +1,6 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import Clenu from '../../assets/clenu.avif'
-
 import { FaTelegram, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa"
 
 function Footer() {
@@ -11,12 +9,15 @@ function Footer() {
       <div className="container ">
         <div className="footer__wrapper">
           <div className="item">
-          <Link to={"/"} className="nav__logo"><img src={Clenu} alt="" width={180}/></Link>
-
+            <Link to={"/"}>
+              <h1>Clenu</h1>
+            </Link>
             <ul>
-              <li>
-                Biz Haqimizda
-              </li>
+              <Link to={"/about"}>
+                <li>
+                  Biz Haqimizda
+                </li>
+                </Link>
               <li>
                 Filyallarimiz
               </li>

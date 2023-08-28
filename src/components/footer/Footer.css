@@ -1,11 +1,11 @@
 .footer {
     width: 100%;
-    background-color: black;
+    background-color: var(--bg-py);
     text-align: center; 
 }
 
 .footer__wrapper {
-    color: rgb(97, 80, 80);
+    color: black;
    
     padding: 40px 0;
 text-align: center;
@@ -15,8 +15,8 @@ text-align: center;
     gap: 50px;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    margin-top: 1.5%;
+    text-align: center; 
+    margin-top: 2%;
 }
 .icon{
     display: flex;
@@ -27,9 +27,8 @@ text-align: center;
 
 .footer button {
     background-color: transparent;
-    color: rgb(97, 80, 80);
     border: none;
-
+color: black;
 }
 
 .footer button:hover {
@@ -39,9 +38,7 @@ text-align: center;
 .item {
    text-align: center;
 }
-.footer h1{
-    font-family: cursive;
-}
+
 .footer li {
     text-decoration: none;
     list-style: none;
@@ -66,11 +63,25 @@ text-align: center;
         flex-direction: column;
     }
 
-    
+    .item {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 
+@media screen and (max-width:400px) {
+   
 
+    .item {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
 @media screen and (max-width:990px) {
    
     .footer {
