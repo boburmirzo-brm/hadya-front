@@ -5,7 +5,6 @@ import { AiOutlineSearch,
  AiOutlineShoppingCart, 
  AiOutlineHome } from "react-icons/ai"
 import {Link} from "react-router-dom"
-import Clenu from "../../assets/clenu.avif"
 import "./Navbar.css"
 function Navbar() {
     const [show, setShow] = useState(false  )
@@ -13,14 +12,11 @@ function Navbar() {
     return (
         <div className='navbar'>
         <div className='container navbar__main'>
-            <Link to={"/"} className="nav__logo"><img src={Clenu} alt="" width={180}/></Link>
+            <Link to={"/"} className="nav__logo">HADYA </Link>
             <div className="nav__search">
             <input type="text" placeholder='Qidirish...' />
             </div>
             <ul className="nav__collection">
-                <Link to={"/about"} className="nav__item">
-                    <AiOutlineSearch />
-                </Link> 
                 <Link to={"/"} className="nav__item">
                     <AiOutlineHome />
                 </Link>
