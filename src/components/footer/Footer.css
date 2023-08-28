@@ -57,31 +57,17 @@ color: black;
 
 @media screen and (max-width:350px) {
     .footer__wrapper {
-        color: rgb(97, 80, 80);
+        color: black;
         display: block;
         padding: 40px 0;
         flex-direction: column;
     }
 
-    .item {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
+
 }
 
 
-@media screen and (max-width:400px) {
-   
 
-    .item {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-}
 @media screen and (max-width:990px) {
    
     .footer {
