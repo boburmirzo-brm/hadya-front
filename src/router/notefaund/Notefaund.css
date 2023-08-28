@@ -6,9 +6,7 @@
 }
 
 .p_Tree {
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Domine', serif;
-    font-family: 'Pacifico', cursive;
+    font-family: pacifico, cursive;
     font-size: 50px;
     text-align: center;
     height: 120px;

@@ -28,11 +28,16 @@ function Products() {
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
           >
-            <img
-              src={hoveredItem === item ? item.url[1] : item.url[0]}
+            <div 
+            className="product-image"
+            style={{background: `url(${hoveredItem === item ? item.url[1] ? item.url[1] : item.url[0] : item.url[0]}) no-repeat center/cover`}}>
+              
+            </div>
+            {/* <img
+              src={}
               // alt={item.name}
               className="product-image"
-            />
+            /> */}
             <div>
               <h5>{item.name}</h5>
               <h4>${item.price}.00</h4>

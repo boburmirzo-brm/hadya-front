@@ -1,3 +1,8 @@
+import img1 from '../assets/category/cake.jpg'
+import img2 from '../assets/category/sweet.jpg'
+import img3 from '../assets/category/norin.jpg'
+import img4 from '../assets/category/fastfood.jpg'
+
 export const ProductsData = [
   {
     name: "Bread",
@@ -36,3 +41,32 @@ export const ProductsData = [
     ],
   },
 ];
+
+
+export const category = [
+  {
+    id: "c-1",
+    url: img1,
+    title: "Tort",
+    link: "/cake"
+  },
+  {
+    id: "c-2",
+    url: img2,
+    title: "Pirojniy",
+    link: "/sweet"
+  },
+  {
+    id: "c-3",
+    url: img3,
+    title: "Norin",
+    link: "/norin"
+  },
+  {
+    id: "c-4",
+    url: img4,
+    title: "Fastfood",
+    link: "/fastfood"
+  }
+]
+
