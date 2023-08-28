@@ -40,4 +40,7 @@
         margin-right: 10%;
         text-align: center;
     }
+    .empty__container img{
+        width: 70%;
+    }
 }
