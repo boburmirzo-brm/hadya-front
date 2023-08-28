@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-
+import { Link } from "react-router-dom";
 import { FaTelegram, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa"
 
 function Footer() {
@@ -9,11 +9,20 @@ function Footer() {
       <div className="container ">
         <div className="footer__wrapper">
           <div className="item">
-            <h1>Clenu</h1>
-            <li>
-              Bizda hamma yaxshi narsalar
-            </li>
-            <li>Yaxshi narsalarni bizdan oling</li>
+            <Link to={"/"}>
+              <h1>Hadya</h1>
+            </Link>
+            <ul>
+              <Link to={"/about"}>
+                <li>
+                  Biz Haqimizda
+                </li>
+                </Link>
+              <li>
+                Filyallarimiz
+              </li>
+            </ul>
+
             <div className="icon">
               <a href="https://instagram.com/hadya2020.uz">
                 <button>
@@ -26,27 +35,18 @@ function Footer() {
                 </button>
               </a>
               <a href="#">
-              <button>
-                <FaFacebook />
-              </button>
+                <button>
+                  <FaFacebook />
+                </button>
               </a>
               <a href="#">
-              <button>
-                <FaYoutube />
-              </button>
+                <button>
+                  <FaYoutube />
+                </button>
               </a>
             </div>
           </div>
-          <div className="item">
-            <h2>Biz xaqimizda</h2>
-            <ul>
-              <li>About Us</li>
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Products Return</li>
-              <li>Wholesale Policy</li>
-            </ul>
-          </div>
+
         </div>
       </div>
     </div>
