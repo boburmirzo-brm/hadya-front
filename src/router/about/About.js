@@ -5,6 +5,13 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "swiper/css";
 
+import about1 from "../../assets/about_1.jpg"
+import about2 from "../../assets/about_2.jpg"
+import about3 from "../../assets/about_3.jpg"
+
+import oshpaz1 from "../../assets/oshpaz_1.jpg"
+import oshpaz2 from "../../assets/oshpaz_2.jpg"
+import oshpaz3 from "../../assets/oshpaz_3.jpg"
 
 function About() {
 
@@ -32,9 +39,9 @@ function About() {
           <h3>Baked goods have been around for thousands of years. The art of baking was developed early during the Roman Empire. It was a highly famous art as Roman citizens loved baked goods and demanded for them frequently for important occasions such as feasts and weddings etc. Due to the fame and desire that the art of baking received, around 300 BC, baking was introduced as an occupation and respectable profession for Romans.</h3>
 
           <div className="approach__images">
-            <img src="https://cakeciouswp.bolvosites.com/demo1/wp-content/uploads/sites/14/2018/06/bakery-1.jpg" alt="" />
-            <img src="https://cakeciouswp.bolvosites.com/demo1/wp-content/uploads/sites/14/2018/06/bakery-2.jpg" alt="" />
-            <img src="https://cakeciouswp.bolvosites.com/demo1/wp-content/uploads/sites/14/2018/06/bakery-3.jpg" alt="" />
+            <img src={about1} alt="" />
+            <img src={about2} alt="" />
+            <img src={about3} alt="" />
           </div>
         </div>
 
