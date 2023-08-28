@@ -22,7 +22,9 @@ function Footer() {
               <Link to={"/about"}>
                 <li>Biz Haqimizda</li>
               </Link>
+              <Link to={"/branches"}>
               <li>Filyallarimiz</li>
+              </Link>
             </ul>
 
             <div className="icon">
