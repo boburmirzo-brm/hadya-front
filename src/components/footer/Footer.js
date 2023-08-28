@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer__wrapper">
           <div className="item">
             <Link to={"/"}>
-              <h1>Clenu</h1>
+              <h1>Hadya</h1>
             </Link>
             <ul>
               <Link to={"/about"}>
