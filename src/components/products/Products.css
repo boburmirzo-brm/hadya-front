@@ -60,6 +60,10 @@
   border: none;
 }
 
+.product__heart {
+  border: none;
+}
+
 .products .actions .product__cart:hover,
 .products .actions .product__heart:hover {
   background: saddlebrown;
