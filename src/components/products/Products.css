@@ -72,6 +72,9 @@
     }
 }
 
+
+/*---------------- PRODUCT WITH CATEGORY ------------ */
+
 .product-second {
     display: flex;
     flex-wrap: wrap;
