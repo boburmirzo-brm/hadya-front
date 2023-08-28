@@ -1,14 +1,13 @@
 .footer {
     width: 100%;
-    background-color: var(--bg-py);
+    background-color: #111;
     text-align: center; 
+    color: var(--bg-py);
 }
 
 .footer__wrapper {
-    color: black;
-   
     padding: 40px 0;
-text-align: center;
+    text-align: center;
 }
 .item ul{
     display: flex;
@@ -16,21 +15,22 @@ text-align: center;
     align-items: center;
     justify-content: center;
     text-align: center; 
-    margin-top: 2%;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 .icon{
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
-    margin-top: 2%;
 }
 
 .footer button {
     background-color: transparent;
     border: none;
-color: black;
 }
-
+.footer__logo{
+    width: 200px;
+}
 .footer button:hover {
     color: pink;
 }
@@ -45,14 +45,11 @@ color: black;
     font-weight: 800;
 }
 
-.footer li:hover {
-    color: pink;
-    cursor: pointer;
-}
 
 .item svg {
     font-size: 30px;
     gap: 20px;
+    color: var(--bg-py);
 }
 
 @media screen and (max-width:350px) {

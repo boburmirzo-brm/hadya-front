@@ -1,18 +1,25 @@
 import React, {useState} from 'react'
-import { AiOutlineSearch,
+import { 
  AiOutlineUser, 
  AiOutlineHeart, 
  AiOutlineShoppingCart, 
  AiOutlineHome } from "react-icons/ai"
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import "./Navbar.css"
+import logo from "../../assets/hadya-logo.png"
+
 function Navbar() {
+    const {pathname} = useLocation()
     const [show, setShow] = useState(false  )
     document.body.style.overflow = show ? "hidden" : "auto"
+
+    if(pathname.includes("login")){
+        return <></>
+    }
     return (
         <div className='navbar'>
         <div className='container navbar__main'>
-            <Link to={"/"} className="nav__logo">HADYA </Link>
+            <Link to={"/"} className="nav__logo"><img src={logo} alt="" /> </Link>
             <div className="nav__search">
             <input type="text" placeholder='Qidirish...' />
             </div>

@@ -1,26 +1,28 @@
 import React from "react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
-import { FaTelegram, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa"
+import { Link, useLocation } from "react-router-dom";
+import { FaTelegram, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import logo from "../../assets/hadya-logo.png";
 
 function Footer() {
+  const { pathname } = useLocation();
+
+  if (pathname.includes("login")) {
+    return <></>;
+  }
   return (
     <div className="footer">
       <div className="container ">
         <div className="footer__wrapper">
           <div className="item">
             <Link to={"/"}>
-              <h1>Hadya</h1>
+              <img className="footer__logo" src={logo} alt="" />
             </Link>
             <ul>
               <Link to={"/about"}>
-                <li>
-                  Biz Haqimizda
-                </li>
-                </Link>
-              <li>
-                Filyallarimiz
-              </li>
+                <li>Biz Haqimizda</li>
+              </Link>
+              <li>Filyallarimiz</li>
             </ul>
 
             <div className="icon">
@@ -46,7 +48,6 @@ function Footer() {
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>

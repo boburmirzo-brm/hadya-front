@@ -9,12 +9,10 @@
 .login_box {
     background-color: white;
     border-radius: 30px;
-    box-shadow: 0px 5px 40px var(--bg-py);
     padding: 40px;
     text-align: center;
     max-width: 400px;
     width: 80%;
-    animation: animate 1s ease-in-out;
 }
 .login__home{
     padding: 15px;
@@ -119,16 +117,6 @@
     background-color: #0e7865;
 }
 
-@keyframes animate {
-    0% {
-        transform: translateY(-250px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
 @media screen and (max-width: 450px) {
     .main_container {
