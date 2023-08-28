@@ -8,6 +8,10 @@ import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import Notefaund from './router/notefaund/Notefaund';
 import Login from './router/login/Login';
+import Cake from './router/cake/Cake';
+import Sweet from './router/sweet/Sweet';
+import FastFood from './router/fastfood/FastFood';
+import Norin from './router/norin/Norin';
     
 function App() {
   return (
@@ -19,6 +23,10 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
+        <Route path='/cake' element={<Cake/>}/>
+        <Route path='/sweet' element={<Sweet/>}/>
+        <Route path='/fastfood' element={<FastFood/>}/>
+        <Route path='/norin' element={<Norin/>}/>
         <Route path="*" element={<Notefaund/>} />
       </Routes>      
       <Footer/>

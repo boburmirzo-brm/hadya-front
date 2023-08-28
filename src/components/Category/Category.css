@@ -1,0 +1,35 @@
+.Category {
+    margin-bottom: 40px;
+}
+
+.Category h2 {
+    margin-bottom: 10px;
+}
+
+.card__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 120px;
+}
+
+.category__card {
+    width: 100px;
+    text-align: center;
+}
+
+.category__card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    .card__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .category__card {
+        width: 100px;
+    }
+}
