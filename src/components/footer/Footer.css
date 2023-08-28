@@ -1,18 +1,28 @@
 .footer {
     width: 100%;
     background-color: black;
+    text-align: center; 
 }
 
 .footer__wrapper {
     color: rgb(97, 80, 80);
-    display: flex;
+   
     padding: 40px 0;
-
+text-align: center;
 }
-
-.icon {
+.item ul{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5%;
+}
+.icon{
     display: flex;
     gap: 10px;
+    justify-content: center;
+    margin-top: 2%;
 }
 
 .footer button {
@@ -27,13 +37,11 @@
 }
 
 .item {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    width: 100%;
+   text-align: center;
 }
-
+.footer h1{
+    font-family: cursive;
+}
 .footer li {
     text-decoration: none;
     list-style: none;
@@ -58,25 +66,11 @@
         flex-direction: column;
     }
 
-    .item {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
+    
 }
 
 
-@media screen and (max-width:400px) {
-   
 
-    .item {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-}
 @media screen and (max-width:990px) {
    
     .footer {
