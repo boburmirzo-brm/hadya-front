@@ -2,6 +2,7 @@ import React from 'react'
 import './Branches.css'
 import {IoLocationOutline} from 'react-icons/io5'
 function Branches() {
+    
   return (
     <div className='main__branches'>
         <h2 className='branch__text'>Bizning<span> Filiallarimmiz</span><IoLocationOutline/></h2>
@@ -37,7 +38,7 @@ function Branches() {
                <h3>Biz bilan Bog'lanish: <span>931322727</span></h3>
                <h4> <span>Bizning ish Vaqtimmiz:</span> 8:00 dan 18:00 gacha</h4>
             </div>
-        </div>
+        </div><br />
     </div>
   )
 }
