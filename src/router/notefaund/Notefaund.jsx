@@ -1,15 +1,15 @@
 import React from 'react'
 import "./Notefaund.css"
 import {Link} from "react-router-dom"
-import not from "../../assets/404.png" 
+import not from "../../assets/not__img.png" 
 export default function Notefaund() {
   return (
    <div className="container">
      <div className='not__faund'>
-        <p className='p_Tree'>Ой, кажется я что-то понажимала…</p>
+        <p className='p_Tree'>Voy manimcha nimadir tushunarsiz...</p>
         <img src={not} alt="" />
-        <p className='p_One'>Пока я тут разбираюсь с ошибкой, по номеру 78 113 40 40 вам помогут.</p>
-        <Link to={"/"}><p className='p_Two'>НА ГЛАВНУЮ</p></Link>
+        <p className='p_One'>Bu yerda xatolik bilan shug‘ullanayotganimda, ular 78 113 40 40 raqamiga qo‘ng‘iroq qilib, sizga yordam berishadi.</p>
+        <Link to={"/"}><p className='p_Two'>Bosh saxifaga</p></Link>
     </div>
    </div>
   )
