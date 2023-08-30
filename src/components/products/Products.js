@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Products.css";
-import { ProductsData } from "../../static";
 import {
   AiFillHeart,
   AiOutlineHeart,
@@ -11,7 +10,9 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { addToHeart, removeFromHeart } from "../../context/heart";
 
-function Products() {
+import { Link } from "react-router-dom";
+
+function Products({ ProductsData }) {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const heart = useSelector((s) => s.heart.value);
@@ -28,20 +29,30 @@ function Products() {
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
           >
-            <div 
-            className="product-image"
-            style={{background: `url(${hoveredItem === item ? item.url[1] ? item.url[1] : item.url[0] : item.url[0]}) no-repeat center/cover`}}>
-              
-            </div>
+            <div
+              className="product-image"
+              style={{
+                background: `url(${
+                  hoveredItem === item
+                    ? item.url[1]
+                      ? item.url[1]
+                      : item.url[0]
+                    : item.url[0]
+                }) no-repeat center/cover`,
+              }}
+            ></div>
             {/* <img
               src={}
               // alt={item.name}
               className="product-image"
             /> */}
-            <div>
+            <Link
+              to={`/product/${item.name.toLowerCase().split(" ").join("-")}`}
+              state={item}
+            >
               <h5>{item.name}</h5>
               <h4>${item.price}.00</h4>
-            </div>
+            </Link>
             <div className="action__wrapper">
               <div className="actions">
                 <div className="product__cart">
