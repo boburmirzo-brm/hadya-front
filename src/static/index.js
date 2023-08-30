@@ -1,7 +1,8 @@
-import img1 from '../assets/category/cake.jpg'
-import img2 from '../assets/category/sweet.jpg'
-import img3 from '../assets/category/norin.jpg'
+import img1 from '../assets/category/cake1.jpg'
+import img2 from '../assets/category/p.jpg'
+import img3 from '../assets/category/norin1.jpg'
 import img4 from '../assets/category/fastfood.jpg'
+import img5 from '../assets/category/all.webp'
 
 
 import img11 from "../assets/product/1.jpg"
@@ -54,6 +55,12 @@ export const ProductsData = [
 
 
 export const category = [
+  {
+    id: "c-11",
+    url: img5,
+    title: "Hammasi",
+    link: "/all"
+  },
   {
     id: "c-1",
     url: img1,
