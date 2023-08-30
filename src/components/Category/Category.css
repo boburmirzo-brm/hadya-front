@@ -29,7 +29,6 @@
 }
 .category__title{
     font-size: 50px;
-    font-family: pacifico;
     font-weight: 100;
 }
 
@@ -37,7 +36,7 @@
     .card__wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0;
+        gap: 20px 0;
     }
     .category__card{
         width: auto;
@@ -45,6 +44,9 @@
     .category__card img{
         width: 150px;
         height: 150px;
+    }
+    .category__title{
+        font-size: 32px;
     }
 }
 

@@ -1,7 +1,18 @@
-import img1 from '../assets/category/cake.jpg'
-import img2 from '../assets/category/sweet.jpg'
-import img3 from '../assets/category/norin.jpg'
+import img1 from '../assets/category/cake1.jpg'
+import img2 from '../assets/category/p.jpg'
+import img3 from '../assets/category/norin1.jpg'
 import img4 from '../assets/category/fastfood.jpg'
+import img5 from '../assets/category/all.webp'
+
+
+import img11 from "../assets/product/1.jpg"
+import img22 from "../assets/product/2.jpg"
+import img33 from "../assets/product/3.jpg"
+import img44 from "../assets/product/4.jpg"
+import img55 from "../assets/product/5.jpg"
+import img66 from "../assets/product/6.jpg"
+import img77 from "../assets/product/7.jpg"
+import img88 from "../assets/product/8.jpg"
 
 export const ProductsData = [
   {
@@ -9,8 +20,8 @@ export const ProductsData = [
     price: 15,
     category: "tort",
     url: [
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/pro1_79599500-9bf6-446e-b6f4-6833b9c2efd6.jpg?v=1676536072",
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/pro4_65d08cc9-3bc1-4335-ad13-d53c671287b8.jpg?v=1676536072",
+      img11,
+      img55,
     ],
   },
   {
@@ -18,8 +29,8 @@ export const ProductsData = [
     price: 12,
     category: "tort",
     url: [
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/product48.jpg?v=1676536053",
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/product47.jpg?v=1676536053",
+      img22,
+      img66,
     ],
   },
   {
@@ -27,8 +38,8 @@ export const ProductsData = [
     price: 16,
     category: "pirojniy",
     url: [
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/product19.jpg?v=1676536050",
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/product22.jpg?v=1676536050",
+      img33,
+      img77,
     ],
   },
   {
@@ -36,14 +47,20 @@ export const ProductsData = [
     price: 20,
     category: "biscuite",
     url: [
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/product1.jpg?v=1676536045",
-      "https://clenu-store-demo.myshopify.com/cdn/shop/products/product4.jpg?v=1676536045",
+      img44,
+      img88,
     ],
   },
 ];
 
 
 export const category = [
+  {
+    id: "c-11",
+    url: img5,
+    title: "Hammasi",
+    link: "/all"
+  },
   {
     id: "c-1",
     url: img1,

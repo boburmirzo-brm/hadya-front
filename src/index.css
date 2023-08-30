@@ -2,6 +2,10 @@
   font-family:  pacifico;
   src: url("./fonts/Pacifico/Pacifico-Regular.ttf");
 }
+@font-face {
+  font-family:  dancin;
+  src: url("./fonts/Dancin/DancingScript-VariableFont_wght.ttf");
+}
 * {
   margin: 0;
   padding: 0;

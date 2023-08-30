@@ -8,16 +8,21 @@ import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import Notefaund from './router/notefaund/Notefaund';
 import Login from './router/login/Login';
+import Branches from './router/branch/Branches';
+import SingleProduct from "./router/single-product/SingleProduct";
+
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
+        <Route path='/branches' element={<Branches/>}/>
+        <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="*" element={<Notefaund/>} />
       </Routes>      
       <Footer/>

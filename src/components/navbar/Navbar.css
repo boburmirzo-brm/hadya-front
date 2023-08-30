@@ -20,7 +20,7 @@
     border: none;
     border-radius: 4px;
     color: var(--bg-py);
-    display: flex;
+    display: none;
     gap: 8px;
     align-items: center;
 }
