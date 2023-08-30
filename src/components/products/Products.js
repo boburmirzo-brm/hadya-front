@@ -10,6 +10,7 @@ import {
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToHeart, removeFromHeart } from "../../context/heart";
+import { addToCart  } from "../../context/cart";
 
 function Products() {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -45,7 +46,7 @@ function Products() {
             <div className="action__wrapper">
               <div className="actions">
                 <div className="product__cart">
-                  <AiOutlineShoppingCart />
+                  <AiOutlineShoppingCart onClick={()=> dispatch(addToCart(item))} />
                 </div>
                 <button className="product__heart">
                   {heart.some((i) => i.name === item.name) ? (
