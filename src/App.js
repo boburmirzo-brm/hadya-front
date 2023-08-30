@@ -8,7 +8,6 @@ import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import Notefaund from './router/notefaund/Notefaund';
 import Login from './router/login/Login';
-    
 function App() {
   return (
     <div className="App">

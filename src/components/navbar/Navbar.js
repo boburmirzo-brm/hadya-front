@@ -3,10 +3,12 @@ import {
  AiOutlineUser, 
  AiOutlineHeart, 
  AiOutlineShoppingCart, 
+ AiOutlineMenu,
  AiOutlineHome } from "react-icons/ai"
 import {Link, useLocation} from "react-router-dom"
 import "./Navbar.css"
 import logo from "../../assets/hadya-logo.png"
+import Sidebar from '../sidebar/Sidebar'
 
 function Navbar() {
     const {pathname} = useLocation()
@@ -17,12 +19,20 @@ function Navbar() {
         return <></>
     }
     return (
+            <>
         <div className='navbar'>
         <div className='container navbar__main'>
             <Link to={"/"} className="nav__logo"><img src={logo} alt="" /> </Link>
-            <div className="nav__search">
-            <input type="text" placeholder='Qidirish...' />
+            <button className='nav__btn' onClick={()=> setShow(true)}><AiOutlineMenu/></button>
+            <div className="item1">
+            <ul>
+              <Link to={"/about"}>
+                <li>Biz Haqimizda</li>
+              </Link>
+              <li>Filyallarimiz</li>
+            </ul>
             </div>
+
             <ul className="nav__collection">
                 <Link to={"/"} className="nav__item">
                     <AiOutlineHome />
@@ -39,6 +49,8 @@ function Navbar() {
             </ul>
         </div>
         </div>
+        <Sidebar show={show} setShow={setShow}/> 
+</>
     )
 }
 
