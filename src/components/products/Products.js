@@ -29,8 +29,10 @@ function Products({ ProductsData }) {
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
           >
-            <div
+            <Link
               className="product-image"
+              to={`/product/${item.name.toLowerCase().split(" ").join("-")}`}
+              state={item}
               style={{
                 background: `url(${
                   hoveredItem === item
@@ -40,7 +42,7 @@ function Products({ ProductsData }) {
                     : item.url[0]
                 }) no-repeat center/cover`,
               }}
-            ></div>
+            ></Link>
             {/* <img
               src={}
               // alt={item.name}
