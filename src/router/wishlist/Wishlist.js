@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Wishlist.css";
 import Products from "../../components/products/Products";
 import Empty from "../../components/empty/Empty";
-// import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 function Wishlist() {
-  const heart = [];
-  console.log(heart);
+  const heart = useSelector((s) => s.heart.value);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   return (
     <div className="wishlist">
-      {heart.length ? <Products /> : <Empty title="Sevimlilar" data={heart} />}
+      {heart.length ? (
+        <Products ProductsData={heart} />
+      ) : (
+        <Empty title="Sevimlilar" data={heart} />
+      )}
     </div>
   );
 }
