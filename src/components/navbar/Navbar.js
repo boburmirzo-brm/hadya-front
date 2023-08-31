@@ -13,7 +13,7 @@ function Navbar() {
     const [show, setShow] = useState(false  )
     document.body.style.overflow = show ? "hidden" : "auto"
 
-    if(pathname.includes("login")){
+    if(pathname.includes("login") || ("admin")){
         return <></>
     }
     return (
