@@ -10,6 +10,9 @@ function Footer() {
   if (pathname.includes("login")) {
     return <></>;
   }
+  if (pathname.includes("admin")) {
+    return <></>;
+  }
   return (
     <div className="footer">
       <div className="container ">
