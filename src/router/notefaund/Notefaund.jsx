@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Notefaund.css"
 import {Link} from "react-router-dom"
 import not from "../../assets/not__img.png" 
 export default function Notefaund() {
+  useEffect(()=>{window.scroll(0, 0)}, [])
+
   return (
    <div className="container">
      <div className='not__faund'>
