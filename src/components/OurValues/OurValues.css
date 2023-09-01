@@ -1,4 +1,4 @@
-.inner__values{
+.inner__values {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -7,21 +7,26 @@
     justify-content: space-around;
     gap: 50px;
 }
-.our__values h2{
- text-align:  center;
- margin-bottom: 20px;
- font-weight: 400;
- font-size: 40px;
+
+.our__values h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 40px;
 }
-.our__values .value svg{
+
+.our__values .value svg {
     color: var(--bg-py);
     font-size: 45px;
-}.our__values .value h3{
+}
+
+.our__values .value h3 {
     font-weight: 100;
     margin-top: 10px;
     font-size: 20px;
 }
-.our__values p{
+
+.our__values p {
     font-size: 15px;
     margin-top: 5px;
 }
