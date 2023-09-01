@@ -71,7 +71,7 @@
     margin-left: 20px;
     height: auto;
     margin-top: 20px;
-    max-width: 80%;
+    width: 30%;
 }
 
 
@@ -233,12 +233,15 @@
     .about__swiper{
         padding: 60px 0;
     }
+    .about .about__our__approach .approach__images img{
+        width: 100%;
+    }
 }
 
 
 @media screen and (max-width: 650px) {
     .about .about__real__taste h2{
-        font-size: 50px;
+        font-size: 30px;
     }
     .about .about__real__taste h3{
         font-size: 20px;

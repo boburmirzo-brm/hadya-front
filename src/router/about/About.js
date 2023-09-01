@@ -27,7 +27,7 @@ function About() {
 
         <div className="main__aboutus__text">
           <div className="container">
-          <h2>About Us</h2>
+          <h2>Biz haqimizda</h2>
           </div>
           <div className="back__color"></div>
         </div>
