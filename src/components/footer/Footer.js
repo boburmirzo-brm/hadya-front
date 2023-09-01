@@ -7,7 +7,10 @@ import logo from "../../assets/hadya-logo.png";
 function Footer() {
   const { pathname } = useLocation();
 
-  if (pathname.includes("login") || ("admin")) {
+  if (pathname.includes("login")) {
+    return <></>;
+  }
+  if (pathname.includes("admin")) {
     return <></>;
   }
   return (
