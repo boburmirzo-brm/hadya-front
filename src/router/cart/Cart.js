@@ -3,7 +3,8 @@ import "./Cart.css";
 import { FiTrash2 } from "react-icons/fi";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 import { ProductsData } from "../../static";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../context/cart";
 
 const initialState = {
 	name: "",
@@ -17,6 +18,8 @@ function Cart() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
+	const dispatch = useDispatch();
 
 	console.log(cart);
 
@@ -58,7 +61,7 @@ function Cart() {
 					<th></th>
 				</thead>
 				<tbody className="cart__table-tbody">
-					{ProductsData?.map(item => (
+					{cart?.map(item => (
 						<tr>
 							<td key={item.id} className="cart__table-name">
 								<div>
@@ -69,13 +72,13 @@ function Cart() {
 							</td>
 							<td className="cart__table-price">
 								<span>Price:</span>
-								<span>${item.price}.00</span>
+								<span>{item.price?.brm()} so'm</span>
 							</td>
 							<td className="cart__table-quantity">
 								<span>Quantity</span>
 								<div className="cart__table-quantity-wrapper">
 									<div className="cart__table-quantity-actions">
-										<input type="text" defaultValue={"1"} />
+										<input type="text" defaultValue={item.quantity} />
 										<div className="cart__table-quantity-btns">
 											<button>
 												<GoTriangleUp />
@@ -94,7 +97,9 @@ function Cart() {
 							<td className="cart__table-remove">
 								<div className="cart__table-remove-wrapper">
 									<span>.</span>
-									<FiTrash2 />
+									<button onClick={() => dispatch(removeFromCart(item._id))}>
+										<FiTrash2 />
+									</button>
 								</div>
 							</td>
 						</tr>

@@ -214,6 +214,11 @@
 	display: none;
 }
 
+.cart__table-remove-wrapper button {
+	background-color: transparent;
+	border: none;
+}
+
 .cart__table-remove-wrapper svg {
 	color: #289f89;
 	font-size: 22px;
