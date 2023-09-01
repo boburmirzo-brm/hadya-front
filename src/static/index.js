@@ -59,31 +59,31 @@ export const category = [
     id: "c-11",
     url: img5,
     title: "Hammasi",
-    link: "/all"
+    link: "all"
   },
   {
     id: "c-1",
     url: img1,
     title: "Tort",
-    link: "/cake"
+    link: "cake"
   },
   {
     id: "c-2",
     url: img2,
     title: "Pirojniy",
-    link: "/sweet"
+    link: "sweet"
   },
   {
     id: "c-3",
     url: img3,
     title: "Norin",
-    link: "/norin"
+    link: "norin"
   },
   {
     id: "c-4",
     url: img4,
     title: "Fastfood",
-    link: "/fastfood"
+    link: "fastfood"
   }
 ]
 

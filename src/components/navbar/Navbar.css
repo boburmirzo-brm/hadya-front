@@ -14,8 +14,8 @@
     align-items: center;
 }
 .nav__btn {
-    background: #e1e1f6;
-    padding: 0 26px;
+    background: #fff;
+    font-size: 22px;
     height: 34px;
     border: none;
     border-radius: 4px;
@@ -30,9 +30,6 @@
     align-items: center;
     justify-content: center;
     text-align: center; 
-    margin-top: 20px;
-    color: var(--bg-py);
-    margin-bottom: 30px;
 }
 
 .nav__search input {

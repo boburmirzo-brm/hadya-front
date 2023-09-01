@@ -1,0 +1,10 @@
+.sort__category{
+    min-height: 80vh;
+    padding: 40px 0;
+}
+.sort__category-not{
+    text-align: center;
+}
+.sort__category-not img{
+    width: 300px;
+}

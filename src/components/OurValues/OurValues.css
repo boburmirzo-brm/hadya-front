@@ -1,20 +1,17 @@
 .inner__values {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 50px;
+    padding: 40px 0;
+    width: 100%;
 }
 
-.our__values h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 400;
-    font-size: 40px;
+.value{
+    width: 30%;
 }
-
 .our__values .value svg {
     color: var(--bg-py);
     font-size: 45px;
@@ -29,4 +26,19 @@
 .our__values p {
     font-size: 15px;
     margin-top: 5px;
+}
+
+
+@media screen and (max-width:1050px) {
+    .inner__values{
+        justify-content: center;
+    }
+    .value{
+        width: 40%;
+    }
+}
+@media screen and (max-width:650px){
+    .value{
+        width: 100%;
+    }
 }

@@ -11,7 +11,7 @@ function Category() {
 
         {
           category?.map((item) =>
-            <Link to={`${item.link}`} key={item.id} className="category__card">
+            <Link to={`/products/${item.link}`} key={item.id} className="category__card">
               <img src={item.url} alt="" />
               <h4>{item.title}</h4>
             </Link>

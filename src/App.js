@@ -11,6 +11,7 @@ import Login from './router/login/Login';
 import Branches from './router/branch/Branches';
 import SingleProduct from "./router/single-product/SingleProduct";
 import Admin from './router/admin/Admin'
+import SortCategory from './router/sort-category/SortCategory';
 function App() {
   return (
     <div className="App">
@@ -21,8 +22,9 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
+        <Route path='/products/:category' element={<SortCategory/>}/>
         <Route path='/branches' element={<Branches/>}/>
-        <Route path='/Admin/*' element={<Admin/>}/>
+        <Route path='/admin/*' element={<Admin/>}/>
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="*" element={<Notefaund/>} />
       </Routes>      

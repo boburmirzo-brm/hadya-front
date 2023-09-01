@@ -5,8 +5,9 @@ import {MdOutlineFamilyRestroom} from 'react-icons/md'
 import {FaPrayingHands} from 'react-icons/fa'
  function OurValues() {
    return (
-     <div className='our__values'>
-        <h2>BIZNING QADIRLARIMIZ</h2>
+    <div className='container'>
+       <div className='our__values'>
+        <h2 className='category__title'>BIZNING QADIRLARIMIZ</h2>
         <div className="inner__values">
         <div className="value">
             <LuFlower2/>
@@ -25,6 +26,8 @@ import {FaPrayingHands} from 'react-icons/fa'
         </div>
         </div>
      </div>
+    </div>
+
    )
  }
  

@@ -30,12 +30,10 @@
   }
   .sidebar__item span{
     font-size: 18px;
-    color: var(--bg-py);
     align-items: left;
   } 
   .sidebar__item font{
     font-size: 18px;
-    color: var(--bg-py);
     align-items: left;
   } 
   .sidebar.show {

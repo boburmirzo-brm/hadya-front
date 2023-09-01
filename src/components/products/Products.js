@@ -54,7 +54,7 @@ function Products({ ProductsData }) {
               state={item}
             >
               <h5>{item.name}</h5>
-              <h4>${item.price}.00</h4>
+              <h4>{item.price?.brm()} so'm</h4>
             </Link>
             <div className="action__wrapper">
               <div className="actions">

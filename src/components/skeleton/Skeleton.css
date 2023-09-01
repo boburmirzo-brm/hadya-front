@@ -1,0 +1,40 @@
+.skeleton{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.skeleton__item{
+    width: 300px;
+}
+.skeleton__image{
+    width: 100%;
+    height: 200px;
+    background: #ddd;
+    border-radius: 8px;
+}
+.skeleton__line{
+    width: 80%;
+    height: 20px;
+    background: #ddd;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+.skeleton__line:nth-child(3){
+    width: 60%;
+}
+.anime{
+    background: linear-gradient(90deg, #eee, #ddd, #eee);
+    background-size: 200%;
+    animation: anime 1s linear  infinite;
+}
+@keyframes anime {
+    to{
+        background-position: 200%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .skeleton__item{
+        width: 100%;
+    }
+}
