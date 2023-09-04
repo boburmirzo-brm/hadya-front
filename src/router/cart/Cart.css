@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap");
 
 .cart {
+	min-height: 80vh;
 	width: 100%;
 	display: flex;
 	align-items: flex-start;
@@ -249,7 +250,7 @@
 .cart__toals-form button {
 	width: 400px;
 	height: 40px;
-	padding: 5px 20px;
+	text-indent: 12px;
 	outline: none;
 	border: 1px solid #dee2e6;
 	border-radius: 7px;
@@ -260,7 +261,7 @@
 .cart__toals-form input:focus,
 .cart__toals-form textarea:focus {
 	/* box-shadow: 0px 0px 5px 3px rgba(6, 147, 255, 0.2); */
-	box-shadow: 0px 0px 10px 1px rgb(40, 159, 137);
+	border: 1px solid #289f89;
 }
 
 .cart__toals-form button {
@@ -277,7 +278,7 @@
 }
 
 .cart__toals-form textarea {
-	padding: 15px 20px;
+	padding: 12px 0;
 	height: 100px;
 }
 /* ======================= */

@@ -8,7 +8,7 @@ const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addToCart: (state, action) => {
-			let index = state.value.findIndex(i => i.id === action.payload.id);
+			let index = state.value.findIndex(i => i._id === action.payload._id);
 			if (index < 0) {
 				state.value = [...state.value, { ...action.payload, quantity: 1 }];
 				localStorage.setItem("hadya-cart", JSON.stringify(state.value));
@@ -19,17 +19,20 @@ const cartSlice = createSlice({
 			}
 		},
 		removeFromCart: (state, action) => {
-			state.value = state.value.filter(i => i.id !== action.payload.id);
+			state.value = state.value.filter(i => i._id !== action.payload._id);
 			localStorage.setItem("hadya-cart", JSON.stringify(state.value));
 		},
 		decrementCart: (state, action) => {
-			let index = state.value.findIndex(i => i.id === action.payload.id);
+			let index = state.value.findIndex(i => i._id === action.payload._id);
 			state.value = state.value.map((item, inx) =>
 				inx === index ? { ...item, quantity: item.quantity - 1 } : item
 			);
+		},
+		deleteAllCart: (state) => {
+			state.value = []
 		}
 	}
 });
 
-export const { addToCart, removeFromCart, decrementCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, decrementCart, deleteAllCart } = cartSlice.actions;
 export default cartSlice.reducer;

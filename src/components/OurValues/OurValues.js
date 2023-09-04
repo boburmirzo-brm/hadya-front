@@ -7,7 +7,7 @@ import {FaPrayingHands} from 'react-icons/fa'
    return (
     <div className='container'>
        <div className='our__values'>
-        <h2 className='category__title'>BIZNING QADRIYATLARIMIZ</h2>
+        <h2 className='category__title'>Bizning qadriyatlarimiz</h2>
         <div className="inner__values">
         <div className="value">
             <MdBakeryDining/>

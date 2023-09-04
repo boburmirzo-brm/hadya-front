@@ -51,7 +51,10 @@
     gap: 20px;
     color: var(--bg-py);
 }
-
+.footer__company-name{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
 @media screen and (max-width:350px) {
     .footer__wrapper {
         color: black;

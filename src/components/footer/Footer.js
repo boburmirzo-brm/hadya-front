@@ -54,6 +54,7 @@ function Footer() {
             </div>
           </div>
         </div>
+      <p className="footer__company-name">&copy; 2023{2023 === new Date().getFullYear() ? "" : "-"+new Date().getFullYear()} NamTech Solution Inc.</p>
       </div>
     </div>
   );

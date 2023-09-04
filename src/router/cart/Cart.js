@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import "./Cart.css";
 import { FiTrash2 } from "react-icons/fi";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
-import { ProductsData } from "../../static";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, decrementCart, removeFromCart } from "../../context/cart";
+import { addToCart, decrementCart, removeFromCart, deleteAllCart } from "../../context/cart";
 import Empty from "../../components/empty/Empty";
+import {toast} from "react-toastify"
 
 function Cart() {
 	const cart = useSelector(s => s.cart.value);
@@ -15,9 +15,9 @@ function Cart() {
 
 	const dispatch = useDispatch();
 
-	if (cart.length === 0) {
-		return <Empty />;
-	}
+	const totalPrice = useMemo(()=> {
+		return cart?.reduce((a,b)=> a+(b.price * b.quantity), 0)
+	}, [cart])
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -53,98 +53,100 @@ function Cart() {
 		let api = new XMLHttpRequest();
 		api.open("GET", url, true);
 		api.send();
+		dispatch(deleteAllCart())
+		toast.success("Buyurtmangiz qabul qilindi. Tez orada sizga bog'lanamiz")
 	};
 
 	return (
-		<div className="cart">
-			<table className="container cart__table">
-				<thead className="cart__table-thead">
-					<th className="cart__table-thead-name">Mahhsulot nomi</th>
-					<th>Narxi</th>
-					<th>Soni</th>
-					<th>Jami</th>
-					<th></th>
-				</thead>
-				<tbody className="cart__table-tbody">
-					{cart?.map(item => (
-						<tr>
-							<td key={item.id} className="cart__table-name">
-								<div>
-									<img src={item.url[0]} width={100} alt="Product" />
-
-									<span>{item.name}</span>
-								</div>
-							</td>
-							<td className="cart__table-price">
-								<span>Price:</span>
-								<span>{item.price?.brm()} so'm</span>
-							</td>
-							<td className="cart__table-quantity">
-								<span>Quantity</span>
-								<div className="cart__table-quantity-wrapper">
-									<div className="cart__table-quantity-actions">
-										{/* <input type="text" placeholder={item.quantity} /> */}
-										<p>{item.quantity}</p>
-										<div className="cart__table-quantity-btns">
-											<button onClick={() => addToCart(item)}>
-												<GoTriangleUp />
-											</button>
-											<button onClick={() => decrementCart(item)}>
-												<GoTriangleDown />
-											</button>
+		<div div className="cart">
+			{
+				cart.length ?
+				<>
+				<table className="container cart__table">
+					<thead className="cart__table-thead">
+						<th className="cart__table-thead-name">Mahhsulot nomi</th>
+						<th>Narxi</th>
+						<th>Soni</th>
+						<th>Jami</th>
+						<th></th>
+					</thead>
+					<tbody className="cart__table-tbody">
+						{cart?.map(item => (
+							<tr>
+								<td key={item.id} className="cart__table-name">
+									<div>
+										<img src={item.url[0]} width={100} alt="Product" />
+	
+										<span>{item.name}</span>
+									</div>
+								</td>
+								<td className="cart__table-price">
+									<span>Price:</span>
+									<span>{item.price?.brm()} so'm</span>
+								</td>
+								<td className="cart__table-quantity">
+									<span>Quantity</span>
+									<div className="cart__table-quantity-wrapper">
+										<div className="cart__table-quantity-actions">
+											<p>{item.quantity}</p>
+											<div className="cart__table-quantity-btns">
+												<button  onClick={() =>dispatch( addToCart(item))}>
+													<GoTriangleUp />
+												</button>
+												<button disabled={item.quantity <= 1} onClick={() => dispatch(decrementCart(item))}>
+													<GoTriangleDown />
+												</button>
+											</div>
 										</div>
 									</div>
-								</div>
-							</td>
-							<td className="cart__table-total">
-								<span>Total:</span>
-								<span>$32.00</span>
-							</td>
-							<td className="cart__table-remove">
-								<div className="cart__table-remove-wrapper">
-									<span>.</span>
-									<button onClick={() => dispatch(removeFromCart(item._id))}>
-										<FiTrash2 />
-									</button>
-								</div>
-							</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-			{/* <div className="cart__buttons container">
-        <button className="cart__buttons-btn">Update Cart</button>
-        <button className="cart__buttons-btn btn-coral">
-          Continue Shopping
-        </button>
-      </div> */}
-			<div className="container cart__totals">
-				<div className="cart__totals-wrapper">
-					<div className="cart__totals-title">
-						<p>Jamu summa</p>
+								</td>
+								<td className="cart__table-total">
+									<span>Total:</span>
+									<span>{(item.price*item.quantity)?.brm()} so'm</span>
+								</td>
+								<td className="cart__table-remove">
+									<div className="cart__table-remove-wrapper">
+										<span>.</span>
+										<button onClick={() => dispatch(removeFromCart(item._id))}>
+											<FiTrash2 />
+										</button>
+									</div>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+		
+				<div className="container cart__totals">
+					<div className="cart__totals-wrapper">
+						<div className="cart__totals-title">
+							<p>Jami summa</p>
+						</div>
+						<div className="cart__totals-checkout">
+							<span>Jami</span>
+							<span>{totalPrice?.brm()} so'm</span>
+						</div>
+				
+						<form className="cart__toals-form" onSubmit={handleSubmit}>
+							<input autoComplete="off" id="inp1" type="text" placeholder="To'liq ism" />
+							<input
+								id="inp2"
+								type="number"
+								placeholder="Telefon raqam"
+								pattern="\d*"
+								autoComplete="off"
+							/>
+							<input autoComplete="off" id="inp3" type="text" placeholder="Manzil" />
+							<textarea id="inp4" placeholder="Komment"></textarea>
+							<button type="submit">Jo'natish</button>
+						</form>
 					</div>
-					<div className="cart__totals-checkout">
-						<span>Jami</span>
-						<span>$32.00</span>
-					</div>
-					{/* <div className="cart__totals-btn">
-          <button>Proceed to checkout</button>
-        </div> */}
-					<form className="cart__toals-form" onSubmit={handleSubmit}>
-						<input id="inp1" type="text" placeholder="To'liq ism" />
-						<input
-							id="inp2"
-							type="number"
-							placeholder="Telefon raqam"
-							pattern="\d*"
-						/>
-						<input id="inp3" type="text" placeholder="Manzil" />
-						<textarea id="inp4" placeholder="Komment"></textarea>
-						<button type="submit">Jo'natish</button>
-					</form>
 				</div>
-			</div>
+			</>:
+			 <Empty title="Savatcha"/>
+			}
 		</div>
+	
 	);
 }
 

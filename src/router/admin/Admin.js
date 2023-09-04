@@ -42,7 +42,7 @@ function Admin() {
       
       <div className="admin__content">
         <Routes>
-          <Route path="/create-product" element={<CreateProduct />} />
+          <Route path="create-product" element={<CreateProduct />} />
         </Routes>
       </div>
       <div className="admin__menu" onClick={() => setShowSidebar(!showSidebar)}>

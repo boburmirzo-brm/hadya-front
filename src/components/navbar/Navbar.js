@@ -42,7 +42,7 @@ function Navbar() {
                 <Link to={"/"} className="nav__item">
                     <AiOutlineHome />
                 </Link>
-                <Link to={"/login"} className="nav__item">
+                <Link to={"/admin"} className="nav__item">
                     <AiOutlineUser />
                 </Link>
                 <Link to={"/wishlist"} className="nav__item">

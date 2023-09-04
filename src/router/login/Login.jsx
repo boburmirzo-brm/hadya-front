@@ -1,19 +1,34 @@
 import React, { useState } from 'react';
 import './Login.css';
 import login from "../../assets/login.jpg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { PiUserCircleFill } from 'react-icons/pi'
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
+import axios from "../../api"
+import {toast} from "react-toastify"
+
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false); 
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault();
-        let newUser = { username, password };
-        console.log(newUser);
+        axios.post("/create/sign-in",{ username, password})
+            .then(res=> {
+                if(res.data.variant === "success"){
+                    localStorage.setItem("hadya-token",res.data.innerData.token )
+                    localStorage.setItem("hadya-user",res.data.innerData.user )
+                    navigate("/admin/create-product")
+                    toast.success("Hush kelibsiz")
+                }
+            })
+            .catch(err=>{ 
+                toast.error("username yoki parol xato")
+                console.log(err)
+            })
     };
 
     const togglePasswordVisibility = () => {
