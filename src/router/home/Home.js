@@ -19,12 +19,12 @@ function Home() {
 
   return (
     <div>
-      <Banner />
-      <Category />
-      {
-        loading ? <Skeleton/> : <Products ProductsData={data.slice(0, 8)} />
-      }
-      <OurValues/>
+        <Banner />
+        <Category />
+        {
+          loading ? <Skeleton/> : <Products ProductsData={data.slice(0, 8)} />
+        }
+        <OurValues/>
     </div>
   );
 }
