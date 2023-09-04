@@ -103,12 +103,17 @@
 	border-bottom: 1px solid #dee2e6;
 }
 
+.cart__table-quantity-actions p {
+	width: 40px;
+}
+
 .cart__table-quantity-btns button {
 	background-color: transparent;
 	border: none;
 	border-left: 1px solid #dee2e6;
 	height: 25px;
 	width: 42px;
+	cursor: pointer;
 }
 
 .cart__buttons {

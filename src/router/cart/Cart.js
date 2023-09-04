@@ -4,14 +4,8 @@ import { FiTrash2 } from "react-icons/fi";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 import { ProductsData } from "../../static";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../context/cart";
-
-const initialState = {
-	name: "",
-	phone: "",
-	address: "",
-	comment: ""
-};
+import { addToCart, decrementCart, removeFromCart } from "../../context/cart";
+import Empty from "../../components/empty/Empty";
 
 function Cart() {
 	const cart = useSelector(s => s.cart.value);
@@ -21,34 +15,45 @@ function Cart() {
 
 	const dispatch = useDispatch();
 
-	console.log(cart);
+	if (cart.length === 0) {
+		return <Empty />;
+	}
 
-	// const handleSubmit = e => {
-	// 	e.preventDefault();
+	const handleSubmit = e => {
+		e.preventDefault();
 
-	// 	let token = "6600729530:AAEO3DhQAGMdi6F1dMxxpTeTblGJ9HYR2Ok";
+		let token = "6600729530:AAEO3DhQAGMdi6F1dMxxpTeTblGJ9HYR2Ok";
+		let chat_id = -933130947;
 
-	// 	let chat_id = -933130947;
+		let inp1 = encodeURIComponent(document.getElementById("inp1").value);
+		let inp2 = encodeURIComponent(document.getElementById("inp2").value);
+		let inp3 = encodeURIComponent(document.getElementById("inp3").value);
+		let inp4 = encodeURIComponent(document.getElementById("inp4").value);
 
-	// 	let my_text = `Mahsulot oluvhi:%0A - Mahsulot oluvhining ismi: ${inp1} %0A - Mahsulot oluvhining raqami: ${inp2}  %0A - Mahsulot oluvhining manzili: ${inp3} %0A%0A`;
+		// Очистка полей ввода
+		document.getElementById("inp1").value = "";
+		document.getElementById("inp2").value = "";
+		document.getElementById("inp3").value = "";
+		document.getElementById("inp4").value = "";
 
-	// 	data?.forEach(item => {
-	// 		my_text += `Nomi : ${item.title} %0A`;
-	// 		my_text += `Soni : ${item.quantity} %0A`;
-	// 		my_text += `Narxi : ${item.price} so'm %0A%0A`;
-	// 	});
+		let my_text = `Mijoz: ${inp1} %0A Raqami: ${inp2}  %0A Manzil: ${inp3} %0A Komment: ${inp4} %0A%0A`;
 
-	// 	my_text += `Jami: ${data?.reduce(
-	// 		(a, b) => a + b.price * b.quantity,
-	// 		0
-	// 	)} som %0A`;
+		cart?.forEach(item => {
+			my_text += `Nomi : ${item.name} %0A`;
+			my_text += `Soni : ${item.quantity} %0A`;
+			my_text += `Narxi : ${item.price} so'm %0A%0A`;
+		});
 
-	// 	let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;
-	// 	let api = new XMLHttpRequest();
-	// 	api.open("GET", url, true);
-	// 	api.send();
-	// 	console.log("Message sent");
-	// };
+		my_text += `Jami: ${cart?.reduce(
+			(a, b) => a + b.price * b.quantity,
+			0
+		)} som %0A`;
+
+		let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;
+		let api = new XMLHttpRequest();
+		api.open("GET", url, true);
+		api.send();
+	};
 
 	return (
 		<div className="cart">
@@ -78,12 +83,13 @@ function Cart() {
 								<span>Quantity</span>
 								<div className="cart__table-quantity-wrapper">
 									<div className="cart__table-quantity-actions">
-										<input type="text" defaultValue={item.quantity} />
+										{/* <input type="text" placeholder={item.quantity} /> */}
+										<p>{item.quantity}</p>
 										<div className="cart__table-quantity-btns">
-											<button>
+											<button onClick={() => addToCart(item)}>
 												<GoTriangleUp />
 											</button>
-											<button>
+											<button onClick={() => decrementCart(item)}>
 												<GoTriangleDown />
 											</button>
 										</div>
@@ -124,11 +130,16 @@ function Cart() {
 					{/* <div className="cart__totals-btn">
           <button>Proceed to checkout</button>
         </div> */}
-					<form className="cart__toals-form">
-						<input type="text" placeholder="To'liq ism" />
-						<input type="number" placeholder="Telefon raqam" pattern="\d*" />
-						<input type="text" placeholder="Manzil" />
-						<textarea placeholder="Komment" readOnly></textarea>
+					<form className="cart__toals-form" onSubmit={handleSubmit}>
+						<input id="inp1" type="text" placeholder="To'liq ism" />
+						<input
+							id="inp2"
+							type="number"
+							placeholder="Telefon raqam"
+							pattern="\d*"
+						/>
+						<input id="inp3" type="text" placeholder="Manzil" />
+						<textarea id="inp4" placeholder="Komment"></textarea>
 						<button type="submit">Jo'natish</button>
 					</form>
 				</div>
