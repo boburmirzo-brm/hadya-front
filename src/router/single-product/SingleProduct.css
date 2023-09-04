@@ -1,95 +1,169 @@
 .single__product__container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  padding: 20px;
 }
 
 .single__product {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .single__product__images {
+  flex: 1;
+}
+
+.additional__images {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   gap: 30px;
+  bottom: 0;
+  justify-content: center;
 }
 
-.single__product .main__image {
-  width: 300px;
+.additional__images img {
+  max-width: 150px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
-.single__product .additional__images {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
+.additional__images img:hover {
+  opacity: 0.7;
 }
 
-.single__product .additional__images img {
-  width: 100px;
+.main__image {
+  max-width: 100%;
 }
 
 .single__product__description {
-  max-width: 400px;
+  flex: 1;
+  padding: 50px;
 }
 
 .single__product__description h3 {
-  font-size: 24px;
-  font-weight: normal;
-  margin: 15px 0;
-  color: var(--bg-py);
+  font-size: 44px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 10px;
+  font-weight: 100;
 }
 
 .single__product__description h5 {
-  font-size: 20px;
-  font-weight: normal;
-  margin: 15px 0;
+  font-size: 28px;
   color: var(--bg-py);
+  margin-bottom: 20px;
+  font-weight: 100;
 }
 
-.single__product__description .description {
-  margin: 15px 0;
-  font-size: 16px;
-  line-height: 20px;
+.single__desc {
+  margin-bottom: 20px;
 }
 
-.single__product__description .single__buttons {
+.single__desc h2 {
+  font-size: 26px;
+  font-weight: 100;
+}
+
+.single__buttons {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 40px;
+  flex-direction: column;
 }
 
 .single__buttons button {
-  width: 200px;
-  height: 40px;
-  background: var(--bg-py);
-  border: 2px solid var(--bg-py);
-  border-radius: 15px;
-  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
   cursor: pointer;
+  background-color: var(--bg-py);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-  .single__product .additional__images {
-    flex-direction: row;
+.single__buttons button:hover {
+  background-color: #094b3f;
+}
+@media (max-width: 768px) {
+  .single__product {
+    flex-direction: column;
   }
-  .single__product__description .single__buttons {
-    justify-content: center;
-    flex-wrap: wrap;
+
+  .single__product__images {
+    text-align: center;
+  }
+  .main__image{
+    width: 400px;
   }
   .single__product__description {
     text-align: center;
+    padding: 0;
+    margin-top: 20px;
   }
-  .single__product__description .description {
-    width: 80%;
-    margin: auto;
+  .single__count{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+.single__count{
+  display: flex;
+  background: var(--bg-py);
+  padding: 10px ;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 200px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.single__count button{
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 15px ;
+}
+.single__count button:hover{
+  background: #86fde7;
+  border-radius: 50%;
+  padding: 5px 15px ;
+  color: #000;
+}
+.single__to__home{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--bg-py);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 450px) {
+  .single__product {
+    justify-content: flex-start; 
+    border: none;
+    box-shadow: none;
+  }
+
+  .single__product__images {
+    flex: 1;
+    padding: 0; 
+  }
+
+  .single__product__description {
+    flex: 1;
+    padding: 0;
   }
 }
