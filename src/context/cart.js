@@ -19,7 +19,7 @@ const cartSlice = createSlice({
 			}
 		},
 		removeFromCart: (state, action) => {
-			state.value = state.value.filter(i => i._id !== action.payload._id);
+			state.value = state.value.filter(i => i._id !== action.payload);
 			localStorage.setItem("hadya-cart", JSON.stringify(state.value));
 		},
 		decrementCart: (state, action) => {
@@ -30,6 +30,7 @@ const cartSlice = createSlice({
 		},
 		deleteAllCart: (state) => {
 			state.value = []
+			localStorage.removeItem("hadya-cart");
 		}
 	}
 });

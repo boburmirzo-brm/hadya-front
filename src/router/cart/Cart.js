@@ -23,7 +23,7 @@ function Cart() {
 		e.preventDefault();
 
 		let token = "6600729530:AAEO3DhQAGMdi6F1dMxxpTeTblGJ9HYR2Ok";
-		let chat_id = -933130947;
+		let chat_id = -1001810727254;
 
 		let inp1 = encodeURIComponent(document.getElementById("inp1").value);
 		let inp2 = encodeURIComponent(document.getElementById("inp2").value);
@@ -36,43 +36,47 @@ function Cart() {
 		document.getElementById("inp3").value = "";
 		document.getElementById("inp4").value = "";
 
-		let my_text = `Mijoz: ${inp1} %0A Raqami: ${inp2}  %0A Manzil: ${inp3} %0A Komment: ${inp4} %0A%0A`;
-
+		
 		cart?.forEach(item => {
+			let my_text = `Mijoz: <b>${inp1}</b> %0A`;
+			my_text += `Raqami: <b>${inp2}</b> %0A`
+			my_text += `Manzil: <b>${inp3}</b> %0A`
+			my_text += `Izoh: ${inp4} %0A%0A`
 			my_text += `Nomi : ${item.name} %0A`;
-			my_text += `Soni : ${item.quantity} %0A`;
 			my_text += `Narxi : ${item.price} so'm %0A%0A`;
+			my_text += `${item.url[0]}%0A`;
+			let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;
+			let api = new XMLHttpRequest();
+			api.open("GET", url, true);
+			api.send();
 		});
 
-		my_text += `Jami: ${cart?.reduce(
-			(a, b) => a + b.price * b.quantity,
-			0
-		)} som %0A`;
-
-		let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;
-		let api = new XMLHttpRequest();
-		api.open("GET", url, true);
-		api.send();
+		// my_text += `Jami: ${cart?.reduce(
+		// 	(a, b) => a + b.price * b.quantity,
+		// 	0
+		// )} som %0A`;
 		dispatch(deleteAllCart())
 		toast.success("Buyurtmangiz qabul qilindi. Tez orada sizga bog'lanamiz")
 	};
 
 	return (
-		<div div className="cart">
+		<div  className="cart">
 			{
 				cart.length ?
 				<>
 				<table className="container cart__table">
 					<thead className="cart__table-thead">
-						<th className="cart__table-thead-name">Mahhsulot nomi</th>
+					<tr>
+					<th className="cart__table-thead-name">Mahhsulot nomi</th>
 						<th>Narxi</th>
 						<th>Soni</th>
 						<th>Jami</th>
 						<th></th>
+					</tr>
 					</thead>
 					<tbody className="cart__table-tbody">
 						{cart?.map(item => (
-							<tr>
+							<tr key={item._id}>
 								<td key={item.id} className="cart__table-name">
 									<div>
 										<img src={item.url[0]} width={100} alt="Product" />
