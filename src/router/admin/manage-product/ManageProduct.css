@@ -1,0 +1,37 @@
+.manage__product h2 {
+  font-size: 25px;
+  text-align: center;
+  margin: 3vh 0;
+}
+
+.manage__product__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.manage__product__wrapper div {
+  width: 300px;
+}
+
+.manage__product__wrapper div img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.manage__product__wrapper .image__wrapper {
+  position: relative;
+}
+
+.manage__product__wrapper .image__wrapper p {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px 8px;
+  background: teal;
+  color: #ffff;
+  border-radius: 15px;
+}
