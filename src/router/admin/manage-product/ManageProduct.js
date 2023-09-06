@@ -47,12 +47,17 @@ const ManageProduct = () => {
             <div key={item._id}>
               <div className="image__wrapper">
                 <img src={item.url[0]} alt="" />
-                <p>{item.valid ? "Sotuvda bor" : "Sotuvda yo'q"}</p>
+                <p className={`${item.valid ? "valid" : "invalid"}`}>
+                  {item.valid ? "Sotuvda bor" : "Sotuvda yo'q"}
+                </p>
               </div>
               <p>{item.category}</p>
               <h3>{item.name}</h3>
 
-              <button onClick={() => toggleValid(item._id, item.valid)}>
+              <button
+                className="toggleValid"
+                onClick={() => toggleValid(item._id, item.valid)}
+              >
                 {item.valid ? "Sotuvdan olish" : "Sotuvga qo'yish"}
               </button>
             </div>
