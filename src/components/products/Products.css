@@ -79,6 +79,7 @@
 .products .actions .product__heart:hover {
   background: var(--bg-py);
   color: #fff;
+  cursor: pointer;
 }
 .products .actions .cart,
 .products .actions .heart {

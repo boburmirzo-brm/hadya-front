@@ -9,7 +9,7 @@ const ManageProduct = () => {
 
   useEffect(() => {
     axios
-      .get("/get/products")
+      .get("/get/products", )
       .then((res) => {
         setData(res.data.innerData);
       })

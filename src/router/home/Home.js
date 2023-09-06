@@ -11,7 +11,9 @@ function Home() {
   const [loading,setLoading] = useState(false)
   useEffect(()=>{
     setLoading(true)
-    axios.get("/get/products")
+    axios.get("/get/products" , {
+      params: {valid: true}
+    })
       .then(res => setData(res.data.innerData))
       .catch(err => console.log(err))
       .finally(()=> setLoading(false))

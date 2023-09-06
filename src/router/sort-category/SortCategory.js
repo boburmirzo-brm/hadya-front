@@ -14,7 +14,7 @@ function SortCategory() {
     setLoading(true);
     axios
       .get(`/get/products`, {
-        params: category === "all" ? null : { category },
+        params: category === "all" ? {valid: true} : { category, valid: true},
       })
       .then((res) => setData(res.data.innerData))
       .catch((err) => console.log(err))

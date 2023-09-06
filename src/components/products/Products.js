@@ -58,23 +58,28 @@ function Products({ ProductsData }) {
 						</Link>
 						<div className="action__wrapper">
 							<div className="actions">
-								<div className="product__cart">
+								<div onClick={() => dispatch(addToCart(item))} className="product__cart">
 									<AiOutlineShoppingCart
-										onClick={() => dispatch(addToCart(item))}
+										
 									/>
 								</div>
-								<button className="product__heart">
+								
 									{heart.some(i => i.name === item.name) ? (
+										<button onClick={() => dispatch(removeFromHeart(item))} className="product__heart">
 										<AiFillHeart
 											style={{ color: "#000" }}
-											onClick={() => dispatch(removeFromHeart(item))}
+											
 										/>
+										</button>
 									) : (
+										<button onClick={() => dispatch(addToHeart(item))} className="product__heart">
+
 										<AiOutlineHeart
-											onClick={() => dispatch(addToHeart(item))}
-										/>
+											
+											/>
+											</button>
 									)}
-								</button>
+								
 							</div>
 						</div>
 					</div>
