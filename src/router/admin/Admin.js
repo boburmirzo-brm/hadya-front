@@ -9,6 +9,12 @@ import ManageProduct from "./manage-product/ManageProduct";
 function Admin() {
   const [showSidebar, setShowSidebar] = useState(false);
 
+  const handleLogOut = () => {
+    localStorage.removeItem("hadya-token");
+    localStorage.removeItem("hadya-user");
+    window.location.assign("/");
+  };
+
   return (
     <div className={`admin ${showSidebar ? "show" : ""}`}>
       <div className="admin__sidebar">
@@ -36,6 +42,11 @@ function Admin() {
             <Link className="admin__link" to="/">
               Bosh Sahifaga qaytish
             </Link>
+          </li>
+          <li className="admin__item">
+            <a href="/" onClick={handleLogOut} className="admin__link">
+              Chiqish
+            </a>
           </li>
         </ul>
       </div>
