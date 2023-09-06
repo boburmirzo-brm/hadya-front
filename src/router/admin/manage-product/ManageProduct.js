@@ -3,7 +3,6 @@ import axios from "../../../api";
 import { toast } from "react-toastify";
 
 import "./ManageProduct.css";
-import Skeleton from "../../../components/skeleton/Skeleton";
 
 const ManageProduct = () => {
   const [data, setData] = useState([]);
