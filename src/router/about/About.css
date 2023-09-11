@@ -66,12 +66,17 @@
     padding: 0 40px;
     margin-top: 30px;
     /* margin-left: -40px; */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 .about .about__our__approach .approach__images img{
-    margin-left: 20px;
     height: auto;
-    margin-top: 20px;
-    width: 30%;
+    width: 350px;
+    height: 260px;
+    object-fit: cover;
 }
 
 
@@ -236,6 +241,9 @@
     .about .about__our__approach .approach__images img{
         width: 100%;
     }
+    .about .about__real__taste{
+        height: 400px;
+    }
 }
 
 
@@ -252,7 +260,14 @@
         text-align: center;
         align-items: center;
         justify-content: center;
+        padding: 0;
     } 
+    
+element.style {
+    background-image: url(https://i.ibb.co/SN8HcTx/2.jpg);
+    background-repeat: no-repeat;
+}
+
     /* .swiper__content{
         flex-direction: column;
         width: 100%;

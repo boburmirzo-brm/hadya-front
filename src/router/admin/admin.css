@@ -1,6 +1,6 @@
 .admin{
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 .admin__sidebar{
     width: 350px;
@@ -44,7 +44,8 @@
 }
 .admin__content{
     flex: 1;
-    height: 100%;
+    min-height: 100%;
+    padding-bottom: 200px;
 }
 .admin__sidebar h2{
     font-size: 25px;
@@ -88,6 +89,12 @@
   
     .admin__menu {
       display: block;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--bg-py);
+      color: #fff;
+      border-radius: 6px;
     }
   }
   @media screen and (max-width: 500px){

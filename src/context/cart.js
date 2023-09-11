@@ -11,12 +11,12 @@ const cartSlice = createSlice({
 			let index = state.value.findIndex(i => i._id === action.payload._id);
 			if (index < 0) {
 				state.value = [...state.value, { ...action.payload, quantity: 1 }];
-				localStorage.setItem("hadya-cart", JSON.stringify(state.value));
 			} else {
 				state.value = state.value.map((item, inx) =>
 					inx === index ? { ...item, quantity: item.quantity + 1 } : item
 				);
 			}
+			localStorage.setItem("hadya-cart", JSON.stringify(state.value));
 		},
 		removeFromCart: (state, action) => {
 			state.value = state.value.filter(i => i._id !== action.payload);

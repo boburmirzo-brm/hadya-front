@@ -11,10 +11,12 @@ import {toast} from "react-toastify"
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
+        setLoading(true)
         e.preventDefault();
         axios.post("/create/sign-in",{ username, password})
             .then(res=> {
@@ -29,6 +31,7 @@ function Login() {
                 toast.error("username yoki parol xato")
                 console.log(err)
             })
+            .finally(()=> setLoading(false))
     };
 
     const togglePasswordVisibility = () => {
@@ -61,7 +64,7 @@ function Login() {
                         )}
                         <label className="input_label">Parolingiz</label>
                     </div>
-                    <button type="submit" className="submit_button">Jo'natish</button>
+                    <button disabled={loading} type="submit" className="submit_button">{loading?"Kuting...":"Jo'natish"}</button>
                 </form>
                 <Link to={"/"}>
                     <button className='login__home'>Bosh Sahifaga Qaytish</button>

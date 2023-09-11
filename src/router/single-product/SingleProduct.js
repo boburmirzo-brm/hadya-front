@@ -5,12 +5,13 @@ import "./SingleProduct.css";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { addToHeart, removeFromHeart } from "../../context/heart";
+import ZoomImage from "../../components/zoom-image/ZoomImage";
 
 const SingleProduct = () => {
   const { state } = useLocation();
+  const [zoom, setZoom] = useState(null);
 
   const [mainImage, setMainImage] = useState(state.url[0]);
-  const [quantity, setQuantity] = useState(1); 
   const dispatch = useDispatch();
   const heart = useSelector((s) => s.heart.value);
 
@@ -18,24 +19,16 @@ const SingleProduct = () => {
     window.scroll(0, 0);
   }, []);
 
-  const totalPrice = state.price * quantity;
 
-  const handleIncrement = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
 
   return (
-    <div className="single__product__container">
+    <div className="container">
       <div className="single__product">
         <div className="single__product__images">
+          <img onClick={()=> setZoom(state?.url)} className="main__image" src={mainImage} alt="" />
+          <br />
           <div className="additional__images">
-            {state.url.map((item) => (
+            {state?.url.map((item) => (
               <img
                 key={item}
                 src={item}
@@ -44,22 +37,12 @@ const SingleProduct = () => {
               />
             ))}
           </div>
-          <br />
-          <img className="main__image" src={mainImage} alt="" />
-         
         </div>
         <div className="single__product__description">
-          <h3>{state.name}</h3>
           <div className="single__price">
-            <div className="single__desc">
-            <h2>{state.desc}</h2>
-          </div>
-            <h5>{totalPrice} so'm</h5>
-            <div className="single__count">
-              <button onClick={handleIncrement}>+</button>
-              <p>{quantity}</p>
-              <button onClick={handleDecrement}>-</button>
-            </div>
+            <h1>{state?.name}</h1>
+            <h2>{state?.price?.brm()} so'm</h2>
+            <p>{state?.desc}</p>
           </div>
           
           <div className="single__buttons">
@@ -82,6 +65,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
+      {zoom && <ZoomImage urls={zoom} setZoom={setZoom} />}
     </div>
   );
 };

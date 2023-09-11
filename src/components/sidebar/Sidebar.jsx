@@ -16,8 +16,8 @@ function Sidebar({ show, setShow }) {
           <img src={Hadya} alt="" />
           {icons.map((icon, index) => (
             <div className="sidebar__item" key={index}> 
-              <span> <Link to={"/branches"}>{icon.filial}</Link> </span>
-              <font> <Link to={"/about"}>{icon.haqimizda}</Link> </font>
+              <span onClick={()=> setShow(false)}> <Link to={"/branches"}>{icon.filial}</Link> </span>
+              <font onClick={()=> setShow(false)}> <Link to={"/about"}>{icon.haqimizda}</Link> </font>
             </div>
           ))}
         </div>

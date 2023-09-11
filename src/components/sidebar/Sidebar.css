@@ -31,10 +31,13 @@
   .sidebar__item span{
     font-size: 18px;
     align-items: left;
+    color: #666;
   } 
   .sidebar__item font{
     font-size: 18px;
     align-items: left;
+    color: #666;
+
   } 
   .sidebar.show {
     left: 0;

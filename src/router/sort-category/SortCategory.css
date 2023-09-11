@@ -8,3 +8,16 @@
 .sort__category-not img{
     width: 300px;
 }
+.sort__category-btn{
+    display: block;
+    margin: auto;
+    padding: 10px 24px;
+    background: var(--bg-py);
+    color: #fff;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.sort__category-btn:hover{
+    opacity: .7;
+}

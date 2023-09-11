@@ -23,13 +23,20 @@
     
   }
   
-  iframe {
+ .branch__one iframe {
     height: 300px;
     width: 100%;
     border: none;
     max-width: 900px;
+    background: linear-gradient(90deg, #ddd, #f7f7f7, #ddd);
+    background-size:  200%;
+    animation: iframe 1s linear infinite;
   }
-  
+  @keyframes iframe {
+    to{
+      background-position: 200%;
+    }
+  }
   .info {
     margin-top: -50px; 
     background: var(--bg-py);

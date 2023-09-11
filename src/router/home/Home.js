@@ -5,26 +5,29 @@ import Category from "../../components/Category/Category";
 import OurValues from "../../components/OurValues/OurValues";
 import axios from "../../api"
 import Skeleton from "../../components/skeleton/Skeleton"
+import {useGetProductQuery} from "../../context/productApi"
 
 function Home() {
-  const [data,setData] = useState([])
-  const [loading,setLoading] = useState(false)
-  useEffect(()=>{
-    setLoading(true)
-    axios.get("/get/products" , {
-      params: {valid: true}
-    })
-      .then(res => setData(res.data.innerData))
-      .catch(err => console.log(err))
-      .finally(()=> setLoading(false))
-  }, [])
+  // const [data,setData] = useState([])
+  // const [loading,setLoading] = useState(false)
+  const {data, isLoading} = useGetProductQuery(["/get/products",{ valid:true}])
+
+  // useEffect(()=>{
+  //   setLoading(true)
+  //   axios.get("/get/products" , {
+  //     params: {valid: true}
+  //   })
+  //     .then(res => setData(res.data.innerData))
+  //     .catch(err => console.log(err))
+  //     .finally(()=> setLoading(false))
+  // }, [])
 
   return (
     <div>
         <Banner />
         <Category />
         {
-          loading ? <Skeleton/> : <Products ProductsData={data.slice(0, 8)} />
+          isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 8)} />
         }
         <OurValues/>
     </div>

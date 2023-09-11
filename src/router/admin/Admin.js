@@ -9,6 +9,14 @@ import ManageProduct from "./manage-product/ManageProduct";
 function Admin() {
   const [showSidebar, setShowSidebar] = useState(false);
 
+  const handleLogOut = () => {
+    if (window.confirm("Tizimdan chiqib ketmoqchimisi")) {
+      localStorage.removeItem("hadya-token");
+      localStorage.removeItem("hadya-user");
+      window.location.assign("/");
+    }
+  };
+
   return (
     <div className={`admin ${showSidebar ? "show" : ""}`}>
       <div className="admin__sidebar">
@@ -17,25 +25,25 @@ function Admin() {
           <MdAdminPanelSettings className="admin__icon" />
         </div>
         <ul className="admin__collection">
-          <li className="admin__item">
+          <li onClick={()=> setShowSidebar(false)} className="admin__item">
+            <Link className="admin__link" to="/">
+              Asosiy sahifa
+            </Link>
+          </li>
+          <li onClick={()=> setShowSidebar(false)} className="admin__item">
             <Link className="admin__link" to="create-product">
               Mahsulotlarni Qoshish
             </Link>
           </li>
-          <li className="admin__item">
+          <li onClick={()=> setShowSidebar(false)} className="admin__item">
             <Link className="admin__link" to="manage-product">
               Mahsulotlarni boshqarish
             </Link>
           </li>
           <li className="admin__item">
-            <Link className="admin__link" to="/">
-              Buyurtmalarni boshqarish
-            </Link>
-          </li>
-          <li className="admin__item">
-            <Link className="admin__link" to="/">
-              Bosh Sahifaga qaytish
-            </Link>
+            <span onClick={handleLogOut} className="admin__link">
+              Chiqish
+            </span>
           </li>
         </ul>
       </div>

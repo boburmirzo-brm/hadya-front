@@ -43,6 +43,7 @@ function Cart() {
 			my_text += `Manzil: <b>${inp3}</b> %0A`
 			my_text += `Izoh: ${inp4} %0A%0A`
 			my_text += `Nomi : ${item.name} %0A`;
+			my_text += `Nomi : ${item.quantity} %0A`;
 			my_text += `Narxi : ${item.price} so'm %0A%0A`;
 			my_text += `${item.url[0]}%0A`;
 			let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}&parse_mode=html`;

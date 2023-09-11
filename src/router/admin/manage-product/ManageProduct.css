@@ -31,9 +31,16 @@
   top: 3px;
   right: 5px;
   padding: 5px 8px;
-  background: teal;
   color: #ffff;
   border-radius: 15px;
+}
+
+.manage__product__wrapper .image__wrapper .invalid {
+  background: crimson;
+}
+
+.manage__product__wrapper .image__wrapper .valid {
+  background: teal;
 }
 
 .manage__product__loader {
@@ -80,6 +87,24 @@
 .manage__product__loader .loader .circle:nth-child(4) {
   bottom: 0;
   right: 0;
+}
+
+.manage__product__wrapper .toggleValid {
+  padding: 6px 15px;
+  border-radius: 12px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.manage__product__wrapper .toggleValid.red{
+  background: crimson;
+}
+.manage__product__wrapper .toggleValid.blue{
+  background: var(--bg-py);
+}
+.manage__product__wrapper .toggleValid:disabled{
+  cursor: auto;
+  opacity: .6;
 }
 
 @keyframes spin988 {

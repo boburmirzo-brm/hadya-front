@@ -4,14 +4,14 @@ import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
-
 import about1 from "../../assets/about_1.jpg";
 import about2 from "../../assets/about_2.jpg";
 import about3 from "../../assets/about_3.jpg";
-
-import oshpaz1 from "../../assets/oshpaz_1.jpg";
-import oshpaz2 from "../../assets/oshpaz_2.jpg";
-import oshpaz3 from "../../assets/oshpaz_3.jpg";
+import about4 from "../../assets/about/bg2.jpg";
+import about5 from "../../assets/about/bg3.jpg";
+import about6 from "../../assets/about/bg4.jpg";
+import about7 from "../../assets/about/bg5.jpg";
+import about8 from "../../assets/about/bg6.jpg";
 
 function About() {
   useEffect(() => {
@@ -30,13 +30,6 @@ function About() {
       <div className="container about__our__approach">
         <h1>Bizning yondashuv</h1>
         <p></p>
-        <h2>
-          Bizning maftunkor lazzatlar dunyomizga xush kelibsiz. Bu tort
-          ishqibozlari va hayotning shirin daqiqalarini qadrlaydiganlar uchun
-          boshpana. Bizning tort nonvoyxonamizda shirinlik pishirish shunchaki
-          vazifa emas; Bu biz har bir o'lchov, har bir ingredient va har bir
-          muzqaymoq bilan ishtiyoq bilan yaratadigan san'at turi.
-        </h2>
         <h3>
           Baked goods have been around for thousands of years. The art of baking
           was developed early during the Roman Empire. It was a highly famous
@@ -48,12 +41,15 @@ function About() {
         </h3>
 
         <div className="approach__images">
-          <img src={about1} alt="" />
-          <img src={about2} alt="" />
+          <img src={about5} alt="" />
           <img src={about3} alt="" />
+          <img src={about4} alt="" />
+          <img src={about6} alt="" />
+          <img src={about7} alt="" />
+          <img src={about8} alt="" />
         </div>
       </div>
-
+{/* 
       <div
         style={{
           backgroundImage: `url("https://i.ibb.co/SN8HcTx/2.jpg")`,
@@ -66,7 +62,7 @@ function About() {
           Mehir va muhabbat bilan tayyorlangan shirinlikni har bir bo'lakda his
           qiling
         </h3>
-      </div>
+      </div> */}
 
       <div className="container about__our__mission">
         <div className="mission__text">
@@ -156,7 +152,7 @@ function About() {
 
     </div> */}
 
-      <div className="our__chefs">
+      {/* <div className="our__chefs">
         <div className="our__chefs__text">
           <h1>Bizning oshpazlar</h1>
           <p>
@@ -194,7 +190,7 @@ function About() {
             <p>Expert in Pizzas</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
