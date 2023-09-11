@@ -16,6 +16,7 @@ function Navbar() {
 	const { pathname } = useLocation();
 	const [show, setShow] = useState(false);
 	const cart = useSelector(s => s.cart.value);
+	const heart = useSelector(s => s.heart.value);
 
 	document.body.style.overflow = show ? "hidden" : "auto";
 
@@ -56,6 +57,7 @@ function Navbar() {
 							<AiOutlineUser />
 						</Link>
 						<Link to={"/wishlist"} className="nav__item">
+							<span>{heart.length}</span>
 							<AiOutlineHeart />
 						</Link>
 						<Link to={"/cart"} className="nav__item">
