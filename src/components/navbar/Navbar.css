@@ -53,6 +53,20 @@
     display: flex;
     gap: 8px;
     cursor: pointer;
+    position: relative;
+}
+.nav__index{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: crimson;
+    color: #fff;
+    padding: 1px;
+    border-radius: 50px;
+    font-size: 11px;
+    min-width: 14px;
+    display: grid;
+    place-items: center;
 }
 
 .nav__item svg {

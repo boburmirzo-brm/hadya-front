@@ -34,26 +34,33 @@
     text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-    .card__wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+@media screen and (max-width: 990px){
+    .card__wrapper{
+        flex-wrap: nowrap;
+        overflow: auto;
+        justify-content: flex-start;
+        padding: 20px 30px;
     }
-    .category__card{
-        width: auto;
+    .category__card {
+        width: 150px;
+        text-align: center;
     }
-    .category__card img{
+    .category__card img {
         width: 150px;
         height: 150px;
     }
-    .category__title{
-        font-size: 32px;
-    }
 }
 
-@media screen and (max-width: 350px) {
-    .category__card img{
+
+@media screen and (max-width: 500px){
+    .card__wrapper{
+        padding: 20px;
+    }
+    .category__card {
+        width: 120px;
+        text-align: center;
+    }
+    .category__card img {
         width: 120px;
         height: 120px;
     }

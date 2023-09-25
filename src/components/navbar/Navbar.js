@@ -9,16 +9,15 @@ import {Link, useLocation} from "react-router-dom"
 import "./Navbar.css"
 import logo from "../../assets/hadya-logo.png"
 import Sidebar from '../sidebar/Sidebar'
+import {useSelector} from "react-redux"
 
 function Navbar() {
     const {pathname} = useLocation()
     const [show, setShow] = useState(false  )
+    const carts = useSelector(s=> s.cart.value)
     document.body.style.overflow = show ? "hidden" : "auto"
 
-    if(pathname.includes("login")){
-        return <></>
-    }
-    if(pathname.includes("admin")){
+    if(pathname.includes("admin") || pathname.includes("login")){
         return <></>
     }
     return (
@@ -50,6 +49,7 @@ function Navbar() {
                 </Link>
                 <Link to={"/cart"} className="nav__item">
                     <AiOutlineShoppingCart />
+                    <span className='nav__index'>{carts.length}</span>
                 </Link>
             </ul>
         </div>

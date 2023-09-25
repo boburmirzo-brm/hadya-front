@@ -4,6 +4,7 @@ import { category } from "../../../static";
 import axios from "../../../api";
 import { HiOutlinePhoto } from "react-icons/hi2";
 import { toast } from "react-toastify";
+import { useCreateProductMutation } from "../../../context/productApi"
 
 const initialState = {
   name: "",
@@ -14,12 +15,13 @@ const initialState = {
 function CreateProduct() {
   const [product, setProduct] = useState(initialState);
   const [files, setFiles] = useState("");
+  const [createProduct, {isLoading} ] = useCreateProductMutation()
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
     let newProduct = new FormData();
     newProduct.append("name", product.name);
     newProduct.append("desc", product.desc);
@@ -28,19 +30,25 @@ function CreateProduct() {
     Array.from(files).forEach((i) => {
       newProduct.append("rasmlar", i, i.name);
     });
-    axios
-      .post("/create/product", newProduct)
-      .then((res) => {
-        console.log(res);
+    createProduct({path:"/create/product", body: newProduct})
+      .then(()=>  {
+        toast.success("Mahsulot qo'shildi!")
         setProduct(initialState);
         setFiles("");
-        toast.success("Mahsulot qo'shildi!");
       })
-      .catch((err) => {
-        console.log(err);
-        toast.error("Server error");
-      })
-      .finally(() => setLoading(false));
+    // axios
+    //   .post("/create/product", newProduct)
+    //   .then((res) => {
+    //     console.log(res);
+    //     // setProduct(initialState);
+    //     // setFiles("");
+    //     toast.success("Mahsulot qo'shildi!");
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     toast.error("Server error");
+    //   })
+    //   .finally(() => setLoading(false));
   };
   return (
     <div className="create__product">
@@ -56,7 +64,7 @@ function CreateProduct() {
             type="text"
             className="form-control"
             placeholder="Mahsulot nomi"
-            disabled={loading}
+            disabled={isLoading}
           />
         </div>
         <div>
@@ -69,7 +77,7 @@ function CreateProduct() {
             type="number"
             className="form-control"
             placeholder="Mahsulot narhi"
-            disabled={loading}
+            disabled={isLoading}
           />
         </div>
 
@@ -82,7 +90,7 @@ function CreateProduct() {
             type="text"
             className="form-control"
             placeholder="Mahsulot Tavsifi"
-            disabled={loading}
+            disabled={isLoading}
           />
         </div>
         <div>
@@ -94,7 +102,7 @@ function CreateProduct() {
             className="form-control"
             name=""
             id=""
-            disabled={loading}
+            disabled={isLoading}
           >
             <option value="" disabled>
               Tanlang
@@ -115,13 +123,13 @@ function CreateProduct() {
               multiple
               className="form-control"
               placeholder="Mahsulot rasmi"
-              disabled={loading}
+              disabled={isLoading}
             />
             <HiOutlinePhoto />
           </div>
         </div>
-        <button disabled={loading}>
-          {loading ? "Yuklanmoqda" : "Jo'natish"}
+        <button disabled={isLoading}>
+          {isLoading ? "Yuklanmoqda" : "Jo'natish"}
         </button>
       </form>
     </div>

@@ -4,7 +4,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // Define a service using a base URL and expected endpoints
 export const productApi = createApi({
   reducerPath: "productApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://cheerfulexemplaryfirewall--boburmirzo-brm.repl.co" }),
+  baseQuery: fetchBaseQuery({ 
+    // baseUrl: "https://cheerfulexemplaryfirewall--boburmirzo-brm.repl.co",
+    baseUrl: "http://localhost:8000",
+   }),
+  tagTypes: ["Product"],
   endpoints: (builder) => ({
     getProduct: builder.query({
       query: ([path, params]) => {
@@ -18,24 +22,18 @@ export const productApi = createApi({
           return path;
         }
       },
-      providesTags: (result) =>
-        result
-          ? result.length ? [
-              ...result.map(({ id }) => ({ type: "Posts", id })),
-              { type: "Posts", id: "LIST" },
-            ]: [{ type: "Posts", id: "LIST" }]
-          : [{ type: "Posts", id: "LIST" }],
+      providesTags: ["Product"],
     }),
     createProduct: builder.mutation({
       query(data) {
-        const { path, ...body } = data;
+        const { path, body } = data;
         return {
           url: path,
           method: "POST",
           body,
         };
       },
-      invalidatesTags: [{ type: "Posts", id: "LIST" }],
+      invalidatesTags: ["Product"],
     }),
     deleteProduct: builder.mutation({
       query(data) {
@@ -45,7 +43,18 @@ export const productApi = createApi({
           method: "DELETE",
         };
       },
-      invalidatesTags: (result, error, id) => [{ type: "Posts", id: "LIST" }],
+      invalidatesTags:["Product"],
+    }),
+    validProduct: builder.mutation({
+      query(data) {
+        const { path, _id, body } = data;
+        return {
+          url: `${path}/${_id}`,
+          method: "PATCH",
+          body
+        };
+      },
+      invalidatesTags:["Product"],
     }),
   }),
 });
@@ -56,4 +65,5 @@ export const {
   useGetProductQuery,
   useCreateProductMutation,
   useDeleteProductMutation,
+  useValidProductMutation
 } = productApi;

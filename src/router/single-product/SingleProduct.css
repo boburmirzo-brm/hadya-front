@@ -1,5 +1,3 @@
-
-
 .single__product {
   display: flex;
   justify-content: space-between;
@@ -24,6 +22,7 @@
   object-fit: cover;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  border-radius: 8px;
 }
 
 .additional__images img:hover {
@@ -34,6 +33,7 @@
   width: 100%;
   object-fit: cover;
   height: 450px;
+  border-radius: 16px;
 }
 
 .single__product__description {

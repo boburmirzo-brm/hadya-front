@@ -6,6 +6,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdAdminPanelSettings } from "react-icons/md";
 import ManageProduct from "./manage-product/ManageProduct";
+import {BsFillArrowLeftCircleFill} from "react-icons/bs"
+
 function Admin() {
   const [showSidebar, setShowSidebar] = useState(false);
 
@@ -20,16 +22,15 @@ function Admin() {
   return (
     <div className={`admin ${showSidebar ? "show" : ""}`}>
       <div className="admin__sidebar">
+        <Link style={{fontSize: 24}} to="/">
+          <BsFillArrowLeftCircleFill/>
+        </Link>
         <h2>Administrator boshqaruv paneli</h2>
         <div className="l">
           <MdAdminPanelSettings className="admin__icon" />
         </div>
         <ul className="admin__collection">
-          <li onClick={()=> setShowSidebar(false)} className="admin__item">
-            <Link className="admin__link" to="/">
-              Asosiy sahifa
-            </Link>
-          </li>
+         
           <li onClick={()=> setShowSidebar(false)} className="admin__item">
             <Link className="admin__link" to="create-product">
               Mahsulotlarni Qoshish
@@ -40,8 +41,8 @@ function Admin() {
               Mahsulotlarni boshqarish
             </Link>
           </li>
-          <li className="admin__item">
-            <span onClick={handleLogOut} className="admin__link">
+          <li style={{marginTop:100}} className="admin__item">
+            <span style={{background: "crimson", color:"#fff"}} onClick={handleLogOut} className="admin__link">
               Chiqish
             </span>
           </li>
