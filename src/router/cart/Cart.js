@@ -3,7 +3,7 @@ import "./Cart.css";
 import { FiTrash2 } from "react-icons/fi";
 import { GoTriangleUp, GoTriangleDown } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, decrementCart, removeFromCart, deleteAllCart } from "../../context/cart";
+import { addToCart, decrementCart, removeFromCart, deleteAllCart } from "../../context/cartSlice";
 import Empty from "../../components/empty/Empty";
 import {toast} from "react-toastify"
 

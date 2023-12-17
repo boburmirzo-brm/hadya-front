@@ -8,8 +8,8 @@ import {
 } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addToHeart, removeFromHeart } from "../../context/heart";
-import { addToCart } from "../../context/cart";
+import { addToHeart, removeFromHeart } from "../../context/heartSlice";
+import { addToCart } from "../../context/cartSlice";
 
 import { Link } from "react-router-dom";
 
@@ -32,7 +32,7 @@ function Products({ ProductsData }) {
           >
             <Link
               className="product-image"
-              to={`/product/${item.name.toLowerCase().split(" ").join("-")}`}
+              to={`/product/${item._id}`}
               state={item}
               style={{
                 background: `url(${

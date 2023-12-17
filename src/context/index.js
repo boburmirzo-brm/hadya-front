@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import heartSlice from "./heart";
-import cartSlice from './cart'
-import {productApi} from "./productApi"
+import heartSlice from "./heartSlice";
+import cartSlice from './cartSlice'
+import { api } from "./api";
 
 export const store = configureStore({
   reducer: {
     heart: heartSlice,
     cart: cartSlice,
-    [productApi.reducerPath]: productApi.reducer,
+    [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware().concat(productApi.middleware),
+  getDefaultMiddleware().concat(api.middleware),
 });

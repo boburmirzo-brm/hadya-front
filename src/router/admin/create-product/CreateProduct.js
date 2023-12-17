@@ -4,7 +4,7 @@ import { category } from "../../../static";
 import axios from "../../../api";
 import { HiOutlinePhoto } from "react-icons/hi2";
 import { toast } from "react-toastify";
-import { useCreateProductMutation } from "../../../context/productApi"
+import { useCreateProductMutation } from "../../../context/prApi"
 
 const initialState = {
   name: "",

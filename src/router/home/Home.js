@@ -5,12 +5,12 @@ import Category from "../../components/Category/Category";
 import OurValues from "../../components/OurValues/OurValues";
 import axios from "../../api"
 import Skeleton from "../../components/skeleton/Skeleton"
-import {useGetProductQuery} from "../../context/productApi"
+import {useGetProductsQuery} from "../../context/productsApi"
 
 function Home() {
   // const [data,setData] = useState([])
   // const [loading,setLoading] = useState(false)
-  const {data, isLoading} = useGetProductQuery(["/get/products",{ valid:true}])
+  const {data, isLoading} = useGetProductsQuery()
 
   // useEffect(()=>{
   //   setLoading(true)

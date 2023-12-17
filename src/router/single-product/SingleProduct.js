@@ -4,22 +4,25 @@ import { BsFillCartDashFill } from "react-icons/bs";
 import "./SingleProduct.css";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFillCartCheckFill } from "react-icons/bs";
-import { addToHeart, removeFromHeart } from "../../context/heart";
+import { addToHeart, removeFromHeart } from "../../context/heartSlice";
 import ZoomImage from "../../components/zoom-image/ZoomImage";
+import Notefaund from "../notefaund/Notefaund";
 
 const SingleProduct = () => {
   const { state } = useLocation();
   const [zoom, setZoom] = useState(null);
 
-  const [mainImage, setMainImage] = useState(state.url[0]);
+  const [mainImage, setMainImage] = useState(state?.url[0]);
   const dispatch = useDispatch();
   const heart = useSelector((s) => s.heart.value);
-
+  
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
 
-
+  if(!state){
+    return <Notefaund/>
+  }
 
   return (
     <div className="container">

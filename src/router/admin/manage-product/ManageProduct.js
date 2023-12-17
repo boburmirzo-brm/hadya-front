@@ -3,7 +3,7 @@ import axios from "../../../api";
 import { toast } from "react-toastify";
 import Skeleton from "../../../components/skeleton/Skeleton";
 import "./ManageProduct.css";
-import {useGetProductQuery, useDeleteProductMutation,useValidProductMutation} from "../../../context/productApi"
+import {useGetProductQuery, useDeleteProductMutation,useValidProductMutation} from "../../../context/prApi"
 
 const PAGE_COUNT = 8;
 
