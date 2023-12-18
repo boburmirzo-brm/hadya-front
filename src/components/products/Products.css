@@ -38,6 +38,8 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    color: #555;
+    font-weight: 500;
 }
 .product__cart{
     position: absolute;
