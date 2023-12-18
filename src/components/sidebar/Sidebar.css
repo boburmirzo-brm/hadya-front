@@ -71,6 +71,11 @@
     font-size: 13px;
     color: #555;
   }
+  .sidebar__link{
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+  }
   @media screen and (max-width: 600px) {
     .sidebar {
       width: 70%;

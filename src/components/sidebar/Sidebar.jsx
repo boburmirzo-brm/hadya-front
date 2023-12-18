@@ -3,6 +3,7 @@ import './Sidebar.css';
 import { Link } from 'react-router-dom';
 import Hadya from "../../assets/hadya-logo.png"
 import { category } from '../../static';
+import { FaInstagram, FaTelegram } from 'react-icons/fa';
 const icons = [
   { filial: "Filiallar" },
   { haqimizda: "Biz haqimizda " },
@@ -27,6 +28,15 @@ function Sidebar({ show, setShow }) {
                     </Link>
                   )
                 }
+                <b>Ijtimoiy tarmoqlarimiz</b>
+                <a target='_blank' className='sidebar__link' href="https://instagram.com/hadya2020.uz">
+                  <FaInstagram />
+                  <span>Instagram</span>
+                </a>
+                <a target='_blank' className='sidebar__link' href="https://t.me/hadya2020">
+                    <FaTelegram />
+                    <span>Telegram</span>
+                </a>
               </div>
         </div>
         <p className='sidebar__namtech'>© 2023 NamTech Solution Inc.</p>
