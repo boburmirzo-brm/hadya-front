@@ -32,7 +32,7 @@ function Navbar() {
                 <li>Biz Haqimizda</li>
               </Link>
               <Link to={"/branches"}>
-              <li>Filyallarimiz</li>
+              <li>Filiallarimiz</li>
               </Link>
             </ul>
             </div>

@@ -1,57 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Banner.css';
-import SwiperCore, { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { Link } from 'react-router-dom';
+import { Autoplay } from 'swiper/modules';
+import img1 from "../../assets/banner006.jpg" 
+import img2 from "../../assets/banner008.jpg" 
+import img3 from "../../assets/banner007.jpg" 
+import img4 from "../../assets/banner005.jpg" 
 
 function Banner() {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
-
   return (
-    <div className={`slider__container ${animate ? 'animate' : ''}`}>
+    <div className={`slider__container `}>
       <Swiper
         loop={true}
-        pagination={{
-          clickable: true,
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
         }}
-        className="mySwiper"
+        modules={[Autoplay]}
+        className="banner__swiper"
       >
-        <SwiperSlide>
-          <div className="banner__one">
-            <div className="banner_text container">
-              <p>Style Destination</p>
-              <h1>Mazzali tortlar</h1>
-              <span>
-                Bizda mazzali tortlar, piroglar, shirinliklar, va pecheniyalrar
-                bor <br /> hamyonbob rarxda
-              </span>
-              <br />
-              <Link to={"/about"}>
-                <button className="banner__btn">Biz haqimizda</button>
-              </Link>
-            </div>
-          </div>
+        <SwiperSlide className="banner__item">
+            <img src={img1} alt="" />
+       
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner__two">
-            <div className="banner_text container">
-              <p>Style Destination</p>
-              <h1>Tortlar Toplami</h1>
-              <span>
-                Bizda mazzali tortlar, piroglar, shirinliklar, va pecheniyalrar
-                bor <br /> hamyonbob rarxda
-              </span>
-              <br />
+        <SwiperSlide className="banner__item">
+            <img src={img2} alt="" />
+            {/* <div className="banner_text container">
+              <h1>Tortlar</h1>
               <Link to={"/about"}>
                 <button className="banner__btn">Biz haqimizda</button>
               </Link>
-            </div>
-          </div>
+            </div> */}
+        </SwiperSlide>
+        <SwiperSlide className="banner__item">
+          <img src={img3} alt="" />
+            {/* <div className="banner_text container">
+              <h1>Tortlar Toplami</h1>
+              <Link to={"/about"}>
+                <button className="banner__btn">Biz haqimizda</button>
+              </Link>
+            </div> */}
+        </SwiperSlide>
+        <SwiperSlide className="banner__item">
+          <img src={img4} alt="" />
+
+            {/* <div className="banner_text container">
+              <h1>Cheese Cake</h1>
+              <Link to={"/about"}>
+                <button className="banner__btn">Biz haqimizda</button>
+              </Link>
+            </div> */}
         </SwiperSlide>
       </Swiper>
     </div>

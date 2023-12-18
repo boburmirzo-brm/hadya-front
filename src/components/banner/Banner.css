@@ -1,214 +1,97 @@
-.slider__container .mySwiper{
-    height: 650px;
+.banner__swiper{
+    height: 600px;
     margin-bottom: 30px;
 }
-.slider__container .mySwiper img{
+.banner__item{
+    width: 100%;
+    height: 100%;
+}
+.banner__item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-} 
-/* BANNER FIRST */
-.banner__one{
-    background: url(../../assets//banner_img_one.webp);
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    object-fit: cover;
-    background-repeat: no-repeat;
 }
-.banner__one .banner_text{
-    padding: 200px 0; 
-    cursor: pointer;  
+.banner_text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.banner__one .banner_text p{
-    font-weight: 100;
-    font-size: 20px;
-    letter-spacing: 5px;
+.banner_text h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+    opacity: .6;
 }
-.banner__one .banner_text h1{
-    margin-top: 20px;
-    font-weight: 800;
-    font-size: 75px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.banner__one .banner_text span{
-    font-size: 20px;
-    font-weight: 100;
-    margin-top: 40px;
-}
-.banner__one .banner_text .banner__btn{
-    padding: 15px 30px;
+.banner__btn{
+    width: 150px;
+    height: 40px;
     background: transparent;
-    border: 2px solid #000;
-    margin-top: 30px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: .3s ease-in-out;
+    border:1px solid  var(--bg-py);
+    color: var(--bg-py);
+    border-radius: 6px;
+    font-size: 16px;
 }
-.banner__one .banner_text .banner__btn:hover{
-    background: #000;
-    transition: .3s ease-in-out;
-    color: #fff;
+/* .banner__item:nth-child(1){
+    background: url("../../assets/banner006.jpg") no-repeat center/cover;
+} */
+.banner__item:nth-child(2){
+    background: url("../../assets/banner_img_one.webp") no-repeat center/cover;
 }
-@media screen and (max-width:657px){
-   .banner__one .banner_text h1{
-    font-size: 50px;
-   }
-   .banner__one .banner_text span{
-    font-size: 18px;
-    margin-top: 20px;
-   }
+.banner__item:nth-child(3){
+    background: url("../../assets/banner_img_two.webp") no-repeat center/cover;
 }
-@media screen and (max-width:510px){
-    .banner__one .banner_text h1{
-        font-size: 35px;
-       }
-       .banner__one .banner_text span{
-        font-size: 15px;
-        margin-top: 20px;
-       }
-       .slider__container .mySwiper{
-        height: 450px;
-    }
-    .banner__one .banner_text {
-        padding: 100px 50px; 
-    }
-}
-@media screen and (max-width:350px){
-    .banner__one .banner_text{
-        padding: 50px 10px;
-    }
-    .banner__one .banner_text .banner__btn{
-        padding: 10px 20px;
-    }
-    .banner__one{
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        object-fit: cover;
-    }
+.banner__item:nth-child(4){
+    background: url("../../assets/banner005.jpg") no-repeat center/cover;
 }
 
 
-/* BANNER TWO */
-.banner__two{
-    background: url(../../assets//banner_img_two.webp);
-    height: 100vh;
-    background-position: center;
-    object-fit: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.banner__two .banner_text{
-    padding: 200px 0; 
-    cursor: pointer;  
-}
-.banner__two .banner_text p{
-    font-weight: 100;
-    font-size: 20px;
-    letter-spacing: 5px;
-}
-.banner__two .banner_text h1{
-    margin-top: 20px;
-    font-weight: 800;
-    font-size: 75px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.banner__two .banner_text span{
-    font-size: 20px;
-    font-weight: 100;
-    margin-top: 40px;
-}
-.banner__two .banner_text .banner__btn{
-    padding: 15px 30px;
-    background: transparent;
-    border: 2px solid #000;
-    margin-top: 30px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: .3s ease-in-out;
-}
-.banner__two .banner_text .banner__btn:hover{
-    background: #000;
-    transition: .3s ease-in-out;
-    color: #fff;
-}
-@media screen and (max-width:657px){
-   .banner__two .banner_text h1{
-    font-size: 50px;
-   }
-   .banner__two .banner_text span{
-    font-size: 18px;
-    margin-top: 20px;
-   }
-}
-@media screen and (max-width:510px){
-    .banner__two .banner_text h1{
-        font-size: 35px;
-       }
-       .banner__two .banner_text span{
-        font-size: 15px;
-        margin-top: 20px;
-       }
-       .slider__container .mySwiper{
-        height: 450px;
-    }
-    .banner__two .banner_text {
-        padding: 100px 50px; 
+
+
+@media screen and (max-width: 1400px) {
+    .banner__swiper{
+        height: 500px;
     }
 }
-@media screen and (max-width:350px){
-    .banner__two .banner_text{
-        padding: 50px 10px;
-    }
-    .banner__two .banner_text .banner__btn{
-        padding: 10px 20px;
-    }
-    .banner__two{
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        object-fit: cover;
+@media screen and (max-width: 990px) {
+    .banner__swiper{
+        height: 400px;
     }
 }
-
-
-/* ANIMATION code
-.slider__container.animate .banner__one .banner_text,
-.slider__container.animate .banner__two .banner_text {
-  animation: slide-in 1s ease-in-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  transform: translateX(-100%);
+@media screen and (max-width: 750px) {
+    .banner__swiper{
+        height: 350px;
+    }
+    .banner_text h1{
+        font-size: 50px;
+    }
+    .banner__btn{
+        width: auto;
+        height: auto;
+        padding: 6px 20px;
+        font-size: 14px;
+    }
 }
-
-.slider__container.animate .banner__one .banner_text,
-.slider__container.animate .banner__two .banner_text {
-  animation: slide-in 1s ease-in-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  transform: translateY(-100%);
+@media screen and (max-width: 650px) {
+    .banner__swiper{
+        height: 300px;
+    }
+    .banner_text h1{
+        font-size: 45px;
+    }
 }
-
-.slider__container.animate .banner__one .banner__img,
-.slider__container.animate .banner__two .banner__img {
-  animation: slide-in-img 1s ease-in-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  transform: translateX(-100%);
+@media screen and (max-width: 500px) {
+    .banner__swiper{
+        height: 240px;
+    }
+    .banner_text h1{
+        font-size: 38px;
+    }
 }
-
-@keyframes slide-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@media screen and (max-width: 450px) {
+    .banner__swiper{
+        height: 200px;
+    }
+    .banner_text h1{
+        font-size: 32px;
+    }
 }
-
-@keyframes slide-in-img {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
- */

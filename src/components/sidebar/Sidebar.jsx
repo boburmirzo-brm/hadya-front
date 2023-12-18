@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 import Hadya from "../../assets/hadya-logo.png"
 import { category } from '../../static';
 import { FaInstagram, FaTelegram } from 'react-icons/fa';
-const icons = [
-  { filial: "Filiallar" },
-  { haqimizda: "Biz haqimizda " },
-];
+
 
 function Sidebar({ show, setShow }) {
   return (
@@ -19,8 +16,8 @@ function Sidebar({ show, setShow }) {
             <div className="sidebar__item" > 
               <Link onClick={() => setShow(false)} to={"/about"}>Biz haqimizda</Link> 
               <Link onClick={() => setShow(false)} to={"/branches"}>Filiallar</Link> 
-              <hr  className='hr'/>
               <b>Kategoriya</b>
+              <hr  className='hr'/>
                 {
                   category?.map((item) =>
                     <Link onClick={() => setShow(false)} to={`/products/${item.link}`} key={item.id}>
@@ -28,8 +25,8 @@ function Sidebar({ show, setShow }) {
                     </Link>
                   )
                 }
-                <hr className='hr'/>
                 <b>Ijtimoiy tarmoqlarimiz</b>
+                <hr className='hr'/>
                 <a target='_blank' className='sidebar__link' href="https://instagram.com/hadya2020.uz">
                   <FaInstagram />
                   <span>Instagram</span>
