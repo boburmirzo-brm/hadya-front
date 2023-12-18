@@ -1,74 +1,94 @@
 import React, { useEffect, useState } from "react";
-import { useLocation,Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { BsFillCartDashFill } from "react-icons/bs";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "./SingleProduct.css";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { addToHeart, removeFromHeart } from "../../context/heartSlice";
-import ZoomImage from "../../components/zoom-image/ZoomImage";
+import { addToCart, removeFromCart } from "../../context/cartSlice";
 import Notefaund from "../notefaund/Notefaund";
 
 const SingleProduct = () => {
   const { state } = useLocation();
-  const [zoom, setZoom] = useState(null);
 
   const [mainImage, setMainImage] = useState(state?.url[0]);
   const dispatch = useDispatch();
   const heart = useSelector((s) => s.heart.value);
-  
+  const cart = useSelector((s) => s.cart.value);
+  const myCart = cart.find((i) => i.id === cart.id);
+
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
 
-  if(!state){
-    return <Notefaund/>
+  if (!state) {
+    return <Notefaund />;
   }
 
   return (
     <div className="container">
       <div className="single__product">
         <div className="single__product__images">
-          <img onClick={()=> setZoom(state?.url)} className="main__image" src={mainImage} alt="" />
+          <img className="main__image" src={mainImage} alt="" />
           <br />
           <div className="additional__images">
             {state?.url.map((item) => (
-              <img
-                key={item}
-                src={item}
-                alt=""
-                onClick={() => setMainImage(item)}
-              />
+              <img key={item} src={item} onClick={() => setMainImage(item)} />
             ))}
           </div>
         </div>
         <div className="single__product__description">
-          <div className="single__price">
-            <h1>{state?.name}</h1>
-            <h2>{state?.price?.brm()} so'm</h2>
-            <p>{state?.desc}</p>
+          <div className="single__product__description_top">
+            <div className="title">
+              <h1>{state?.name}</h1>
+              {heart.some((i) => i.name === state.name) ? (
+                <button
+                  onClick={() =>
+                    dispatch(removeFromHeart({ name: state.name }))
+                  }
+                >
+                  <AiFillHeart className="single__icon" />
+                  <span>Istaklarda</span>
+                </button>
+              ) : (
+                <button onClick={() => dispatch(addToHeart(state))}>
+                  <AiOutlineHeart className="single__icon" />
+                  <span>Istaklarga</span>
+                </button>
+              )}
+            </div>
+            <div className="price">
+              <p>Narxi:</p>
+              <p className="sinlge__price">{state?.price?.brm()} so'm</p>
+            </div>
+            <div className="description">
+              <p>{state?.desc}</p>
+            </div>
           </div>
-          
+            <ul className="single__ul">
+              <li>Mazzali  tort</li>
+              <li>Mazzali  tort</li>
+              <li>Mazzali  tort</li>
+              <li>Mazzali  tort</li>
+              <li>Mazzali  tort</li>
+              <li>Mazzali  tort</li>
+            </ul>
           <div className="single__buttons">
-            {heart.some((i) => i.name === state.name) ? (
-              <button
-                onClick={() => dispatch(removeFromHeart({ name: state.name }))}
-              >
-                <BsFillCartCheckFill className="single__icon" /> &nbsp;
-                Saralangandan olish
+            {/* {myCart ? (
+              <button onClick={() => dispatch(removeFromCart(state))}>
+                <BsFillCartCheckFill className="single__icon" />
+                Savatdan olish
               </button>
-            ) : (
-              <button onClick={() => dispatch(addToHeart(state))}>
-                <BsFillCartDashFill className="single__icon" />&nbsp;
-                Saralanganlarga qo'shish
+            ) : ( */}
+              <button onClick={() => dispatch(addToCart(state))}>
+                <BsFillCartDashFill className="single__icon" />
+                Savatga qoshish
               </button>
-            )}
-            <Link to={"/"}>
-            <button className="single__to__home">Bosh Sahifaga qaytish</button>
-            </Link>
+            {/* )} */}
           </div>
         </div>
       </div>
-      {zoom && <ZoomImage urls={zoom} setZoom={setZoom} />}
     </div>
   );
 };

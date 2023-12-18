@@ -31,22 +31,22 @@ function Footer() {
             </ul>
 
             <div className="icon">
-              <a href="https://instagram.com/hadya2020.uz">
+              <a href="https://instagram.com/hadya2020.uz" target="_blank">
                 <button>
                   <FaInstagram />
                 </button>
               </a>
-              <a href="https://t.me/hadya2020">
+              <a href="https://t.me/hadya2020" target="_blank">
                 <button>
                   <FaTelegram />
                 </button>
               </a>
-              <a href="#">
+              <a href="#" target="_blank">
                 <button>
                   <FaFacebook />
                 </button>
               </a>
-              <a href="#">
+              <a href="#" target="_blank">
                 <button>
                   <FaYoutube />
                 </button>
