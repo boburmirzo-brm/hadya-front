@@ -18,6 +18,9 @@ const SingleProduct = () => {
   const cart = useSelector((s) => s.cart.value);
   const myCart = cart.find((i) => i.id === cart.id);
 
+  const addCart = () => {
+    <ToastContainer></ToastContainer>
+  }
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -48,7 +51,7 @@ const SingleProduct = () => {
                     dispatch(removeFromHeart({ name: state.name }))
                   }
                 >
-                  <AiFillHeart className="single__icon" />
+                  <AiFillHeart className="single__icon"  style={{color: 'red'}} />
                   <span>Istaklarda</span>
                 </button>
               ) : (
