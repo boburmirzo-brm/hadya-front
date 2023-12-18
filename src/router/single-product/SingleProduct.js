@@ -19,7 +19,6 @@ const SingleProduct = () => {
   const myCart = cart.find((i) => i.id === cart.id);
 
   const addCart = () => {
-    <ToastContainer></ToastContainer>
   }
   useEffect(() => {
     window.scroll(0, 0);

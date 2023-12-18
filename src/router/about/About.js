@@ -32,16 +32,12 @@ function About() {
             </p>
           </div>
         </div>
+        <div className="about__blog__bottom">
         <div className="about__blog_first">
           <div className="about__blog_first_left">
             <h1>Bizning Maxsulotlarimiz xaqida</h1>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab
-              itaque at cum eveniet est natus sequi deserunt molestiae quos
-              minima officiis dicta, repudiandae velit soluta animi perferendis
-              a architecto dolorum. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Iure velit praesentium sapiente ratione alias
-              consequatur cum, labore expedita pariatur tempore.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, totam.
             </p>
           </div>
           <div className="about__blog_first_right">
@@ -55,13 +51,7 @@ function About() {
           <div className="about__blog_second_right">
             <h1>Mana Bizning tazribali povorlarimiz xaqida</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              autem nam doloribus fugiat tenetur, impedit fuga nobis
-              necessitatibus iure debitis ullam rerum atque consequuntur a esse
-              odio quae asperiores laboriosam excepturi, sapiente repudiandae
-              perferendis! Nobis perferendis velit deserunt iure numquam
-              similique, accusamus beatae error quibusdam ad ducimus. Et, rerum
-              natus?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, earum.
             </p>
           </div>
         </div>
@@ -69,18 +59,14 @@ function About() {
           <div className="about__blog_third_left">
             <h1>Biz judayam kop joylarda xizmat korstakanmiz</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque,
-              consequuntur aut? Officiis delectus nisi perferendis similique
-              dolores, accusantium omnis laboriosam, dignissimos assumenda, sunt
-              amet eum sit quas unde quos ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, ut?
-            </p>
+             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, eum? Lorem ipsum dolor sit amet.</p>
           </div>
           <div className="about__blog_third_right">
-            <img src={about8} />
             <img src={about6} />
+            <img src={about8} />
           </div>
         </div>
-        <div className="about__blog_top"></div>
+        </div>
       </div>
     </div>
   );
