@@ -44,17 +44,71 @@
 .single__desc {
   margin-bottom: 20px;
 }
-.single__price h2{
-  margin-top: 20px;
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.single__price p{
+.title button {
+  border: none;
+  background-color: transparent;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.title button svg {
+  font-size: 22px;
+}
+.single__product__description_top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.single__product__description_top h1 {
+  font-size: 26px;
+  text-transform: capitalize;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price h3 {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.single__product__description_top  .sinlge__price{
   font-size: 18px;
-  margin: 20px 0;
+  font-weight: 700;
+  color: #000;
+}
+.small__text {
+  font-size: 16px;
+}
+.single__product__description_top p{
+  font-size: 18px;
+  /* margin: 20px 0; */
   color: #666;
 }
+/* .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+.description p{
+  padding: 0 0 0 20px;
+} */
 .single__buttons {
   display: flex;
   flex-direction: column;
+  padding: 20px 0 0;
 }
 
 .single__buttons button {
@@ -65,11 +119,26 @@
   color: #fff;
   border: none;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   transition: background-color 0.3s ease;
-}
 
+}
+.single__ul {
+  padding: 20px 0;
+}
+.single__ul li {
+  font-size: 18px;
+}
 .single__buttons button:hover {
   background-color: #094b3f;
+}
+@media screen and (max-width:990px) {
+  .title span {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .single__product {
