@@ -8,12 +8,11 @@ function Category() {
     <div className='Category container'>
       <h2 className='category__title'>Kategoriyalar</h2>
       <div className="card__wrapper">
-
         {
           category?.map((item) =>
             <Link to={`/products/${item.link}`} key={item.id} className="category__card">
               <img src={item.url} alt="" />
-              <h4>{item.title}</h4>
+              <p>{item.title}</p>
             </Link>
           )
         }

@@ -29,7 +29,8 @@ function Products({ ProductsData }) {
             className="product"
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
-          >
+          > 
+          <div style={{position:"relative"}}>
             <Link
               className="product-image"
               to={`/product/${item._id}`}
@@ -43,40 +44,42 @@ function Products({ ProductsData }) {
                     : item.url[0]
                 }) no-repeat center/cover`,
               }}
-            ></Link>
-            {/* <img
-              src={}
-              // alt={item.name}
-              className="product-image"
-            /> */}
-            <Link
-              to={`/product/${item.name.toLowerCase().split(" ").join("-")}`}
-              state={item}
+              
             >
-              <h5>{item.name}</h5>
-              <h4>{item.price?.brm()} so'm</h4>
             </Link>
-            <div className="action__wrapper">
-              <div className="actions">
-                <div
+                 <div
                   onClick={() => dispatch(addToCart(item))}
                   className="product__cart"
                 >
                   <AiOutlineShoppingCart />
                 </div>
-
+          </div>
+            {/* <img
+              src={}
+              // alt={item.name}
+              className="product-image"
+            /> */}
+            <div style={{flex:1}}>
+              <h5>{item.name}</h5>
+              <h4>{item.price?.brm()} so'm</h4>
+            </div>
+            <div className="action__wrapper">
+              <div className="actions">
+                
                 {heart.some((i) => i._id === item._id) ? (
                   <button
                     onClick={() => dispatch(removeFromHeart(item))}
                     className="product__heart"
                   >
-                    <AiFillHeart style={{ color: "#000" }} />
+                    <span>Sevimli</span>
+                    <AiFillHeart style={{ color: "crimson" }} />
                   </button>
                 ) : (
                   <button
                     onClick={() => dispatch(addToHeart(item))}
                     className="product__heart"
                   >
+                    <span>Qo'shish</span>
                     <AiOutlineHeart />
                   </button>
                 )}

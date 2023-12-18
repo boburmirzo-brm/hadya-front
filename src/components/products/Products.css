@@ -6,16 +6,17 @@
     margin-bottom: 5vh;
     gap: 16px;
 }
-
-.products .product {
+.product {
     cursor: pointer;
     width: 300px;
     height: auto;
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: flex-start;
 }
-
-
 .product-image{
     width: 100%;
     height: 260px;
@@ -23,90 +24,70 @@
     transition: .5s;
     border-radius: 16px;
     display: block;
+    position: relative;
 }
-.products .product h5 {
-    padding: 10px 0;
-    font-size: 20px;
+.product h5 {
+    margin: 15px 0 10px ;
+    font-size: 16px;
     transition: 0.2s ease;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.product__cart{
+    position: absolute;
+    bottom: -20px;
+    right: -15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bg-py);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 24px;
 }
 
-.products .product h5:hover {
+.product h4 {
+  font-size: 18px;
   color: var(--bg-py);
 }
 
-.products .product h4 {
-  color: var(--bg-py);
-}
-
-.products .product h4 {
+.product h4 {
     color: var(--bg-py);
 }
 
-.products .actions {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    gap: 30px;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-.products .actions svg {
-    font-size: 22px;
-}
-
-.products .actions .product__cart,
-.products .actions .product__heart {
-  width: 40px;
+.product__heart {
+  width: 100%;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   background: #fff;
-  border-radius: 50%;
+  border: 1px solid var(--bg-py);
+  color: var(--bg-py);
+  border-radius: 6px;
   transition: ease 0.4s;
+  font-size: 16px;
 }
-
-.product .heart {
-  border: none;
+.product__heart svg{
+    font-size: 18px;
 }
-
-.product__heart {
-  border: none;
-}
-
-.products .actions .product__cart:hover,
-.products .actions .product__heart:hover {
+.product__heart:hover {
   background: var(--bg-py);
   color: #fff;
   cursor: pointer;
 }
-.products .actions .cart,
-.products .actions .heart {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 50%;
-    transition: ease 0.4s;
-}
 
-.products .actions .cart:hover,
-.products .actions .heart:hover,
-.products .actions .search:hover {
-    background: saddlebrown;
-    color: #fff;
-}
+
 
 @media screen and (max-width: 768px) {
     .products {
         justify-content: center;
     }
 }
-
-
 /*---------------- PRODUCT WITH CATEGORY ------------ */
 
 .product-second {
@@ -153,19 +134,27 @@
     transition: .5s;
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 660px) {
     .product-second {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    .product-second .product-card {
-        width: auto;
+    .product{
+        width: calc(50% - 10px);
     }
-    .product-second .product-card img {
-        height: 130px;
+    .product__cart{
+        position: absolute;
+        bottom: -15px;
+        right: -10;
+        width: 50px;
+        height: 50px;
     }
-    .products .product{
-        width: 100%;
+}
+
+@media screen and (max-width: 450px){
+    .product{
+        height: 340px;
+    }
+    .product-image{
+        height: 200px;
     }
 }

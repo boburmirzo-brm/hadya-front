@@ -10,8 +10,7 @@ import {useGetProductsQuery} from "../../context/productsApi"
 function Home() {
   // const [data,setData] = useState([])
   // const [loading,setLoading] = useState(false)
-  const {data, isLoading} = useGetProductsQuery()
-
+  const {data, isLoading} = useGetProductsQuery({ valid: true })
   // useEffect(()=>{
   //   setLoading(true)
   //   axios.get("/get/products" , {
@@ -26,6 +25,8 @@ function Home() {
     <div>
         <Banner />
         <Category />
+        <h2 className="container">Eng so'ngi qo'shilganlar</h2>
+        <br />
         {
           isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 8)} />
         }

@@ -4,20 +4,33 @@ import { category } from "../../../static";
 import axios from "../../../api";
 import { HiOutlinePhoto } from "react-icons/hi2";
 import { toast } from "react-toastify";
-import { useCreateProductMutation } from "../../../context/prApi"
+import { useCreateProductMutation } from "../../../context/productsApi"
+import defaultImage from "../../../assets/default.png"
+import { FiMinusCircle } from "react-icons/fi";
 
 const initialState = {
   name: "",
   category: "",
   desc: "",
   price: "",
+  items: "",
 };
 function CreateProduct() {
   const [product, setProduct] = useState(initialState);
-  const [files, setFiles] = useState("");
+  const [files, setFiles] = useState([]);
   const [createProduct, {isLoading} ] = useCreateProductMutation()
 
   // const [loading, setLoading] = useState(false);
+
+  const handleRemoveImage = (inx)=>{
+    let newImages = []
+    files.forEach((el, i)=> {
+      if(inx !== i){
+        newImages.push(el)
+      } 
+    })
+    setFiles(newImages)
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,17 +38,22 @@ function CreateProduct() {
     let newProduct = new FormData();
     newProduct.append("name", product.name);
     newProduct.append("desc", product.desc);
-    newProduct.append("price", product.price);
+    newProduct.append("price", +product.price);
     newProduct.append("category", product.category);
-    Array.from(files).forEach((i) => {
-      newProduct.append("rasmlar", i, i.name);
+    product.items.split("\n").map(i=> i.trim()).filter(i=>i).forEach(el=>{
+      newProduct.append("items", el);
+    })
+    files.forEach((i) => {
+      newProduct.append("rasmlar", i[0], i[0].name);
     });
-    createProduct({path:"/create/product", body: newProduct})
-      .then(()=>  {
+    createProduct(newProduct)
+      .then((res)=>  {
+        console.log(res);
         toast.success("Mahsulot qo'shildi!")
         setProduct(initialState);
         setFiles("");
       })
+      .catch(err => console.log(err))
     // axios
     //   .post("/create/product", newProduct)
     //   .then((res) => {
@@ -63,7 +81,7 @@ function CreateProduct() {
             required
             type="text"
             className="form-control"
-            placeholder="Mahsulot nomi"
+            placeholder="Nomi"
             disabled={isLoading}
           />
         </div>
@@ -71,12 +89,12 @@ function CreateProduct() {
           <input
             value={product.price}
             onChange={(e) =>
-              setProduct((p) => ({ ...p, price: +e.target.value }))
+              setProduct((p) => ({ ...p, price: e.target.value }))
             }
             required
             type="number"
             className="form-control"
-            placeholder="Mahsulot narhi"
+            placeholder="Narxi"
             disabled={isLoading}
           />
         </div>
@@ -89,9 +107,20 @@ function CreateProduct() {
             }
             type="text"
             className="form-control"
-            placeholder="Mahsulot Tavsifi"
+            placeholder="Tavsifi"
             disabled={isLoading}
           />
+        </div>
+        <div>
+          <textarea 
+            className="form-control"
+            placeholder="Batafsil"
+            value={product.items}
+            onChange={(e) =>
+              setProduct((p) => ({ ...p, items: e.target.value }))
+            }
+            disabled={isLoading}
+            name="" id="" cols="30" rows="10"></textarea>
         </div>
         <div>
           <select
@@ -115,17 +144,46 @@ function CreateProduct() {
                 </option>
               ))}
           </select>
-          <div className="create__product-image">
-            <input
-              onChange={(e) => setFiles(e.target.files)}
-              required
-              type="file"
-              multiple
-              className="form-control"
-              placeholder="Mahsulot rasmi"
-              disabled={isLoading}
-            />
-            <HiOutlinePhoto />
+          
+          <div className="create__product-image-wrapper">
+            {
+              new Array(3).fill("").map((_, inx)=><div 
+              key={inx}
+              style={{
+                background: `url(${ files.length > inx ? URL.createObjectURL(files[inx][0]) : defaultImage }) no-repeat center/cover`,
+                opacity: files.length < inx ? .4 : 1
+              }}
+              className="create__product-image">
+              {
+                files.length <= inx ? 
+                <input
+                  onChange={(e) => setFiles(p=>[...p, e.target.files])}
+                  accept="image/png, image/jpeg, image/jpg, image/heic, image/webp"
+                  type="file"
+                  className="form-control"
+                  placeholder="Mahsulot rasmi"
+                  disabled={isLoading || files.length < inx}
+                /> : <div onClick={()=> handleRemoveImage(inx)}>
+                    <FiMinusCircle />
+                </div> 
+              }
+            </div>)
+            }
+          
+            {/* <div 
+              style={{background: `url(${defaultImage}) no-repeat center/cover`}}
+              className="create__product-image">
+              <input
+                onChange={(e) => console.log(e.target.files)}
+                required
+                accept="image/png, image/jpeg, image/jpg, image/heic"
+                type="file"
+                multiple
+                className="form-control"
+                placeholder="Mahsulot rasmi"
+                disabled={isLoading }
+              />
+            </div> */}
           </div>
         </div>
         <button disabled={isLoading}>

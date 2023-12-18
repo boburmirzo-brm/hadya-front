@@ -1,20 +1,14 @@
 .create__product {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  min-height: 100vh;
 }
 .create__product h3{
   font-weight: 100;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 20px;
-  text-align: center;
-  color: var(--bg-py);
   margin-bottom: 20px;
 }
-
 .form-control {
   padding: 10px;
   width: 350px;
@@ -22,11 +16,15 @@
   border: 1px solid#ccc;
   border-radius: 5px;
 }
-.form-control:focus{
+.form-control:focus,
+.create__product textarea:focus{
   outline: 2px solid var(--bg-py);
 }
+.create__product textarea{
+    resize: vertical;
+}
 .create__product button {
-  width: 100%;
+  width: 120px;
   padding: 10px;
   background-color: var(--bg-py);
   color: white;
@@ -38,10 +36,14 @@
   cursor: auto;
   opacity: .6;
 }
+.create__product-image-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .create__product-image{
-  width: 120px;
-  height: 120px;
-  border: 1px solid red;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
   border-radius: 6px;
   position: relative;
@@ -50,7 +52,8 @@
   font-size: 36px;
   border: 1px solid #ddd;
 }
-.create__product-image input{
+.create__product-image input,
+.create__product-image div{
   width: 100%;
   height: 100%;
   position: absolute;
@@ -59,28 +62,15 @@
   opacity: 0;
   cursor: pointer;
 }
+.create__product-image div{
+  opacity: 1;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
 @media screen and (max-width: 450px){
   .form-control{
-    width: 300px;
-  }
-  .create__product h3{
-    text-align: center;
-    font-size: 15px;
-  }
-  form{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-}
-@media screen and (max-width: 350px){
-  .create__product h3{
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  form{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 100%;
   }
 }

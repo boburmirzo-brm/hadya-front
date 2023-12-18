@@ -59,24 +59,17 @@
   
   .admin__menu {
     display: none;
-    color: var(--bg-py);
-    cursor: pointer;
-    right: 40px; 
-    outline: none;
+ 
   }
-  .icon__admin{
-    font-size: 40px;
-    right: 40px; 
-  }
+  
   @media screen and (max-width: 800px) {
     .admin__sidebar {
       position: fixed;
       top: 0;
-      left: -80%;
+      left: -100%;
       z-index: 99;
       transition: 0.3s ease;
-      width: 70%;
-      height: 100vh;
+      width: 100%;
       background: var(--bg-py);
       flex-direction: column;
       padding: 20px;
@@ -88,19 +81,21 @@
     }
   
     .admin__menu {
-      display: block;
+      cursor: pointer;
+      outline: none;
+      border: 1px solid #fff;
+      font-size: 36px;
+      display: flex;
       position: fixed;
       bottom: 20px;
       right: 20px;
       background: var(--bg-py);
       color: #fff;
       border-radius: 6px;
+      z-index: 100;
     }
   }
   @media screen and (max-width: 500px){
-    .admin__sidebar{
-        width: 80%;
-    }
     .admin__link{
         padding:10px 4px;
     }

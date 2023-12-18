@@ -86,11 +86,11 @@ function Cart() {
 									</div>
 								</td>
 								<td className="cart__table-price">
-									<span>Price:</span>
+									<span>Narxi:</span>
 									<span>{item.price?.brm()} so'm</span>
 								</td>
 								<td className="cart__table-quantity">
-									<span>Quantity</span>
+									<span>Miqdori</span>
 									<div className="cart__table-quantity-wrapper">
 										<div className="cart__table-quantity-actions">
 											<p>{item.quantity}</p>
@@ -106,7 +106,7 @@ function Cart() {
 									</div>
 								</td>
 								<td className="cart__table-total">
-									<span>Total:</span>
+									<span>Jami:</span>
 									<span>{(item.price*item.quantity)?.brm()} so'm</span>
 								</td>
 								<td className="cart__table-remove">
@@ -122,10 +122,9 @@ function Cart() {
 					</tbody>
 				</table>
 		
-				<div className="container cart__totals">
-					<div className="cart__totals-wrapper">
+				<div className="cart__totals-wrapper">
 						<div className="cart__totals-title">
-							<p>Jami summa</p>
+							<p>Rasmiylashtirish</p>
 						</div>
 						<div className="cart__totals-checkout">
 							<span>Jami</span>
@@ -145,7 +144,6 @@ function Cart() {
 							<textarea id="inp4" placeholder="Komment"></textarea>
 							<button type="submit">Jo'natish</button>
 						</form>
-					</div>
 				</div>
 			</>:
 			 <Empty title="Savatcha"/>

@@ -6,15 +6,16 @@ import Skeleton from "../../components/skeleton/Skeleton";
 import "./SortCategory.css";
 import image from "../../assets/not__img.png";
 import { useGetProductsQuery } from "../../context/productsApi"
+import { category } from "../../static"
 
 const PAGE_COUNT = 8
 
 function SortCategory() {
-  const { category } = useParams();
+  const { category: categoryType } = useParams();
   // const [data, setData] = useState([]);
   const [count, setCount] = useState(1);
   // const [loading, setLoading] = useState(false);
-  const { data, isLoading } = useGetProductsQuery(category === "all" ? { valid: true } : { category, valid: true })
+  const { data, isLoading } = useGetProductsQuery(categoryType === "all" ? { valid: true } : { categoryType, valid: true })
   console.log(data);
   // useEffect(() => {
   //   setLoading(true);
@@ -34,6 +35,11 @@ function SortCategory() {
 
   return (
     <div className="sort__category">
+      <div className="sort__category-banner">
+        <div className="sort__category-dark">
+          <h1>{category?.find(el=> el.link===categoryType)?.title}</h1>
+        </div>
+      </div>
       {isLoading ? (
         <Skeleton />
       ) : data?.innerData?.length ? (

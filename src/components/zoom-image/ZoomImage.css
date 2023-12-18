@@ -26,11 +26,11 @@
     cursor: pointer;
 }
 .zoom_container{
-    width: 80%;
-    height: 80%;
+    width: 600px;
+    height: 600px;
     position: relative;
     z-index: 2;
-    background: #fff;
+    background: #fff9;
     animation: zoomImg .3s ease-in forwards;
     transform: scale(.7);
     opacity: 0;

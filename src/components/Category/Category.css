@@ -1,8 +1,6 @@
 .Category {
     margin-bottom: 40px;
-    text-align: center;
 }
-
 .Category h2 {
     margin-bottom: 10px;
 }
@@ -16,21 +14,20 @@
 }
 
 .category__card {
-    width: 250px;
+    width: 220px;
     text-align: center;
 }
 
 .category__card img {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 16px;
 }
 .category__title{
     font-size: 38px;
-    text-transform: capitalize;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -40,6 +37,7 @@
         overflow: auto;
         justify-content: flex-start;
         padding: 20px 30px;
+        gap: 14px;
     }
     .category__card {
         width: 150px;
@@ -53,6 +51,9 @@
 
 
 @media screen and (max-width: 500px){
+    .category__title{
+        font-size: 28px;
+    }
     .card__wrapper{
         padding: 20px;
     }

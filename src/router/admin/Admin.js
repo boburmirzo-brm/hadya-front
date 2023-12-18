@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import "./admin.css";
 import CreateProduct from "./create-product/CreateProduct";
 import { Link, Route, Routes } from "react-router-dom";
-import { FiMenu } from "react-icons/fi";
 import { MdAdminPanelSettings } from "react-icons/md";
 import ManageProduct from "./manage-product/ManageProduct";
 import {BsFillArrowLeftCircleFill} from "react-icons/bs"
+import { IoMenuSharp, IoCloseOutline  } from "react-icons/io5";
 
 function Admin() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -56,7 +56,11 @@ function Admin() {
         </Routes>
       </div>
       <div className="admin__menu" onClick={() => setShowSidebar(!showSidebar)}>
-        <FiMenu className="icon__admin" />
+        {
+          showSidebar? 
+          <IoCloseOutline/> :
+          <IoMenuSharp />
+        }
       </div>
     </div>
   );
