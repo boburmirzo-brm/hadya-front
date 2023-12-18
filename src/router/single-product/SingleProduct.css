@@ -38,7 +38,7 @@
 
 .single__product__description {
   width: 50%;
-  padding:0 30px ;
+  padding-left: 30px ;
 }
 
 .single__desc {
@@ -80,7 +80,7 @@
   font-size: 23px;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .single__product__description_top  .sinlge__price{
   font-size: 18px;
@@ -138,6 +138,11 @@
   background-color: #094b3f;
 }
 @media screen and (max-width:990px) {
+  .single__product-heart-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
   .single__product-title  {
     gap: 10px;
     flex-direction: column;

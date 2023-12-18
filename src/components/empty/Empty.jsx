@@ -1,16 +1,11 @@
 import React from "react";
 import "./Empty.css";
-import rasim from "../../assets/empty.webp";
 import { Link } from "react-router-dom";
-function Empty({ title }) {
+function Empty({ title, url }) {
 	return (
 		<div className="empty__container">
-			<img src={rasim} />
+			<img src={url} alt=""/>
 			<h3>{title}da hozircha mahsulot yo'q</h3>
-			<p>
-				Bosh sahifadagi to'plamlardan boshlang yoki kerakli mahsulotni qidiruv
-				orqali toping
-			</p>
 			<Link to={"/"}>Bosh sahifa</Link>
 		</div>
 	);

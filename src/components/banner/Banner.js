@@ -2,7 +2,6 @@ import React from 'react';
 import './Banner.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import { Link } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import img1 from "../../assets/banner006.jpg" 
 import img2 from "../../assets/banner008.jpg" 

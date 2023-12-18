@@ -3,7 +3,6 @@ import Banner from "../../components/banner/Banner";
 import Products from "../../components/products/Products";
 import Category from "../../components/Category/Category";
 import OurValues from "../../components/OurValues/OurValues";
-import axios from "../../api"
 import Skeleton from "../../components/skeleton/Skeleton"
 import {useGetProductsQuery} from "../../context/productsApi"
 
@@ -25,7 +24,7 @@ function Home() {
     <div>
         <Banner />
         <Category />
-        <h2 className="container category__title">Eng so'ngi qo'shilganlar</h2>
+        <h2 className="container category__title text__left">Eng so'ngi qo'shilganlar</h2>
         <br />
         {
           isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 8)} />

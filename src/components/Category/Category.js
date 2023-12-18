@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Category() {
   return (
     <div className='Category container'>
-      <h2 className='category__title'>Kategoriyalar</h2>
+      <h2 className='category__title text__left'>Kategoriyalar</h2>
       <div className="card__wrapper">
         {
           category?.map((item) =>

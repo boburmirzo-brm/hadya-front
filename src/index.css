@@ -22,11 +22,16 @@
   width: 1250px;
   margin: auto;
 }
-
+.container .container{
+  width: 100%;
+}
 @media screen and (max-width: 1280px) {
   .container {
     width: 100%;
     padding: 0 16px;
+  }
+  .container .container{
+    padding: 0;
   }
 }
 

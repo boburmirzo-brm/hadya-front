@@ -3,7 +3,6 @@ import "./Products.css";
 import {
   AiFillHeart,
   AiOutlineHeart,
-  AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 
@@ -12,6 +11,7 @@ import { addToHeart, removeFromHeart } from "../../context/heartSlice";
 import { addToCart } from "../../context/cartSlice";
 
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Products({ ProductsData }) {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -48,7 +48,10 @@ function Products({ ProductsData }) {
             >
             </Link>
                  <div
-                  onClick={() => dispatch(addToCart(item))}
+                  onClick={() => {
+                    toast.success("Maxsulot savatga qo'shildi")
+                    dispatch(addToCart(item))
+                  }}
                   className="product__cart"
                 >
                   <AiOutlineShoppingCart />

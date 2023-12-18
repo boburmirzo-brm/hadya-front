@@ -1,32 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { BsFillCartDashFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "./SingleProduct.css";
 import { useDispatch, useSelector } from "react-redux";
-import { BsFillCartCheckFill } from "react-icons/bs";
 import { addToHeart, removeFromHeart } from "../../context/heartSlice";
-import { addToCart, removeFromCart } from "../../context/cartSlice";
+import { addToCart } from "../../context/cartSlice";
 import Notefaund from "../notefaund/Notefaund";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { useGetProductsQuery } from "../../context/productsApi";
+import Skeleton from "../../components/skeleton/Skeleton";
+import Products from "../../components/products/Products";
+
 
 const SingleProduct = () => {
   const { state } = useLocation();
+  const {data, isLoading} = useGetProductsQuery({ valid: true })
 
   const [mainImage, setMainImage] = useState(state?.url[0]);
   const dispatch = useDispatch();
   const heart = useSelector((s) => s.heart.value);
-  const cart = useSelector((s) => s.cart.value);
-  const myCart = cart.find((i) => i.id === cart.id);
 
   const addCart = () => {
-    toast.success('Maxsulot savatga qoshildi')
+    toast.success("Maxsulot savatga qo'shildi")
     dispatch(addToCart(state))
   }
   useEffect(() => {
+    setMainImage(state?.url[0])
     window.scroll(0, 0);
-  }, []);
+  }, [state]);
 
   if (!state) {
     return <Notefaund />;
@@ -40,7 +42,7 @@ const SingleProduct = () => {
           <br />
           <div className="additional__images">
             {state?.url.map((item) => (
-              <img key={item} src={item} onClick={() => setMainImage(item)} />
+              <img key={item} src={item} alt="" onClick={() => setMainImage(item)} />
             ))}
           </div>
         </div>
@@ -48,21 +50,23 @@ const SingleProduct = () => {
           <div className="single__product__description_top">
             <div className="single__product-title">
               <h1>{state?.name}</h1>
-              {heart.some((i) => i.name === state.name) ? (
-                <button
-                  onClick={() =>
-                    dispatch(removeFromHeart({ name: state.name }))
-                  }
-                >
-                  <AiFillHeart className="single__icon"  style={{color: 'red'}} />
-                  <span>Istaklarda</span>
-                </button>
-              ) : (
-                <button onClick={() => dispatch(addToHeart(state))}>
-                  <AiOutlineHeart className="single__icon" />
-                  <span>Istaklarga</span>
-                </button>
-              )}
+              <div className="single__product-heart-btn">
+                {heart.some((i) => i.name === state.name) ? (
+                  <button
+                    onClick={() =>
+                      dispatch(removeFromHeart({ name: state.name }))
+                    }
+                  >
+                    <AiFillHeart className="single__icon"  style={{color: 'red'}} />
+                    <span>Istaklarda</span>
+                  </button>
+                ) : (
+                  <button onClick={() => dispatch(addToHeart(state))}>
+                    <AiOutlineHeart className="single__icon" />
+                    <span>Istaklarga</span>
+                  </button>
+                )}
+              </div>
             </div>
             <div className="price">
               <p>Narxi:</p>
@@ -73,9 +77,9 @@ const SingleProduct = () => {
             </div>
           </div>
             <ul className="single__ul">
-              <li>Mazzali  tort</li>
-              <li>Mazzali  tort</li>
-              <li>Mazzali  tort</li>
+              <li>Yuqori sifat</li>
+              <li>Chiroyli ko'rinishga ega</li>
+              <li>Albatta mazali</li>
             </ul>
           <div className="single__buttons">
             {/* {myCart ? (
@@ -92,7 +96,12 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-      <ToastContainer/>
+          
+      <h2 className="container category__title">Eng so'ngi qo'shilganlar</h2>
+      <br />
+      {
+          isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 4)} />
+      }
     </div>
   );
 };

@@ -38,6 +38,7 @@
         justify-content: flex-start;
         padding: 20px 10px;
         gap: 14px;
+        margin-top: 0;
     }
     .category__card {
         width: 150px;

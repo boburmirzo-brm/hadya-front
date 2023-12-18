@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, decrementCart, removeFromCart, deleteAllCart } from "../../context/cartSlice";
 import Empty from "../../components/empty/Empty";
 import {toast} from "react-toastify"
+import photo from "../../assets/empty-cart.webp"
 
 function Cart() {
 	const cart = useSelector(s => s.cart.value);
@@ -65,6 +66,8 @@ function Cart() {
 			{
 				cart.length ?
 				<>
+				<h2 className="container category__title text__left">Savatchangiz</h2>
+        		<br />
 				<table className="container cart__table">
 					<thead className="cart__table-thead">
 					<tr>
@@ -146,7 +149,7 @@ function Cart() {
 						</form>
 				</div>
 			</>:
-			 <Empty title="Savatcha"/>
+			 <Empty title="Savatcha" url={photo}/>
 			}
 		</div>
 	

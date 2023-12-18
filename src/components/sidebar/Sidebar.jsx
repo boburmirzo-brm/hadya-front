@@ -27,11 +27,11 @@ function Sidebar({ show, setShow }) {
                 }
                 <b>Ijtimoiy tarmoqlarimiz</b>
                 <hr className='hr'/>
-                <a target='_blank' className='sidebar__link' href="https://instagram.com/hadya2020.uz">
+                <a target='_blank' rel="noreferrer" className='sidebar__link' href="https://instagram.com/hadya2020.uz">
                   <FaInstagram />
                   <span>Instagram</span>
                 </a>
-                <a target='_blank' className='sidebar__link' href="https://t.me/hadya2020">
+                <a target='_blank' rel="noreferrer" className='sidebar__link' href="https://t.me/hadya2020">
                     <FaTelegram />
                     <span>Telegram</span>
                 </a>
