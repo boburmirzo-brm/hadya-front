@@ -28,6 +28,7 @@ function Sidebar({ show, setShow }) {
                     </Link>
                   )
                 }
+                <hr className='hr'/>
                 <b>Ijtimoiy tarmoqlarimiz</b>
                 <a target='_blank' className='sidebar__link' href="https://instagram.com/hadya2020.uz">
                   <FaInstagram />
