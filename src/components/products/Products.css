@@ -53,8 +53,12 @@
     place-items: center;
     color: #fff;
     font-size: 24px;
+    opacity: .2s;
 }
-
+.product__cart:active{
+    opacity: .7;
+    transform: scale(.95);
+}
 .product h4 {
   font-size: 18px;
   color: var(--bg-py);
@@ -141,6 +145,16 @@
 }
 
 @media screen and (max-width: 660px) {
+    .product__heart:hover {
+        background: #fff;
+        color: var(--bg-py);
+        cursor: pointer;
+      }
+    .product__heart:active {
+        background: var(--bg-py);
+        color: #fff;
+        cursor: pointer;
+      }
     .product-second {
         gap: 20px;
     }
