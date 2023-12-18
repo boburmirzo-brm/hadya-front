@@ -17,6 +17,10 @@
     height: 400px;
     justify-content: flex-start;
 }
+.product__image-container{
+    position: relative;
+    user-select: none;
+}
 .product-image{
     width: 100%;
     height: 260px;

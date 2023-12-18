@@ -15,7 +15,7 @@ function SortCategory() {
   // const [data, setData] = useState([]);
   const [count, setCount] = useState(1);
   // const [loading, setLoading] = useState(false);
-  const { data, isLoading } = useGetProductsQuery(categoryType === "all" ? { valid: true } : { categoryType, valid: true })
+  const { data, isLoading } = useGetProductsQuery(categoryType === "all" ? { valid: true } : { category:categoryType, valid: true })
   console.log(data);
   // useEffect(() => {
   //   setLoading(true);

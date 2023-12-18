@@ -26,8 +26,8 @@
     margin-bottom: 16px;
 }
 .category__title{
-    font-size: 38px;
-    font-weight: 300;
+    font-size: 34px;
+    font-weight: 500;
     text-align: center;
 }
 
@@ -36,7 +36,7 @@
         flex-wrap: nowrap;
         overflow: auto;
         justify-content: flex-start;
-        padding: 20px 30px;
+        padding: 20px 10px;
         gap: 14px;
     }
     .category__card {

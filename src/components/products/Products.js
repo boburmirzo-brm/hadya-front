@@ -30,7 +30,7 @@ function Products({ ProductsData }) {
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
           > 
-          <div style={{position:"relative"}}>
+          <div className="product__image-container" >
             <Link
               className="product-image"
               to={`/product/${item._id}`}

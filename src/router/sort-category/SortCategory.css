@@ -21,6 +21,9 @@
     letter-spacing: 3px;
     font-size: 25px;
 }
+.sort__category-dark h1{
+    opacity: .6;
+}
 .sort__category-not{
     text-align: center;
 }
@@ -42,4 +45,8 @@
 }
 
 
-
+@media screen and (max-width:800px) {
+    .sort__category-dark{
+        font-size: 18px;
+    }
+}

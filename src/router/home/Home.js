@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Banner from "../../components/banner/Banner";
 import Products from "../../components/products/Products";
 import Category from "../../components/Category/Category";
@@ -25,7 +25,7 @@ function Home() {
     <div>
         <Banner />
         <Category />
-        <h2 className="container">Eng so'ngi qo'shilganlar</h2>
+        <h2 className="container category__title">Eng so'ngi qo'shilganlar</h2>
         <br />
         {
           isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 8)} />
