@@ -40,7 +40,7 @@ const SingleProduct = () => {
         </div>
         <div className="single__product__description">
           <div className="single__product__description_top">
-            <div className="title">
+            <div className="single__product-title">
               <h1>{state?.name}</h1>
               {heart.some((i) => i.name === state.name) ? (
                 <button
@@ -67,9 +67,6 @@ const SingleProduct = () => {
             </div>
           </div>
             <ul className="single__ul">
-              <li>Mazzali  tort</li>
-              <li>Mazzali  tort</li>
-              <li>Mazzali  tort</li>
               <li>Mazzali  tort</li>
               <li>Mazzali  tort</li>
               <li>Mazzali  tort</li>
