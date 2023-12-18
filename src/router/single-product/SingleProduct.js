@@ -8,6 +8,8 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import { addToHeart, removeFromHeart } from "../../context/heartSlice";
 import { addToCart, removeFromCart } from "../../context/cartSlice";
 import Notefaund from "../notefaund/Notefaund";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleProduct = () => {
   const { state } = useLocation();
@@ -19,6 +21,8 @@ const SingleProduct = () => {
   const myCart = cart.find((i) => i.id === cart.id);
 
   const addCart = () => {
+    toast.success('Maxsulot savatga qoshildi')
+    dispatch(addToCart(state))
   }
   useEffect(() => {
     window.scroll(0, 0);
@@ -80,7 +84,7 @@ const SingleProduct = () => {
                 Savatdan olish
               </button>
             ) : ( */}
-              <button onClick={() => dispatch(addToCart(state))}>
+              <button onClick={addCart}>
                 <BsFillCartDashFill className="single__icon" />
                 Savatga qoshish
               </button>
@@ -88,6 +92,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
