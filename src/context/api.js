@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery, retry } from '@reduxjs/toolkit/query/react'
 const baseQuery = fetchBaseQuery({
   // baseUrl: 'http://localhost:8000',
   // baseUrl: "https://cheerfulexemplaryfirewall--boburmirzo-brm.repl.co",
-  baseURL: "https://hadyasweets.uz",
+  baseUrl: "https://hadyasweets.uz",
   prepareHeaders: (headers) => {
     const token = "fake__token"
     if (token) {
