@@ -26,7 +26,7 @@ function Footer() {
                 <li>Biz Haqimizda</li>
               </Link>
               <Link to={"/branches"}>
-              <li>Filyallarimiz</li>
+              <li>Filiallarimiz</li>
               </Link>
             </ul>
 
@@ -41,16 +41,8 @@ function Footer() {
                   <FaTelegram />
                 </button>
               </a>
-              <a href="#" target="_blank">
-                <button>
-                  <FaFacebook />
-                </button>
-              </a>
-              <a href="#" target="_blank">
-                <button>
-                  <FaYoutube />
-                </button>
-              </a>
+             
+              
             </div>
           </div>
         </div>

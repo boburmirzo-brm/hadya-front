@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { BsFillCartDashFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "./SingleProduct.css";
@@ -11,26 +11,34 @@ import { toast } from 'react-toastify';
 import { useGetProductsQuery } from "../../context/productsApi";
 import Skeleton from "../../components/skeleton/Skeleton";
 import Products from "../../components/products/Products";
+import Loading from "../../components/loading/Loading";
 
 
 const SingleProduct = () => {
-  const { state } = useLocation();
+  // const { state } = useLocation();
   const {data, isLoading} = useGetProductsQuery({ valid: true })
+  const {id} = useParams()
+  const oneItem = data?.innerData?.find(el => el._id === id) 
 
-  const [mainImage, setMainImage] = useState(state?.url[0]);
+  const [mainImage, setMainImage] = useState(oneItem?.url[0]);
   const dispatch = useDispatch();
   const heart = useSelector((s) => s.heart.value);
 
   const addCart = () => {
     toast.success("Maxsulot savatga qo'shildi")
-    dispatch(addToCart(state))
+    dispatch(addToCart(oneItem))
   }
   useEffect(() => {
-    setMainImage(state?.url[0])
+    setMainImage(oneItem?.url[0])
     window.scroll(0, 0);
-  }, [state]);
+  }, [oneItem]);
 
-  if (!state) {
+
+
+  if(isLoading){
+    return <Loading/>
+  }
+  if (!oneItem) {
     return <Notefaund />;
   }
 
@@ -41,7 +49,7 @@ const SingleProduct = () => {
           <img className="main__image" src={mainImage} alt="" />
           <br />
           <div className="additional__images">
-            {state?.url.map((item) => (
+            {oneItem?.url.map((item) => (
               <img key={item} src={item} alt="" onClick={() => setMainImage(item)} />
             ))}
           </div>
@@ -49,19 +57,19 @@ const SingleProduct = () => {
         <div className="single__product__description">
           <div className="single__product__description_top">
             <div className="single__product-title">
-              <h1>{state?.name}</h1>
+              <h1>{oneItem?.name}</h1>
               <div className="single__product-heart-btn">
-                {heart.some((i) => i.name === state.name) ? (
+                {heart.some((i) => i.name === oneItem.name) ? (
                   <button
                     onClick={() =>
-                      dispatch(removeFromHeart({ name: state.name }))
+                      dispatch(removeFromHeart({ name: oneItem.name }))
                     }
                   >
                     <AiFillHeart className="single__icon"  style={{color: 'red'}} />
                     <span>Istaklarda</span>
                   </button>
                 ) : (
-                  <button onClick={() => dispatch(addToHeart(state))}>
+                  <button onClick={() => dispatch(addToHeart(oneItem))}>
                     <AiOutlineHeart className="single__icon" />
                     <span>Istaklarga</span>
                   </button>
@@ -70,10 +78,10 @@ const SingleProduct = () => {
             </div>
             <div className="price">
               <p>Narxi:</p>
-              <p className="sinlge__price">{state?.price?.brm()} so'm</p>
+              <p className="sinlge__price">{oneItem?.price?.brm()} so'm</p>
             </div>
             <div className="description">
-              <p>{state?.desc}</p>
+              <p>{oneItem?.desc}</p>
             </div>
           </div>
             <ul className="single__ul">

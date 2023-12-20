@@ -18,7 +18,7 @@ function About() {
         {/* <img src={about4} /> */}
         <div className="about__blog_img">
           <div className="about__blog_img_dark">
-            <h1>Biz xaqimizda malumotlar shu saxifada korishiz mumkun</h1>
+            <h1>Biz haqimizda ma'lumotlarni shu sahifada ko'rishingiz mumkin</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Provident, hic veniam vero eaque aliquam veritatis ut earum iusto?
@@ -29,7 +29,7 @@ function About() {
         <div className="about__blog__bottom">
         <div className="about__blog_first">
           <div className="about__blog_first_left">
-            <h1>Bizning Maxsulotlarimiz xaqida</h1>
+            <h1>Bizning Mahsulotlarimiz haqida</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, totam.
             </p>
@@ -43,7 +43,7 @@ function About() {
           <div className="about__blog_second_left">
           </div>
           <div className="about__blog_first_left about__order">
-            <h1>Mana Bizning tazribali povorlarimiz xaqida</h1>
+            <h1>Mana bizning tajribali qandolatchilarimiz </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, earum.
             </p>
@@ -51,7 +51,7 @@ function About() {
         </div>
         <div className="about__blog_first">
           <div className="about__blog_first_left">
-            <h1>Biz judayam kop joylarda xizmat korstakanmiz</h1>
+            <h1>Biz juda ham ko'p joylarda xizmat ko'rstakanmiz</h1>
             <p>
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, eum? Lorem ipsum dolor sit amet.</p>
           </div>

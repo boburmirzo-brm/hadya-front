@@ -10,7 +10,7 @@ function Branches() {
   return (
     <div className="main__branches">
       <h2 className="branch__text">
-        Bizning<span> Filiallarimmiz</span>
+        Bizning<span> Filiallarimiz</span>
         <IoLocationOutline />
       </h2>
       <div className="branch__one">
@@ -20,13 +20,13 @@ function Branches() {
         ></iframe>
         <div className="info">
           <p>
-            <span>Manzil:</span> Qizil kuprik gagarin
+            <span>Manzil:</span> Qizil ko'prik gagarin
           </p>
           <h3>
             Biz bilan Bog'lanish: <a href="">907419131</a>
           </h3>
           <h4>
-            <span>Bizning ish Vaqtimmiz:</span> 8:00 dan 18:00 gacha
+            <span>Bizning ish Vaqtimiz:</span> 8:00 dan 18:00 gacha
           </h4>
         </div>
       </div>
@@ -38,13 +38,13 @@ function Branches() {
         ></iframe>
         <div className="info">
           <p>
-            <span>Manzil:</span> Qizil kuprik gagarin
+            <span>Manzil:</span> Qizil ko'prik gagarin
           </p>
           <h3>
             Biz bilan Bog'lanish: <a href="">907419131</a>
           </h3>
           <h4>
-            <span>Bizning ish Vaqtimmiz:</span> 8:00 dan 18:00 gacha
+            <span>Bizning ish Vaqtimiz:</span> 8:00 dan 18:00 gacha
           </h4>
         </div>
       </div>
@@ -56,13 +56,13 @@ function Branches() {
         ></iframe>
         <div className="info">
           <p>
-            <span>Manzil:</span> Qizil kuprik gagarin
+            <span>Manzil:</span> Qizil ko'prik gagarin
           </p>
           <h3>
             Biz bilan Bog'lanish: <a href="">907419131</a>
           </h3>
           <h4>
-            <span>Bizning ish Vaqtimmiz:</span> 8:00 dan 18:00 gacha
+            <span>Bizning ish Vaqtimiz:</span> 8:00 dan 18:00 gacha
           </h4>
         </div>
       </div>

@@ -3,62 +3,36 @@
     height: 100%;
     text-align: center;
     line-height: 60px;
+    padding: 30px 0;
 }
 
 .p_Tree {
-    font-size: 50px;
-    text-align: center;
-    height: 80px;
+    font-size: 32px;
 }
 
 .not__faund img {
-    align-items: center;
-    width: 30%;
+    width: 300px;   
 }
 
 .p_One {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    height: 80px;
+    font-size: 18px;
+    color: #555;
 }
 
-.p_Two{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+.not__found-btn{
+    padding:12px 20px;
+    font-size: 14px;
+    border: none;
+    background: var(--bg-py);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }
 @media (max-width: 800px) {
-    .not__faund .p_Tree {
-        line-height: 60px; 
-        margin-bottom: 60px;
-    font-size: 38px;
-        
-    }
     .not__faund img{
-        width: 300px;    
-        line-height: 40px; 
+        width: 200px;    
     }
-}
-@media (max-width: 600px) {
-    .not__faund {
-        line-height: 40px; 
-        
-    }
-    .not__faund img{
-        width: 300px;    
-    }
-
-    .not__faund ,
     .p_Tree {
-        font-size: 50px; 
-        height: auto; 
-        margin-bottom: 20px;
-    }
-
-    .p_One,
-    .p_Two {
-        font-size: 16px; 
-        height: auto; 
+        font-size: 26px;
     }
 }

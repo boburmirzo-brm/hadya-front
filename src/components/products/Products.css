@@ -39,6 +39,8 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     color: #555;
+  color: #705314;
+
     font-weight: 500;
 }
 .product__cart{
@@ -62,11 +64,12 @@
 .product h4 {
   font-size: 18px;
   color: var(--bg-py);
+  color: #c2993f;
+  color: #82611b;
+
 }
 
-.product h4 {
-    color: var(--bg-py);
-}
+
 
 .product__heart {
   width: 100%;
