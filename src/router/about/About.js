@@ -43,7 +43,7 @@ function About() {
           <div className="about__blog_second_left">
           </div>
           <div className="about__blog_first_left about__order">
-            <h1>Mana bizning tajribali qandolatchilarimiz </h1>
+            <h1>Bular bizning tajribali qandolatchilarimiz </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, earum.
             </p>
@@ -51,7 +51,7 @@ function About() {
         </div>
         <div className="about__blog_first">
           <div className="about__blog_first_left">
-            <h1>Biz juda ham ko'p joylarda xizmat ko'rstakanmiz</h1>
+            <h1>Biz ko'p joylarda xizmat ko'rsatganmiz</h1>
             <p>
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, eum? Lorem ipsum dolor sit amet.</p>
           </div>

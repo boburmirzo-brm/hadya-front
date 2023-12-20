@@ -56,7 +56,7 @@
         font-size: 24px;
     }
     .card__wrapper{
-        padding: 20px;
+        padding: 20px 0;
     }
     .category__card {
         width: 120px;

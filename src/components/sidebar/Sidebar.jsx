@@ -12,7 +12,9 @@ function Sidebar({ show, setShow }) {
       {show ? <div className='sidebar__shadow' onClick={() => setShow(false)}></div> : <></>}
       <div className={`sidebar ${show ? 'show' : ''}`}>
         <div className="sidebar__content">
+          <Link to={"/"} onClick={()=> setShow(false)}>
           <img src={Hadya} alt="" />
+          </Link>
             <div className="sidebar__item" > 
               <Link onClick={() => setShow(false)} to={"/about"}>Biz haqimizda</Link> 
               <Link onClick={() => setShow(false)} to={"/branches"}>Filiallar</Link> 
