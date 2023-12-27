@@ -23,6 +23,7 @@ function Banner() {
       >
         <SwiperSlide className="banner__item">
           <img src={img1} alt="" />
+          <div className="banner__dark"></div>
           <div className="banner__text container">
             <h1>Lorem, ipsum dolor.</h1>
             <p>
@@ -36,6 +37,7 @@ function Banner() {
         </SwiperSlide>
         <SwiperSlide className="banner__item">
           <img src={img2} alt="" />
+          <div className="banner__dark"></div>
           <div className="banner__text container">
             <h1>Hello world</h1>
             <p>
@@ -49,6 +51,7 @@ function Banner() {
         </SwiperSlide>
         <SwiperSlide className="banner__item">
           <img src={img3} alt="" />
+          <div className="banner__dark"></div>
           <div className="banner__text container">
             <h1>Salom dunyo</h1>
             <p>

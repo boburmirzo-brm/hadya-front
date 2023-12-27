@@ -29,6 +29,10 @@ function Home() {
         {
           isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 8)} />
         }
+          <div className="sort__category-banner">
+        <div className="sort__category-dark">
+        </div>
+      </div>
         <OurValues/>
     </div>
   );
