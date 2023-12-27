@@ -20,8 +20,6 @@ function CreateProduct() {
   const [files, setFiles] = useState([]);
   const [createProduct, {isLoading} ] = useCreateProductMutation()
 
-  // const [loading, setLoading] = useState(false);
-
   const handleRemoveImage = (inx)=>{
     let newImages = []
     files.forEach((el, i)=> {
@@ -34,7 +32,6 @@ function CreateProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setLoading(true);
     let newProduct = new FormData();
     newProduct.append("name", product.name);
     newProduct.append("desc", product.desc);
@@ -53,20 +50,10 @@ function CreateProduct() {
         setProduct(initialState);
         setFiles("");
       })
-      .catch(err => console.log(err))
-    // axios
-    //   .post("/create/product", newProduct)
-    //   .then((res) => {
-    //     console.log(res);
-    //     // setProduct(initialState);
-    //     // setFiles("");
-    //     toast.success("Mahsulot qo'shildi!");
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     toast.error("Server error");
-    //   })
-    //   .finally(() => setLoading(false));
+      .catch(err => {
+        console.log(err)
+        toast.error("Afsuski, mahsulot qo'shilmadi, yana qayta urinib ko'ring")
+      })
   };
   return (
     <div className="create__product">
@@ -128,6 +115,7 @@ function CreateProduct() {
             onChange={(e) =>
               setProduct((p) => ({ ...p, category: e.target.value }))
             }
+            required
             className="form-control"
             name=""
             id=""
@@ -147,7 +135,7 @@ function CreateProduct() {
           
           <div className="create__product-image-wrapper">
             {
-              new Array(3).fill("").map((_, inx)=><div 
+              new Array(4).fill("").map((_, inx)=><div 
               key={inx}
               style={{
                 background: `url(${ files.length > inx ? URL.createObjectURL(files[inx][0]) : defaultImage }) no-repeat center/cover`,
@@ -169,21 +157,6 @@ function CreateProduct() {
               }
             </div>)
             }
-          
-            {/* <div 
-              style={{background: `url(${defaultImage}) no-repeat center/cover`}}
-              className="create__product-image">
-              <input
-                onChange={(e) => console.log(e.target.files)}
-                required
-                accept="image/png, image/jpeg, image/jpg, image/heic"
-                type="file"
-                multiple
-                className="form-control"
-                placeholder="Mahsulot rasmi"
-                disabled={isLoading }
-              />
-            </div> */}
           </div>
         </div>
         <button disabled={isLoading}>

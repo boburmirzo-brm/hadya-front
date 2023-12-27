@@ -46,7 +46,7 @@ const ManageProduct = () => {
                   >
                     {validLoading? "Kuting..." : item.valid ? "Sotuvdan olish" : "Sotuvga qo'yish"}
                   </button>
-                  <button className="manage__product-delete-btn" disabled={deleteLoading} onClick={()=> deletePro(item._id)}>Delete</button>
+                  <button className="manage__product-delete-btn" disabled={deleteLoading} onClick={()=> deletePro(item._id)}>{deleteLoading ? "Kuting..." : "O'chirish"}</button>
                 </div>
               </div>
             ))}

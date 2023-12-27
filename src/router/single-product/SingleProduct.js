@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { BsFillCartDashFill } from "react-icons/bs";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useParams } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import "./SingleProduct.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToHeart, removeFromHeart } from "../../context/heartSlice";
@@ -85,9 +84,9 @@ const SingleProduct = () => {
             </div>
           </div>
             <ul className="single__ul">
-              <li>Yuqori sifat</li>
-              <li>Chiroyli ko'rinishga ega</li>
-              <li>Albatta mazali</li>
+              {
+                oneItem?.items?.map((el, inx)=><li key={inx}>{el}</li>)
+              }
             </ul>
           <div className="single__buttons">
             {/* {myCart ? (
@@ -97,7 +96,7 @@ const SingleProduct = () => {
               </button>
             ) : ( */}
               <button onClick={addCart}>
-                <BsFillCartDashFill className="single__icon" />
+                <AiOutlineShoppingCart className="single__icon" />
                 Savatga qoshish
               </button>
             {/* )} */}
