@@ -40,7 +40,7 @@
 .banner__text p{
     font-size: 20px;
     width: 50%;
-    color: var(--bg-py);
+    color: #fff;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -50,11 +50,17 @@
     width: 180px;
     height: 40px;
     border:none;
-    background: crimson;
+    background: transparent;
     color: #fff;
+    border: 3px double #fff;
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
+    transition: .3s;
+}
+.banner__text button:hover{
+    background: #fff;
+    color: var(--bg-py);
 }
 
 
