@@ -5,7 +5,8 @@ import Category from "../../components/Category/Category";
 import OurValues from "../../components/OurValues/OurValues";
 import Skeleton from "../../components/skeleton/Skeleton"
 import {useGetProductsQuery} from "../../context/productsApi"
-
+import Notefaund from "../notefaund/Notefaund"
+ 
 function Home() {
   // const [data,setData] = useState([])
   // const [loading,setLoading] = useState(false)
@@ -19,7 +20,6 @@ function Home() {
   //     .catch(err => console.log(err))
   //     .finally(()=> setLoading(false))
   // }, [])
-
   return (
     <div>
         <Banner />
@@ -27,7 +27,7 @@ function Home() {
         <h2 className="container category__title text__left">Eng so'ngi qo'shilganlar</h2>
         <br />
         {
-          isLoading ? <Skeleton/> : <Products ProductsData={data?.innerData.slice(0, 8)} />
+          isLoading ? <Skeleton/> : data ? <Products ProductsData={data?.innerData.slice(0, 8)} /> :<Notefaund/>  
         }
           <div className="sort__category-banner">
         <div className="sort__category-dark">

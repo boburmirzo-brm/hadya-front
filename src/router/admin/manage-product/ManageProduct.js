@@ -17,13 +17,29 @@ const ManageProduct = () => {
 
   const toggleValid = (_id, valid)=>{
     validToggle({_id, body: {valid:!valid}})
+      .then(res=>{
+        console.log(res);
+        if(res.error){
+          toast.error(res.error.data.msg)
+        }
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
   }
 
   const deletePro = (_id)=>{
     if(window.confirm("Ishonchingiz komilmi?")){
       deleteProduct( _id )
-      .then(res=> console.log(res))
-      .catch(res=> console.log(res))
+        .then(res=>{
+          console.log(res);
+          if(res.error){
+            toast.error(res.error.data.msg)
+          }
+        })
+        .catch((err)=>{
+          console.log(err);
+        })
     }
   }
   return (

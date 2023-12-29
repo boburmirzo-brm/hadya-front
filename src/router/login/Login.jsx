@@ -4,22 +4,24 @@ import login from "../../assets/login.jpg"
 import { Link, useNavigate } from 'react-router-dom'
 import { PiUserCircleFill } from 'react-icons/pi'
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
-import axios from "../../api"
 import {toast} from "react-toastify"
+import {useSignInMutation} from "../../context/userApi"
 
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate()
+    const [signIn, {isLoading}] = useSignInMutation()
 
     const handleLogin = (e) => {
-        setLoading(true)
         e.preventDefault();
-        axios.post("/create/sign-in",{ username, password})
+        signIn({ username, password})
             .then(res=> {
+                if(res.error){
+                    return toast.error("username yoki parol xato")
+                }
                 if(res.data.variant === "success"){
                     localStorage.setItem("hadya-token",res.data.innerData.token )
                     localStorage.setItem("hadya-user",res.data.innerData.user )
@@ -27,11 +29,10 @@ function Login() {
                     toast.success("Hush kelibsiz")
                 }
             })
-            .catch(err=>{ 
-                toast.error("username yoki parol xato")
-                console.log(err)
+            .catch(err=>{
+                console.log(err);
             })
-            .finally(()=> setLoading(false))
+       
     };
 
     const togglePasswordVisibility = () => {
@@ -64,7 +65,7 @@ function Login() {
                         )}
                         <label className="input_label">Parolingiz</label>
                     </div>
-                    <button disabled={loading} type="submit" className="submit_button">{loading?"Kuting...":"Jo'natish"}</button>
+                    <button disabled={isLoading} type="submit" className="submit_button">{isLoading?"Kuting...":"Jo'natish"}</button>
                 </form>
                 <Link to={"/"}>
                     <button className='login__home'>Bosh Sahifaga Qaytish</button>

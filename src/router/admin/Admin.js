@@ -7,15 +7,18 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import ManageProduct from "./manage-product/ManageProduct";
 import {BsFillArrowLeftCircleFill} from "react-icons/bs"
 import { IoMenuSharp, IoCloseOutline  } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import ManageAdmins from "./manage-admin/ManageAdmins";
 
 function Admin() {
   const [showSidebar, setShowSidebar] = useState(false);
+  const navigate = useNavigate()
 
   const handleLogOut = () => {
     if (window.confirm("Tizimdan chiqib ketmoqchimisi")) {
       localStorage.removeItem("hadya-token");
       localStorage.removeItem("hadya-user");
-      window.location.assign("/");
+      navigate("/")
     }
   };
 
@@ -41,6 +44,11 @@ function Admin() {
               Mahsulotlarni boshqarish
             </Link>
           </li>
+          <li onClick={()=> setShowSidebar(false)} className="admin__item">
+            <Link className="admin__link" to="manage-admins">
+              Adminlarni boshqarish
+            </Link>
+          </li>
           <li style={{marginTop:100}} className="admin__item">
             <span style={{background: "crimson", color:"#fff"}} onClick={handleLogOut} className="admin__link">
               Chiqish
@@ -53,6 +61,7 @@ function Admin() {
         <Routes>
           <Route path="create-product" element={<CreateProduct />} />
           <Route path="manage-product" element={<ManageProduct />} />
+          <Route path="manage-admins" element={<ManageAdmins />} />
         </Routes>
       </div>
       <div className="admin__menu" onClick={() => setShowSidebar(!showSidebar)}>
