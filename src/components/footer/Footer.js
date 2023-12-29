@@ -46,7 +46,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      <p className="footer__company-name">&copy; 2023{2023 === new Date().getFullYear() ? "" : "-"+new Date().getFullYear()} NamTech Solution Inc.</p>
+      <p className="footer__company-name">&copy; 2023{2023 === new Date().getFullYear() ? "" : "-"+new Date().getFullYear()} <a target="_blank" href="https://www.namtech.uz/">NamTech Solution</a> Inc.</p>
       </div>
     </div>
   );
