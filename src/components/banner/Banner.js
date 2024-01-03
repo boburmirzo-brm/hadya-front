@@ -18,7 +18,7 @@ function Banner() {
       <img src={img2} alt="" />
           <div className="banner__dark"></div>
           <div className="banner__text container">
-            <h1>Hello world</h1>
+            <h1>Hadya shirinliklari</h1>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Reprehenderit sapiente

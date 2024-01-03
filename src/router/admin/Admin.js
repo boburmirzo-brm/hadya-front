@@ -44,11 +44,11 @@ function Admin() {
               Mahsulotlarni boshqarish
             </Link>
           </li>
-          <li onClick={()=> setShowSidebar(false)} className="admin__item">
+          {/* <li onClick={()=> setShowSidebar(false)} className="admin__item">
             <Link className="admin__link" to="manage-admins">
               Adminlarni boshqarish
             </Link>
-          </li>
+          </li> */}
           <li style={{marginTop:100}} className="admin__item">
             <span style={{background: "crimson", color:"#fff"}} onClick={handleLogOut} className="admin__link">
               Chiqish
@@ -61,7 +61,7 @@ function Admin() {
         <Routes>
           <Route path="create-product" element={<CreateProduct />} />
           <Route path="manage-product" element={<ManageProduct />} />
-          <Route path="manage-admins" element={<ManageAdmins />} />
+          {/* <Route path="manage-admins" element={<ManageAdmins />} /> */}
         </Routes>
       </div>
       <div className="admin__menu" onClick={() => setShowSidebar(!showSidebar)}>
